@@ -71,7 +71,7 @@ if (!defined('DIAFAN')) {
 						<path d="M14.4386 1.6509C14.3307 1.60506 14.2037 1.62105 14.1139 1.69105C11.8894 3.41135 9.05036 5.61642 8.15712 6.35069C7.65578 6.76354 6.95998 6.76354 6.45747 6.35014C5.50537 5.56757 2.3172 3.09506 0.501313 1.69102C0.41091 1.62103 0.283655 1.60559 0.17661 1.65087C0.0689941 1.69647 0 1.79467 0 1.90289V8.8883C0 9.50109 0.546215 9.99938 1.21794 9.99938H13.3973C14.069 9.99938 14.6152 9.50109 14.6152 8.8883V1.90289C14.6152 1.79467 14.5462 1.69621 14.4386 1.6509Z" fill="#0063A7"></path>
 					</svg>
 				</a>
-				<button class="page-header__menu-trigger burger">
+				<button class="page-header__menu-trigger burger" aria-controls="mobMenu" aria-expanded="false">
 					<span class="visually-hidden">Открыть меню</span>
 					<span class="burger__line"></span>
 				</button>

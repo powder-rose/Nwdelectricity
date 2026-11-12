@@ -73,5 +73,5 @@ if (!defined('DIAFAN')) {
 
 		</div>
 	</div>
-<script charset="utf-8" type="text/javascript" src="https://cp.callback-free.com/api/js/form-builder.js" data-key="41m9pVGF"></script>
+<?php if ((int) $this->diafan->_site->id !== 1) { echo '<script charset="utf-8" type="text/javascript" src="https://cp.callback-free.com/api/js/form-builder.js" data-key="41m9pVGF"></script>'; } ?>
 </footer>

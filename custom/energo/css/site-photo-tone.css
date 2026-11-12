@@ -1,0 +1,12 @@
+/* Photographs in the site's content; logos, icons and controls keep their colors. */
+:root { --nwd-photo-tone: saturate(.86) contrast(.98) brightness(1.02) sepia(.02); }
+.page-main .group-content__picture img,
+.page-main .textBlock > img,
+.page-main .single-article__content img.br-20,
+.page-main .single-article__content img.img-br10,
+.page-main .single-article__content img.single-article__thumbnail,
+.page-main .single-article__content img[src*="ispytanie-AVR.png"],
+.page-main .custom-table img.img-br10,
+.page-main .news__thumbnail {
+  filter: var(--nwd-photo-tone);
+}

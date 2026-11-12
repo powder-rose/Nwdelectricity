@@ -25,20 +25,28 @@ if (!empty($result["name"]))
 }
 
 
+require_once dirname(__DIR__) . '/service_navigation.php';
+
 echo '<ul class="footer-menu">';
 foreach ($result["rows"][$result["parent_id"]] as $row)
 {
+	if (!NwdServiceNavigation::isVisible($row)) {
+		continue;
+	}
+	$isServices = NwdServiceNavigation::isRoot($row);
 
 	echo '<li class="footer-menu__item">';
 
-		if (
+		if ($isServices || (
 			// на текущей странице нет ссылки, если не включена настройка "Текущий пункт как ссылка"
 			(!$row["active"] || $result["current_link"])
 
 			// влючен пункт "Не отображать ссылку на элемент, если он имеет дочерние пункты"
 			&& (!$result["hide_parent_link"] || empty($result["rows"][$row["id"]]))
-		) {
-			if ($row["othurl"]) {
+		)) {
+			if ($isServices) {
+				echo '<a class="footer-menu__link" href="' . NwdServiceNavigation::url() . '">';
+			} elseif ($row["othurl"]) {
 				echo '<a class="footer-menu__link" href="' . $row["othurl"] . '"' . $row["attributes"] . '>';
 			} else {
 				echo '<a class="footer-menu__link" href="' . BASE_PATH_HREF . $row["link"] . '"' . $row["attributes"] . '>';
@@ -56,13 +64,13 @@ foreach ($result["rows"][$result["parent_id"]] as $row)
 				echo $row["name"];
 			}
 
-	if (
+	if ($isServices || (
 		// на текущей странице нет ссылки, если не включена настройка "Текущий пункт как ссылка"
 		(!$row["active"] || $result["current_link"])
 
 		// влючен пункт "Не отображать ссылку на элемент, если он имеет дочерние пункты"
 		&& (!$result["hide_parent_link"] || empty($result["rows"][$row["id"]]))
-	) {
+	)) {
 		echo '</a>';
 	}
 

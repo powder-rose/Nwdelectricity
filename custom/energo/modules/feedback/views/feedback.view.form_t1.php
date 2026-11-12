@@ -17,6 +17,8 @@ if (! empty($result["text"]))
 	return;
 }
 
+$formInstanceId = uniqid('feedback_' . (int) $result["site_id"] . '_');
+
 
 echo '
 <form method="POST" enctype="multipart/form-data" action="" class="form form--vertical ajax">
@@ -38,6 +40,7 @@ echo '
 				{
 					$required = true;
 				}
+				$fieldId = $formInstanceId . '_p' . (int) $row["id"];
 				echo '<p class="form__item ' . $row["id"] . '">';
 
 				switch ($row["type"])
@@ -48,26 +51,26 @@ echo '
 
 					case 'text':
 						echo '
-						<label class="visually-hidden" for=""p' . $row["id"] . '">' . $row["name"] . '</label>
-						<input class="form__field form__field-decor form__field-decor--name" type="text" name="p' . $row["id"] . '" value="" placeholder="'.$row["name"].'">';
+						<label class="visually-hidden form__label" for="' . $fieldId . '">' . $row["name"] . '</label>
+						<input class="form__field form__field-decor form__field-decor--name" type="text" id="' . $fieldId . '" name="p' . $row["id"] . '" value="" placeholder="'.$row["name"].'">';
 						break;
 
 					case "email":
 				echo '
-						<label class="visually-hidden" for=""p' . $row["id"] . '">' . $row["name"] . '</label>
-						<input class="form__field form__field-decor form__field-decor--mail" type="email" name="p' . $row["id"] . '" value="" placeholder="' . $row["name"] . '">';
+						<label class="visually-hidden form__label" for="' . $fieldId . '">' . $row["name"] . '</label>
+						<input class="form__field form__field-decor form__field-decor--mail" type="email" id="' . $fieldId . '" autocomplete="email" name="p' . $row["id"] . '" value="" placeholder="' . $row["name"] . '">';
 				break;
 
 					case "phone":
 						echo '
-						<label class="visually-hidden" for=""p' . $row["id"] . '">' . $row["name"] . '</label>
-						<input class="form__field form__field-decor form__field-decor--phone" type="tel" name="p' . $row["id"] . '" value="" placeholder="+7 (___) ___ - __ - __">';
+						<label class="visually-hidden form__label" for="' . $fieldId . '">' . $row["name"] . '</label>
+						<input class="form__field form__field-decor form__field-decor--phone" type="tel" id="' . $fieldId . '" autocomplete="tel" inputmode="tel" name="p' . $row["id"] . '" value="" placeholder="+7 (___) ___ - __ - __">';
 						break;
 
 					case 'textarea':
 						echo '
-						<label class="visually-hidden" for=""p' . $row["id"] . '">' . $row["name"] . '</label>
-						<textarea class="form__field form__field--message form__field-decor form__field-decor--message" name="p'.$row["id"].'" placeholder="'.$row["name"].'"></textarea>';
+						<label class="visually-hidden form__label" for="' . $fieldId . '">' . $row["name"] . '</label>
+						<textarea class="form__field form__field--message form__field-decor form__field-decor--message" id="' . $fieldId . '" name="p'.$row["id"].'" placeholder="'.$row["name"].'"></textarea>';
 						break;
 
 					// case 'date':
@@ -160,8 +163,8 @@ echo '
 		echo '
 		<p class="form__confirm">
 			<span class="form__confirm-field">
-				<input class="visually-hidden" id="confirm2" type="checkbox" checked>
-				<label class="form__confirm-label" for="confirm2"></label>
+				<input class="visually-hidden" id="' . $formInstanceId . '_confirm" aria-label="Согласие с политикой конфиденциальности" type="checkbox" checked>
+				<label class="form__confirm-label" for="' . $formInstanceId . '_confirm"></label>
 			</span>
 				Нажимая на кнопку вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a>
 		</p>';
