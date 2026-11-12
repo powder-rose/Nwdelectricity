@@ -20,10 +20,14 @@ if (! defined('DIAFAN'))
 	<link rel="shortcut icon" href="<insert name="path">favicon.ico" type="image/x-icon">
 	<insert name="show_css" files="style.css">
 	<?php
+	require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
 	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/site-photo-tone.css'), ENT_QUOTES, 'UTF-8') . '">';
 	if ((int) $this->diafan->_site->id === 1) {
 		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/home-editorial.css'), ENT_QUOTES, 'UTF-8') . '">';
 		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/home-polish.css'), ENT_QUOTES, 'UTF-8') . '">';
+	} elseif (NwdEditorialPages::isAbout($this->diafan)) {
+		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/editorial-pages.css'), ENT_QUOTES, 'UTF-8') . '">';
+		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/about-editorial.css'), ENT_QUOTES, 'UTF-8') . '">';
 	}
 	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/service-navigation.css'), ENT_QUOTES, 'UTF-8') . '">';
 	?>
