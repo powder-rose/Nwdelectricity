@@ -1,0 +1,78 @@
+Options -Indexes
+
+Options +FollowSymLinks
+
+DirectoryIndex index.php index.html
+
+ErrorDocument 404 /404.php
+
+AddDefaultCharset utf-8
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+RewriteBase /
+
+RewriteRule /di-otvetstvennyj-za-elektrohozyajstvo\ 2019.pdf https://nwdelectricity.ru/services/otvetstvennyy-za-elektrokhozyaystvo/$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} /+[^.]+$ 
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  
+RewriteCond %{HTTP_HOST} ^www\.nwdelectricity\.ru$ [NC]
+RewriteRule ^(.*)$ https://nwdelectricity.ru/$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} /+[^.]+$ 
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+
+RewriteRule ^index\.html$ https://nwdelectricity.ru/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+
+RewriteRule ^index\.php$ https://nwdelectricity.ru/ [R=301,L]
+
+  
+# раскомментируйте строку ниже, если на Вашем хостинге установщик выдает ошибку 500 Internal Server Error
+# измените / на /sub/ при установке в подпапку http://site.ru/sub/
+# RewriteBase /
+
+# расcкомментируйте строки ниже, если хотите чтобы сайт был всегда с www,
+# т.е. постоянный редирект с http://site.ru/ на http://www.site.ru/ 
+# RewriteCond %{HTTP_HOST} !^www.
+# RewriteRule (.*) http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# и наоборот: раскомментируйте эти две строки, чтобы был редирект с www на без www
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  RewriteCond %{HTTP:Authorization} !^$
+  RewriteCond %{REQUEST_URI} ^/shop/1c/.*
+  RewriteRule ^(.*)$ shop/1c/?auth=%{HTTP:Authorization}&%{QUERY_STRING}
+
+  RewriteRule ^(.*)sitemap.xml$ index.php?rewrite=sitemap.xml [QSA]
+  RewriteRule ^(&*)(.*)/$ index.php?rewrite=$2 [QSA]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(&*)(.*)$ index.php?rewrite=$2 [QSA]
+  RewriteRule ^index.php\/(.*)$ index.php?rewrite=index.php/$1 [QSA]
+  
+# If-Modified-Since (if php is not installed as cgi then comment lines below)
+  RewriteRule .* - [E=HTTP_IF_MODIFIED_SINCE:%{HTTP:If-Modified-Since}]
+  RewriteRule .* - [E=HTTP_IF_NONE_MATCH:%{HTTP:If-None-Match}]
+</IfModule>
+
+<IfModule mod_headers.c>
+<FilesMatch "\.(flv|woff|woff2|eot|svg|otf|ttf|gif|jpg|jpeg|png|ico|swf|js|css|pdf|ico)$">
+  Header append Cache-Control "public"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+<filesMatch "\.(flv|woff|woff2|eot|svg|otf|ttf|gif|jpg|jpeg|png|ico|swf|js|css|pdf|ico)$">
+  ExpiresActive On
+  ExpiresDefault "access plus 11 month"
+</filesMatch>
+</IfModule>

@@ -1,0 +1,70 @@
+# Environment-specific configuration and credentials.
+/config.php
+/config.*.php
+!/config.example.php
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# A second site copy found inside the supplied document root.
+/public_html/
+
+# DIAFAN runtime directories. Preserve their access rules and placeholders.
+/cache/*
+!/cache/.htaccess
+!/cache/.gitkeep
+/tmp/*
+!/tmp/.htaccess
+!/tmp/.gitkeep
+/return/*
+!/return/.htaccess
+!/return/.gitkeep
+
+# Content uploaded through the CMS is restored separately from source code.
+/userfls/*
+!/userfls/.htaccess
+!/userfls/.gitkeep
+
+# DIAFAN generates this homepage fallback from database content.
+/index.html
+
+# Local data, backups, logs, and database exports.
+/.local/
+/backups/
+*.log
+*.log.*
+*.sql
+*.sql.gz
+*.sql.bz2
+*.dump
+*.sqlite
+*.sqlite3
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.bak
+*.backup
+*.orig
+
+# Editor, operating-system, and tool state.
+/.idea/
+/.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+__pycache__/
+*.pyc
+node_modules/
+
+# Do not ignore dist/ globally: custom/energo/images/dist is used by the site.
