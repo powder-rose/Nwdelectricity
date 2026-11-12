@@ -25,21 +25,29 @@ if (empty($result["rows"]))
 // }
 
 
+require_once dirname(__DIR__) . '/service_navigation.php';
+
 echo '<div id="mobMenu">';
 	echo '<ul class="main-menu main-menu__page-header">';
 		foreach ($result["rows"][$result["parent_id"]] as $row)
 		{
+			if (!NwdServiceNavigation::isVisible($row)) {
+				continue;
+			}
+			$isServices = NwdServiceNavigation::isRoot($row);
 
 			echo '<li>';
 
-				if (
+				if ($isServices || (
 					// на текущей странице нет ссылки, если не включена настройка "Текущий пункт как ссылка"
 					(!$row["active"] || $result["current_link"])
 
 					// влючен пункт "Не отображать ссылку на элемент, если он имеет дочерние пункты"
 					&& (!$result["hide_parent_link"] || empty($result["rows"][$row["id"]]))
-				) {
-					if ($row["othurl"]) {
+				)) {
+					if ($isServices) {
+						echo '<a href="' . NwdServiceNavigation::url() . '">';
+					} elseif ($row["othurl"]) {
 						echo '<a href="' . $row["othurl"] . '"' . $row["attributes"] . '>';
 					} else {
 						echo '<a href="' . BASE_PATH_HREF . $row["link"] . '"' . $row["attributes"] . '>';
@@ -57,13 +65,13 @@ echo '<div id="mobMenu">';
 						echo $row["name"];
 					}
 
-			if (
+			if ($isServices || (
 				// на текущей странице нет ссылки, если не включена настройка "Текущий пункт как ссылка"
 				(!$row["active"] || $result["current_link"])
 
 				// влючен пункт "Не отображать ссылку на элемент, если он имеет дочерние пункты"
 				&& (!$result["hide_parent_link"] || empty($result["rows"][$row["id"]]))
-			) {
+			)) {
 				echo '</a>';
 			}
 
@@ -72,7 +80,7 @@ echo '<div id="mobMenu">';
 				echo $row["text"];
 			}
 
-			if ($result["show_all_level"] || $row["active_child"] || $row["active"]) {
+			if ($isServices || $result["show_all_level"] || $row["active_child"] || $row["active"]) {
 				// вывод вложенного уровня меню
 				$menu_data = $result;
 				$menu_data["parent_id"] = $row["id"];
