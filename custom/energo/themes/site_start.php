@@ -61,10 +61,10 @@ if (!defined("DIAFAN")) {
                <div class="fscreen__wrap fscreen__wrap--mainBg">
                   <div class="fscreen__content">
 
-                     <insert name="show_dynamic" module="site" id="4">
+                     <insert name="show_home_hero">
 
                      <figure class="home-hero-visual" aria-hidden="true">
-                        <img src="/custom/energo/images/home-hero-expanded.png" width="1672" height="941" alt="" fetchpriority="high" decoding="async">
+                        <img src="/custom/energo/images/home-hero-service-refined.webp" width="1505" height="1045" alt="" fetchpriority="high" decoding="async">
                      </figure>
 
                   </div>

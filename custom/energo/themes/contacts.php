@@ -16,7 +16,7 @@ if (!defined("DIAFAN")) {
 
 <insert name="show_include" file="head" />
 
-<body>
+<body class="page-contacts page-editorial">
     <!-- Rating Mail.ru counter -->
 <script type="text/javascript">
 var _tmr = window._tmr || (window._tmr = []);
@@ -45,62 +45,42 @@ _tmr.push({id: "3232969", type: "pageView", start: (new Date()).getTime()});
 
 				<div class="container">
 					<div class="contacts-block">
-						<h1 class="page-title">
-							<insert name="show_h1" />
-						</h1>
+						<h1 class="page-title" id="contacts-title"><insert name="show_h1" /></h1>
 						<div class="contacts-block__row">
-							<div class="contacts-block__form">
-								<insert name="show_form" module="feedback" site_id="166" template="t1" data-btn="Получить консультацию" />
-							</div>
-							<div class="contacts-block__map">
-								<!--<section id="map" class="map" style="background-image: url('https://yandex.ru/maps/?um=constructor%3Ad5f287842b667313c795e7cec5d4faa8ef8b19e74cefb65926421b779017880e&source=constructorLink');"></section>-->
-								<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad5f287842b667313c795e7cec5d4faa8ef8b19e74cefb65926421b779017880e&amp;width=750&amp;height=582&amp;lang=ru_RU&amp;scroll=true"></script>
-							</div>
-						</div>
-						<div class="contacts-block__detail">
 							<div class="contacts-block__content">
-								<div class="contacts-block__content-wrapper">
-									<ul class="contacts-block__list">
-										<li class="contacts-block__item">
-											<div class="contact-phone">
-												<p class="contact-phone__number">
-													<a href="tel:+78002012069">
-														<insert name="show_block" module="site" id="1">
-													</a>
-												</p>
-												<p class="contact-phone__request-service">
-													<a data-fancybox data-src="#modal" href="javascript:;" rel="nofollow">Заявка на обслуживание</a>
-												</p>
-											</div>
-										</li>
-										<li class="contacts-block__item">
-											<div class="working-hours">
-												<p class="working-hours__time">
-													<insert name="show_block" module="site" id="4">
-												</p>
-												<p class="working-hours__orders-time">
-													Заказы выполняются <br>
-													<mark class="mark">Без выходных</mark>
-												</p>
-											</div>
-										</li>
-										<li class="contacts-block__item contacts-block__item--location">
-											<span class="footer-contacts__item footer-contacts__item--location">
-												<insert name="show_block" module="site" id="3" template="nohtml">
-											</span>
-										</li>
-										<li class="contacts-block__item">
-											<a class="footer-contacts__item footer-contacts__item--mail" href="mailto:<insert name=" show_block" module="site" id="2" template="nohtml">">
-												<insert name="show_block" module="site" id="2">
-											</a>
-										</li>
-									</ul>
+								<div class="contacts-block__primary">
+									<div class="contact-phone">
+										<span class="contacts-block__label">Телефон</span>
+										<p class="contact-phone__number">
+											<a href="tel:+78002012069"><insert name="show_block" module="site" id="1"></a>
+										</p>
+										<p class="contact-phone__request-service">
+											<a href="#modal" data-fancybox data-src="#modal" rel="nofollow">Заявка на обслуживание<span aria-hidden="true">↗</span></a>
+										</p>
+									</div>
+									<div class="contacts-block__email">
+										<span class="contacts-block__label">Электронная почта</span>
+										<a href="mailto:<insert name="show_block" module="site" id="2" template="nohtml">"><insert name="show_block" module="site" id="2"></a>
+									</div>
+								</div>
+								<div class="contacts-block__secondary">
+									<div class="contacts-block__address">
+										<span class="contacts-block__label">Адрес</span>
+										<p><insert name="show_block" module="site" id="3" template="nohtml"></p>
+									</div>
+									<div class="working-hours">
+										<span class="contacts-block__label">Режим работы</span>
+										<p class="working-hours__time"><insert name="show_block" module="site" id="4"></p>
+										<p class="working-hours__orders-time">Заказы выполняются<br><mark class="mark">Без выходных</mark></p>
+									</div>
 								</div>
 							</div>
+							<section class="contacts-block__form group-content__form" aria-labelledby="contacts-form-title">
+								<h2 class="contacts-block__form-title" id="contacts-form-title">Получить консультацию</h2>
+								<insert name="show_form" module="feedback" site_id="166" template="t1" data-btn="Получить консультацию" />
+							</section>
 						</div>
-
-						<insert name="show_text" />
-
+						<div class="contacts-block__requisites content"><insert name="show_text" /></div>
 					</div>
 				</div>
 
@@ -109,7 +89,6 @@ _tmr.push({id: "3232969", type: "pageView", start: (new Date()).getTime()});
 
 					<insert name="show_block" module="site" id="9" />
 
-					<insert name="show_block" module="menu" id="5" template="clients" />
 
 				</div>
 				<!--/noindex-->
@@ -122,9 +101,17 @@ _tmr.push({id: "3232969", type: "pageView", start: (new Date()).getTime()});
 
 	</div>
 
+   <a class="home-callback" href="#modal" data-fancybox data-src="#modal" aria-label="Заказать звонок">
+      <span class="home-callback__icon" aria-hidden="true">
+         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3.8 8.2 3l2.1 4.5-1.8 1.8a14.8 14.8 0 0 0 6.2 6.2l1.8-1.8 4.5 2.1-.8 3.2c-.2.8-1 1.4-1.8 1.3C10.6 19.6 4.4 13.4 3.7 5.6 3.6 4.8 4.2 4 5 3.8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="home-callback__label">Заказать звонок <span aria-hidden="true">↗</span></span>
+   </a>
+
 	<insert name="show_include" file="modal" />
 
 	<insert name="show_include" file="scripts" />
+<script src="/custom/energo/js/editorial-pages.js" defer></script>
 <script src="//cdn.callibri.ru/callibri.js" type="text/javascript" charset="utf-8"></script>
 </body>
 

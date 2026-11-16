@@ -4,6 +4,31 @@ if (!defined('DIAFAN')) { exit; }
 
 class NwdEditorialPages
 {
+	public static function isPrices($diafan)
+	{
+		$link = $diafan->_route->link((int) $diafan->_site->id);
+		return trim((string) parse_url($link, PHP_URL_PATH), '/') === 'ceny';
+	}
+
+	public static function isEditorial($diafan)
+	{
+		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan);
+	}
+
+	public static function isResponsible($diafan)
+	{
+		// A shop category belongs to /services/, but its active rewrite is the full service URL.
+		$link = (string) $diafan->_site->rewrite;
+		if ($link === '') { $link = $diafan->_route->link((int) $diafan->_site->id); }
+		return trim((string) parse_url($link, PHP_URL_PATH), '/') === 'services/otvetstvennyy-za-elektrokhozyaystvo';
+	}
+
+	public static function isContacts($diafan)
+	{
+		$link = $diafan->_route->link((int) $diafan->_site->id);
+		return trim((string) parse_url($link, PHP_URL_PATH), '/') === 'kontakty';
+	}
+
 	public static function isAbout($diafan)
 	{
 		$link = $diafan->_route->link((int) $diafan->_site->id);
@@ -25,5 +50,26 @@ class NwdEditorialPages
 			$image = htmlspecialchars(BASE_PATH . Custom::path('images/about-detail-editorial.png'), ENT_QUOTES, 'UTF-8');
 			return '<figure class="about-visual"><img class="about-visual__image" src="' . $image . '" width="1086" height="1448" alt="Обслуживание электрооборудования" fetchpriority="high" decoding="async"></figure>';
 		}, $html);
+	}
+
+	public static function priceContent($html)
+	{
+		if (!preg_match('~<ul\b[^>]*\bclass=["\'][^"\']*\bglobal-cats--price\b[^"\']*["\'][^>]*>.*?</ul>~is', $html, $navigation, PREG_OFFSET_CAPTURE)) {
+			return $html;
+		}
+		$nav = $navigation[0][0];
+		$nav = preg_replace_callback('~<a\b[^>]*>~i', function ($match) {
+			if (!preg_match('~\bdata-tab=["\'](#[A-Za-z][A-Za-z0-9_-]*)["\']~', $match[0], $target)) {
+				return $match[0];
+			}
+			return preg_replace('~\bhref=["\'][^"\']*["\']~i', 'href="' . $target[1] . '"', $match[0]);
+		}, $nav);
+		$offset = $navigation[0][1];
+		$intro = substr($html, 0, $offset);
+		$action = '<a class="price-intro__action button" href="#modal" data-fancybox data-src="#modal">Заявка на обслуживание<span aria-hidden="true">↗</span></a>';
+		$intro = preg_replace('~</section>~i', $action . '</section>', $intro, 1);
+		$tables = substr($html, $offset + strlen($navigation[0][0]));
+		$tables = preg_replace('~<th(\s*>)~i', '<th scope="col"$1', $tables);
+		return $intro . '<div class="price-catalog">' . $nav . $tables . '</div>';
 	}
 }

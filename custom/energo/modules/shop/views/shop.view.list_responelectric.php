@@ -26,6 +26,12 @@ if(! empty($result["error"]))
 	return;
 }
 
+require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
+if (NwdEditorialPages::isResponsible($this->diafan)) {
+	include ABSOLUTE_PATH . Custom::path('modules/shop/views/shop.view.responsible_editorial.php');
+	return;
+}
+
 echo '
 <div class="fscreen">
 	<div class="container">

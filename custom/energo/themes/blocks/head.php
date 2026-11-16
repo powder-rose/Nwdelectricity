@@ -16,18 +16,29 @@ if (! defined('DIAFAN'))
 
 	<insert name="show_head">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<?php
+	if (http_response_code() < 400 && $this->diafan->_site->id && !$this->diafan->_users->useradmin) {
+		$page = '/'.trim((string)$this->diafan->_site->rewrite, '/');
+		echo '<script defer src="/redaktsiya/assets/traffic.js" data-page="'.htmlspecialchars($page, ENT_QUOTES, 'UTF-8').'"></script>';
+	}
+	?>
 
 	<link rel="shortcut icon" href="<insert name="path">favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/svg+xml" sizes="any" href="<insert name="path">favicon.svg">
 	<insert name="show_css" files="style.css">
 	<?php
 	require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
-	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/site-photo-tone.css'), ENT_QUOTES, 'UTF-8') . '">';
+	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/site-photo-tone.css'), ENT_QUOTES, 'UTF-8') . '?nwd-tone=soft">';
 	if ((int) $this->diafan->_site->id === 1) {
 		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/home-editorial.css'), ENT_QUOTES, 'UTF-8') . '">';
 		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/home-polish.css'), ENT_QUOTES, 'UTF-8') . '">';
-	} elseif (NwdEditorialPages::isAbout($this->diafan)) {
+		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/home-hero.css'), ENT_QUOTES, 'UTF-8') . '?v=photo-refined">';
+	} elseif (NwdEditorialPages::isEditorial($this->diafan)) {
 		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/editorial-pages.css'), ENT_QUOTES, 'UTF-8') . '">';
-		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/about-editorial.css'), ENT_QUOTES, 'UTF-8') . '">';
+		$editorialStyle = NwdEditorialPages::isAbout($this->diafan) ? 'about-editorial.css' : 'prices-editorial.css';
+		if (NwdEditorialPages::isContacts($this->diafan)) { $editorialStyle = 'contacts-editorial.css'; }
+		if (NwdEditorialPages::isResponsible($this->diafan)) { $editorialStyle = 'responsible-editorial.css'; }
+		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/' . $editorialStyle), ENT_QUOTES, 'UTF-8') . '">';
 	}
 	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/service-navigation.css'), ENT_QUOTES, 'UTF-8') . '">';
 	?>

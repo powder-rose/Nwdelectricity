@@ -1,5 +1,8 @@
-/* Photographs in the site's content; logos, icons and controls keep their colors. */
-:root { --nwd-photo-tone: saturate(.86) contrast(.98) brightness(1.02) sepia(.02); }
+/* Content photographs share one display transform. The approved home WebP is
+   already graded and therefore passes through the browser unchanged. */
+:root {
+  --nwd-photo-tone: url("../images/photo-tone.svg#home-grade");
+}
 .page-main .group-content__picture img,
 .page-main .textBlock > img,
 .page-main .single-article__content img.br-20,
@@ -7,6 +10,22 @@
 .page-main .single-article__content img.single-article__thumbnail,
 .page-main .single-article__content img[src*="ispytanie-AVR.png"],
 .page-main .custom-table img.img-br10,
-.page-main .news__thumbnail {
+.page-main .maintenance__img img,
+.page-main .block-row-img img,
+.page-main img.block-row-img,
+.page-main .promo__thumbnail,
+.page-main .news__thumbnail,
+.page-main :where(img:is(
+  [src*=".jpg" i], [src*=".jpeg" i], [src*=".webp" i], [src*=".avif" i],
+  [src*="/userfls/photo/"], [src*="/userfls/editor/large/"]
+):not(
+  .clients__preview, [class*="icon" i], [class*="logo" i], [src*="logo" i],
+  [src*="/ico-" i], [src*="/pic-client" i], [src*=".svg" i], [src*="home-hero-service-refined.webp"]
+)) {
   filter: var(--nwd-photo-tone);
+}
+
+/* Light home-page grade on the service portrait, in the editorial and original layouts. */
+:is(.page-responsible .service-hero__photo, .page-main .textBlock--imgLeft) > img:is([src$="/otv-energo.jpg"], [src*="/otv-energo.jpg?"]) {
+  filter: url("../images/otv-energo-tone.svg#portrait");
 }

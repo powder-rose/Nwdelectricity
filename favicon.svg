@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>С — Спецэнергоразвитие</title>
+  <rect width="64" height="64" rx="4" fill="#151515"/>
+  <path d="M43.5 23.2C41 19.4 36.9 17.2 31.7 17.2C23 17.2 16.8 23.8 16.8 32.8S23 48.4 31.7 48.4C36.9 48.4 41 46.2 43.5 42.4"
+        fill="none" stroke="#F4F2ED" stroke-width="6"/>
+  <path d="M44 12H55V23H52V15H44Z" fill="#A9F04A"/>
+</svg>

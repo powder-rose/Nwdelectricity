@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <defs>
+    <!-- The neutral curve follows the metal in the approved home photograph.
+         Warm midtones take a gentler curve so faces retain their colour. -->
+    <filter id="portrait" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feColorMatrix in="SourceGraphic" type="saturate" values=".92" result="neutral"/>
+      <feComponentTransfer in="neutral" result="equipment">
+        <feFuncR type="table" tableValues=".012 .077 .14 .21 .314 .425 .548 .72 .98"/>
+        <feFuncG type="table" tableValues=".012 .077 .14 .21 .314 .425 .548 .72 .98"/>
+        <feFuncB type="table" tableValues=".012 .077 .14 .21 .314 .425 .548 .72 .98"/>
+      </feComponentTransfer>
+      <feColorMatrix in="SourceGraphic" type="matrix" result="redAboveGreen"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  9 -9 0 0 -.18"/>
+      <feColorMatrix in="SourceGraphic" type="matrix" result="greenAboveBlue"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 10 -10 0 .57"/>
+      <feComposite in="redAboveGreen" in2="greenAboveBlue" operator="in" result="warmMask"/>
+      <!-- Only compress excess chroma. A face photographed in cooler light
+           retains its existing colour, while an orange cast recedes. -->
+      <feColorMatrix in="SourceGraphic" type="matrix" result="excessChroma"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  4.6 0 -4.6 0 -.9"/>
+      <feColorMatrix in="SourceGraphic" type="saturate" values=".80" result="lessChroma"/>
+      <feComposite in="lessChroma" in2="excessChroma" operator="in" result="compressed"/>
+      <feComposite in="compressed" in2="SourceGraphic" operator="over" result="warmBalanced"/>
+      <feComponentTransfer in="warmBalanced" result="warm">
+        <feFuncR type="table" tableValues=".008 .103 .216 .33 .455 .581 .709 .843 .98"/>
+        <feFuncG type="table" tableValues=".008 .103 .216 .33 .455 .581 .709 .843 .98"/>
+        <feFuncB type="table" tableValues=".008 .106 .222 .337 .460 .585 .711 .844 .98"/>
+      </feComponentTransfer>
+      <feComposite in="warm" in2="warmMask" operator="in" result="protectedWarm"/>
+      <feComposite in="protectedWarm" in2="equipment" operator="over" result="graded"/>
+      <!-- A light application of the site's calibrated home grade to this opaque photograph. -->
+      <feComposite in="graded" in2="SourceGraphic" operator="arithmetic" k2=".4" k3=".6"/>
+    </filter>
+  </defs>
+</svg>

@@ -74,5 +74,5 @@ require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
 
 		</div>
 	</div>
-<?php if ((int) $this->diafan->_site->id !== 1 && !NwdEditorialPages::isAbout($this->diafan)) { echo '<script charset="utf-8" type="text/javascript" src="https://cp.callback-free.com/api/js/form-builder.js" data-key="41m9pVGF"></script>'; } ?>
+<?php if ((int) $this->diafan->_site->id !== 1 && !NwdEditorialPages::isEditorial($this->diafan)) { echo '<script charset="utf-8" type="text/javascript" src="https://cp.callback-free.com/api/js/form-builder.js" data-key="41m9pVGF"></script>'; } ?>
 </footer>

@@ -1,0 +1,128 @@
+/* Homepage hero only. The offer, benefits and enquiry form remain in the CMS. */
+.page-home .fscreen--mainBg { background: var(--home-paper); color: var(--home-ink); }
+.page-home .fscreen__wrap--mainBg { padding: 60px 0 54px; }
+.page-home .fscreen__content {
+  display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto; gap: 0 24px; align-items: start;
+}
+.page-home .fscreen__content::before { content: ''; grid-column: 1; grid-row: 1 / 3; align-self: stretch; background: var(--home-ink); }
+.page-home .fscreen__content::after { content: none; display: none; }
+.page-home .fscreen__heading {
+  position: relative; z-index: 1; grid-column: 1; grid-row: 1; width: 100%; max-width: none;
+  margin: 0; padding: 38px 38px 0; font-size: clamp(35px, 3.4vw, 44px); font-weight: 550;
+  line-height: 1.18; letter-spacing: -.032em; text-wrap: balance; overflow-wrap: normal;
+}
+.page-home .fscreen__heading .hero-brand-line {
+  display: flex; align-items: center; gap: 12px; margin: 0 0 30px; color: #c4c6be;
+  font-size: 13px; font-weight: 400; line-height: 1.5; letter-spacing: 0;
+}
+.page-home .hero-brand-line::before { content: ''; flex: 0 0 22px; height: 2px; background: var(--home-blue); }
+.page-home .fscreen__heading .hero-brand-line > span { color: inherit; }
+.page-home .fscreen__heading .hero-brand-separator { display: none; }
+.page-home .fscreen__heading .hero-offer { display: block; color: #fff; }
+.page-home .fscreen__heading .hero-offer__lead { color: var(--home-lime); }
+.page-home .hero-offer::first-letter { text-transform: uppercase; }
+.page-home .fscreen__btnWrap {
+  position: relative; z-index: 1; grid-column: 1; grid-row: 2; display: flex; align-items: center;
+  align-self: end; flex-wrap: wrap; gap: 18px 28px; width: auto; margin: 48px 38px 38px;
+}
+.page-home .hero-inquiry {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 26px;
+  min-height: 60px; padding: 16px 22px; border: 1px solid var(--home-lime); border-radius: 2px;
+  background: var(--home-lime); color: var(--home-ink); font-size: 16px; font-weight: 500; line-height: 1.4;
+}
+.page-home .hero-inquiry span { color: inherit; font-size: 20px; font-weight: 400; }
+.page-home .hero-inquiry:hover { border-color: #fff; background: #fff; color: var(--home-ink); }
+.page-home .hero-inquiry:focus-visible { outline-color: #fff; }
+.page-home .fscreen__btn {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 16px;
+  width: auto; min-width: 0; max-width: none; min-height: 48px; height: auto; margin: 0; padding: 12px 0;
+  border: 0; border-radius: 0; background: transparent; color: #fff;
+  font-size: 14px; font-weight: 400; line-height: 1.5; box-shadow: none;
+}
+.page-home .fscreen__btn::after { color: var(--home-blue); font-size: 20px; }
+.page-home .fscreen__btn:hover { background: transparent; color: var(--home-lime); transform: none; }
+.page-home .fscreen__btn:focus-visible { outline-color: #fff; }
+
+/* The photo fills the same wide rectangle as the text panel. Its grade is in the asset. */
+.page-home .home-hero-visual {
+  position: relative; grid-column: 2; grid-row: 1 / 3; align-self: stretch;
+  width: 100%; min-width: 0; min-height: 408px; margin: 0; border: 0; background: #363938;
+}
+.page-home .home-hero-visual img {
+  position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: none;
+  object-fit: cover; object-position: center; filter: none; clip-path: none;
+}
+.page-home .home-hero-visual::before,
+.page-home .home-hero-visual::after { content: none; display: none; }
+
+/* Uniform, readable copy and smaller blue numerals, without a dividing rule. */
+.page-home .fscreen__text { grid-column: 1 / -1; grid-row: 3; width: 100%; max-width: none; margin: 48px 0 0; }
+.page-home .fscreen__text .custom-list {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, .95fr) minmax(0, 1.05fr) minmax(0, 1.25fr);
+  gap: 32px;
+  width: 100%; max-width: none; margin: 0; padding: 0; border: 0;
+  background: transparent; counter-reset: hero-benefit;
+}
+.page-home .fscreen__text .custom-list__item:nth-child(n) {
+  min-width: 0; min-height: 0; margin: 0; padding: 0; border: 0; background: transparent;
+  color: var(--home-ink); font-size: 17px; font-weight: 400; line-height: 1.55; text-wrap: pretty;
+}
+.page-home .fscreen__text .custom-list__item:nth-child(n)::before {
+  content: counter(hero-benefit, decimal-leading-zero); display: block; position: static;
+  width: auto; height: auto; margin: 0 0 18px; border: 0; background: none;
+  color: var(--home-blue); font-size: 28px; font-weight: 450; line-height: 1;
+  letter-spacing: -.04em; font-variant-numeric: tabular-nums;
+}
+.page-home .fscreen__text .custom-list__item b,
+.page-home .fscreen__text .custom-list__item strong { color: inherit !important; font-weight: inherit !important; }
+
+/* Keep the persistent callback quieter than the primary enquiry button. */
+.page-home .home-callback { min-width: 48px; min-height: 48px; gap: 10px; padding: 7px 12px 7px 7px; box-shadow: 0 4px 16px rgba(21, 21, 21, .08); }
+.page-home .home-callback__icon { width: 32px; height: 32px; }
+.page-home .home-callback__icon svg { width: 18px; height: 18px; }
+.page-home .home-callback__label { gap: 14px; font-weight: 500; }
+.page-home .home-callback__label span { font-size: 17px; }
+
+@media (min-width: 881px) and (max-width: 1199px) {
+  .page-home .fscreen__heading { padding: 30px 28px 0; font-size: clamp(31px, 3.5vw, 40px); }
+  .page-home .fscreen__btnWrap { gap: 18px 22px; margin: 36px 28px 30px; }
+  .page-home .hero-inquiry { gap: 18px; padding-inline: 17px; font-size: 14px; }
+  .page-home .fscreen__btn { font-size: 13px; }
+  .page-home .home-hero-visual { min-height: 370px; }
+  .page-home .fscreen__text .custom-list { gap: 28px; }
+  .page-home .fscreen__text .custom-list__item:nth-child(n) { font-size: 15px; }
+}
+@media (max-width: 880px) {
+  .page-home .fscreen__wrap--mainBg { padding: 42px 0 44px; }
+  .page-home .fscreen__content { display: flex; flex-direction: column; align-items: stretch; }
+  .page-home .fscreen__content::before { content: none; display: none; }
+  .page-home .fscreen__heading { order: 1; padding: 32px 32px 0; background: var(--home-ink); font-size: clamp(34px, 5.5vw, 46px); }
+  .page-home .fscreen__heading .hero-brand-line { margin-bottom: 28px; }
+  .page-home .fscreen__btnWrap { order: 2; align-self: stretch; margin: 0 0 24px; padding: 36px 32px 32px; background: var(--home-ink); }
+  .page-home .home-hero-visual { order: 3; min-height: 0; aspect-ratio: 1.5; }
+  .page-home .fscreen__text { order: 4; margin-top: 36px; }
+  .page-home .fscreen__text .custom-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+  .page-home .fscreen__text .custom-list__item:nth-child(n) { font-size: 16px; }
+  .page-home .fscreen__text .custom-list__item:nth-child(n)::before { font-size: 26px; }
+}
+@media (max-width: 600px) {
+  .page-home .fscreen__wrap--mainBg { padding: 28px 0 36px; }
+  .page-home .fscreen__heading { padding: 28px 22px 0; font-size: clamp(25px, 6.2vw, 36px); line-height: 1.18; letter-spacing: -.03em; }
+  .page-home .fscreen__heading .hero-brand-line { gap: 10px; margin-bottom: 26px; font-size: 11px; }
+  .page-home .hero-brand-line::before { flex-basis: 18px; }
+  .page-home .fscreen__btnWrap { gap: 18px 22px; margin: 0 0 20px; padding: 32px 22px 28px; }
+  .page-home .hero-inquiry { flex: 1 1 auto; min-height: 56px; gap: 14px; padding: 15px; font-size: 14px; }
+  .page-home .fscreen__btn { flex: 0 0 auto; gap: 12px; min-height: 44px; font-size: 13px; }
+  .page-home .fscreen__text { margin-top: 30px; }
+  .page-home .fscreen__text .custom-list { gap: 30px 24px; }
+  .page-home .fscreen__text .custom-list__item:nth-child(n) { font-size: 15px; line-height: 1.6; }
+  .page-home .fscreen__text .custom-list__item:nth-child(n)::before { margin-bottom: 14px; font-size: 24px; }
+}
+@media (max-width: 359px) {
+  .page-home .fscreen__heading { padding-inline: 16px; font-size: 24px; }
+  .page-home .fscreen__btnWrap { padding-inline: 16px; }
+  .page-home .hero-inquiry { flex-basis: 100%; }
+  .page-home .fscreen__text .custom-list { grid-template-columns: 1fr; gap: 26px; }
+}
