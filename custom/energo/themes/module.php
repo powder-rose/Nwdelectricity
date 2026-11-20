@@ -10,13 +10,15 @@ if (!defined("DIAFAN")) {
 	}
 	include $path . '/includes/404.php';
 }
+require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
+$nwdMaintenancePage = NwdEditorialPages::isMaintenance($this->diafan);
 ?>
 <!DOCTYPE html>
 <html lang="ru" prefix="og: http://ogp.me/ns#">
 
 <insert name="show_include" file="head" />
 
-<body class="page-inn">
+<body class="page-inn<?php if ($nwdMaintenancePage) { echo ' page-editorial page-maintenance'; } ?>">
    <!-- Rating Mail.ru counter -->
    <script type="text/javascript">
    var _tmr = window._tmr || (window._tmr = []);
@@ -68,7 +70,7 @@ if (!defined("DIAFAN")) {
 
                   <insert name="show_block" module="site" id="9" />
 
-                  <insert name="show_block" module="menu" id="5" template="clients" />
+                  <?php if (!$nwdMaintenancePage) { echo '<insert name="show_block" module="menu" id="5" template="clients" />'; } ?>
 
                </div>
                <!--/noindex-->
@@ -84,6 +86,10 @@ if (!defined("DIAFAN")) {
    <insert name="show_include" file="modal" />
 
    <insert name="show_include" file="scripts" />
+   <?php if ($nwdMaintenancePage) {
+      echo '<script src="/custom/energo/js/editorial-pages.js" defer></script>';
+      echo '<script src="/custom/energo/js/maintenance-editorial.js" defer></script>';
+   } ?>
    <script src="//cdn.callibri.ru/callibri.js" type="text/javascript" charset="utf-8"></script>
 </body>
 

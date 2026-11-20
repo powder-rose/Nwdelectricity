@@ -21,6 +21,13 @@ if (! defined('DIAFAN'))
 }
 
 
+require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
+if (NwdEditorialPages::isMaintenance($this->diafan)) {
+	$nwdMaintenanceRelated = true;
+	include ABSOLUTE_PATH . Custom::path('modules/shop/views/shop.view.maintenance_editorial.php');
+	return;
+}
+
 echo '<div class="container js_shop_id js_shop shop shop_id">';
 
 	echo '<div class="single-article">';

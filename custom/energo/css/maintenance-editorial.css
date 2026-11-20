@@ -1,0 +1,211 @@
+/* Only /services/obsluzhivanie-elektroustanovok/ opts in to this presentation. */
+.page-maintenance { --maintenance-muted:#5d625a; --maintenance-tint:#e9ecdf; }
+.page-maintenance .custom-bg { background:var(--home-paper); }
+.page-maintenance .breadcrumbs { display:flex; flex-wrap:wrap; gap:7px 12px; margin:0; padding:27px 0 0; }
+.page-maintenance .breadcrumbs__item { margin:0; padding:0; }
+.page-maintenance .breadcrumbs__item:not(:last-child)::after { content:'/'; margin-left:12px; color:#8d9185; }
+.page-maintenance .breadcrumbs__link { color:var(--maintenance-muted); font:inherit; font-size:12px; line-height:1.6; }
+.page-maintenance .breadcrumbs__item:last-child { text-decoration:none; }
+.page-maintenance .maintenance-landing { color:var(--home-ink); font-size:16px; line-height:1.75; }
+.page-maintenance .maintenance-landing :is(h1,h2,h3,p,li,strong,summary) { font-family:inherit; text-transform:none; }
+.page-maintenance .maintenance-landing p { margin:0 0 22px; font-size:inherit; line-height:inherit; letter-spacing:0; }
+.page-maintenance .maintenance-landing :is(h1,h2,h3) { padding:0; color:inherit; text-align:left; }
+.page-maintenance .maintenance-landing :is(h1,h2,h3)::before,
+.page-maintenance .maintenance-landing :is(h1,h2,h3)::after { display:none; }
+.page-maintenance .maintenance-landing h2 { margin:0 0 28px; font-size:clamp(30px,3.4vw,46px); font-weight:550; letter-spacing:-.05em; line-height:1.13; text-wrap:balance; }
+.page-maintenance .maintenance-landing h3 { margin:0 0 22px; font-size:25px; font-weight:550; line-height:1.25; letter-spacing:-.035em; }
+.page-maintenance .maintenance-landing :is(ul,ol) { margin:0; padding:0; }
+.page-maintenance .maintenance-landing ul { list-style:none; }
+.page-maintenance .maintenance-landing li { position:relative; width:auto; margin:0; padding:0 0 0 22px; color:inherit; font-size:inherit; font-weight:400; line-height:inherit; }
+.page-maintenance .maintenance-landing ul>li::before { content:''; position:absolute; top:.73em; left:0; display:block; width:6px; height:6px; border:0; border-radius:0; background:var(--home-lime); box-shadow:none; transform:none; }
+.page-maintenance .maintenance-landing li::after { display:none; }
+.page-maintenance .maintenance-landing :is(img,svg) { max-width:100%; }
+.page-maintenance .maintenance-landing img:not(.maintenance-hero__photo img) { height:auto; }
+.page-maintenance .maintenance-intro { padding-top:32px; }
+.page-maintenance .maintenance-hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.08fr); align-items:center; background:var(--home-ink); color:#fff; }
+.page-maintenance .maintenance-hero__copy { min-width:0; padding:44px 40px; }
+.page-maintenance p.maintenance-eyebrow { margin:0 0 28px; color:#d4dbcb; font-size:12px; line-height:1.5; letter-spacing:.09em; }
+.page-maintenance .maintenance-eyebrow::before { content:''; display:inline-block; width:23px; height:2px; margin-right:12px; background:var(--home-lime); vertical-align:middle; }
+.page-maintenance .maintenance-hero h1 { margin:0 0 29px; color:#fff; font-size:clamp(34px,3.8vw,52px); font-weight:550; letter-spacing:-.055em; line-height:1.07; }
+.page-maintenance .maintenance-hero h1>span { display:block; color:var(--home-lime); }
+.page-maintenance .maintenance-hero__lead { max-width:455px; color:#d9dbd4; font-size:17px; line-height:1.7; }
+.page-maintenance .maintenance-hero__lead p { margin:0; }
+.page-maintenance .maintenance-hero__actions { display:flex; flex-wrap:wrap; align-items:center; gap:18px 27px; margin-top:32px; }
+.page-maintenance a.maintenance-button { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:16px 23px; border:1px solid var(--home-lime); border-radius:0; background:var(--home-lime); color:var(--home-ink); font-size:14px; font-weight:550; line-height:1.4; text-decoration:none; transition:background .2s,border-color .2s; }
+.page-maintenance a.maintenance-button:hover { background:#c0ff71; border-color:#c0ff71; }
+.page-maintenance a.maintenance-link { display:inline-block; padding:7px 0; border-bottom:1px solid #91978a; color:inherit; font-size:14px; line-height:1.5; text-decoration:none; transition:border-color .2s; }
+.page-maintenance a.maintenance-link:hover { border-color:var(--home-lime); }
+.page-maintenance .maintenance-hero__photo { position:relative; min-width:0; width:100%; margin:0; background:#323630; }
+.page-maintenance .maintenance-hero__photo>img { display:block; width:100%; height:auto; aspect-ratio:1448/1086; object-fit:contain; filter:brightness(.97) saturate(.95); }
+.page-maintenance .maintenance-hero__photo::after { content:''; position:absolute; bottom:0; right:0; width:44px; height:5px; background:var(--home-lime); }
+.page-maintenance .maintenance-navigation { display:flex; flex-wrap:wrap; gap:15px 32px; align-items:center; padding:22px 0; border-bottom:1px solid var(--home-line); }
+.page-maintenance .maintenance-navigation>a { color:var(--maintenance-muted); font-size:13px; line-height:1.5; text-decoration:none; text-underline-offset:6px; }
+.page-maintenance .maintenance-navigation>a:hover { color:var(--home-ink); text-decoration:underline; text-decoration-color:#83b13e; }
+.page-maintenance .maintenance-opening { display:grid; grid-template-columns:1fr 1fr; gap:44px 72px; padding:57px 0 5px; }
+.page-maintenance .maintenance-opening>p { color:var(--maintenance-muted); }
+.page-maintenance .maintenance-opening>p:first-child { color:var(--home-ink); font-size:21px; line-height:1.65; letter-spacing:-.025em; }
+.page-maintenance .maintenance-section { padding:86px 0; scroll-margin-top:24px; }
+.page-maintenance .maintenance-underline { background:linear-gradient(transparent 88%,var(--home-lime) 88%,var(--home-lime) 96%,transparent 96%); padding-bottom:.05em; }
+.page-maintenance .maintenance-copy { color:var(--maintenance-muted); }
+.page-maintenance .maintenance-copy p:last-child { margin-bottom:0; }
+.page-maintenance .maintenance-scope { display:grid; grid-template-columns:minmax(0,.87fr) minmax(0,1.4fr); gap:65px; margin-top:35px; padding:48px; background:var(--maintenance-tint); }
+.page-maintenance .maintenance-scope h2 { font-size:clamp(30px,3.15vw,42px); }
+.page-maintenance .maintenance-scope__body>p { color:var(--maintenance-muted); font-size:14px; }
+.page-maintenance .maintenance-scope__body>ul { display:grid; grid-template-columns:1fr 1fr; gap:21px 30px; }
+.page-maintenance .maintenance-scope__body li:nth-child(n) { margin:0; padding-left:21px; font-size:16px; line-height:1.55; }
+.page-maintenance .maintenance-types__intro { display:grid; grid-template-columns:1fr 1fr; gap:72px; }
+.page-maintenance .maintenance-types__intro h2 { max-width:460px; }
+.page-maintenance .maintenance-inspections { margin-top:46px; }
+.page-maintenance .maintenance-inspections>p { color:var(--maintenance-muted); font-size:13px; }
+.page-maintenance .maintenance-inspections__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.page-maintenance .maintenance-inspections__grid>li:nth-child(n) { padding:28px; border:1px solid var(--home-line); background:#faf9f5; color:var(--maintenance-muted); font-size:15px; line-height:1.75; transition:background .25s,border-color .25s; }
+.page-maintenance .maintenance-landing .maintenance-inspections__grid>li::before { display:none; }
+.page-maintenance .maintenance-inspections__grid>li:hover { background:#f0f3e7; border-color:#a6b493; }
+.page-maintenance .maintenance-inspections__grid>li>strong { display:block; margin:0 0 20px; color:var(--home-ink); font-size:23px; font-weight:500; line-height:1.3; letter-spacing:-.035em; }
+.page-maintenance .maintenance-inspections__grid ol { list-style:decimal; margin:20px 0 0 20px; padding:0; }
+.page-maintenance .maintenance-inspections__grid ol>li { margin:9px 0 0; padding-left:4px; font-size:14px; }
+.page-maintenance .maintenance-inspections__grid ol>li::before { display:none; }
+.page-maintenance .maintenance-categories { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:85px; padding-top:0; }
+.page-maintenance .maintenance-categories>header { align-self:start; }
+.page-maintenance .maintenance-categories>header h2 { margin-bottom:27px; }
+.page-maintenance .maintenance-category { border-top:1px solid var(--home-line); }
+.page-maintenance .maintenance-category:last-child { border-bottom:1px solid var(--home-line); }
+.page-maintenance .maintenance-category>summary { display:flex; align-items:center; justify-content:space-between; gap:25px; padding:23px 0; list-style:none; cursor:pointer; }
+.page-maintenance .maintenance-category>summary>h3 { margin:0; font-size:26px; }
+.page-maintenance summary::-webkit-details-marker { display:none; }
+.page-maintenance summary::marker { content:''; }
+.page-maintenance summary:focus-visible { outline:2px solid #587e24; outline-offset:5px; }
+.page-maintenance .maintenance-plus { position:relative; display:block; flex:0 0 30px; width:30px; height:30px; border:1px solid #c1c6b6; }
+.page-maintenance .maintenance-plus::before,.page-maintenance .maintenance-plus::after { content:''; position:absolute; inset:14px 8px auto; height:1px; background:currentColor; }
+.page-maintenance .maintenance-plus::after { transform:rotate(90deg); transition:transform .2s; }
+.page-maintenance details[open]>summary .maintenance-plus { border-color:var(--home-lime); background:var(--home-lime); }
+.page-maintenance details[open]>summary .maintenance-plus::after { transform:rotate(0); }
+.page-maintenance .maintenance-category__body { padding:0 35px 24px 0; color:var(--maintenance-muted); }
+.page-maintenance .maintenance-category__body .serv-description__inner { padding:0; border:0; background:none; box-shadow:none; }
+.page-maintenance .maintenance-category__body li:nth-child(n) { margin:0 0 13px; padding-left:22px; }
+.page-maintenance .maintenance-periodicity { position:relative; display:grid; grid-template-columns:1fr 1fr; gap:80px; padding:45px 48px; background:var(--maintenance-tint); }
+.page-maintenance .maintenance-periodicity::before { content:''; position:absolute; top:0; left:0; width:42px; height:4px; background:var(--home-lime); }
+.page-maintenance .maintenance-periodicity h2 { margin:0; max-width:450px; font-size:30px; }
+.page-maintenance .maintenance-periodicity ul { display:grid; grid-template-columns:1fr 1fr; gap:20px 28px; }
+.page-maintenance .maintenance-periodicity li { padding-left:20px; font-size:16px; }
+.page-maintenance .maintenance-enterprise { display:grid; grid-template-columns:1fr 1fr; gap:72px; }
+.page-maintenance .maintenance-enterprise h2 { max-width:470px; font-size:clamp(30px,3vw,40px); }
+.page-maintenance .maintenance-lead { font-size:21px; line-height:1.6; letter-spacing:-.02em; }
+.page-maintenance .maintenance-more { margin:28px 0 0; border-block:1px solid var(--home-line); }
+.page-maintenance .maintenance-more>summary { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:19px 0; color:var(--home-ink); font-size:15px; line-height:1.55; font-weight:500; list-style:none; cursor:pointer; }
+.page-maintenance .maintenance-more>.maintenance-copy { padding:5px 0 25px; font-size:16px; }
+.page-maintenance .maintenance-document-note { margin-top:32px; padding:0 0 0 23px; border-left:2px solid var(--home-lime); color:var(--maintenance-muted); font-size:15px; line-height:1.8; }
+.page-maintenance .maintenance-document-note p:last-child { margin-bottom:0; }
+.page-maintenance .maintenance-prices { padding-top:0; }
+.page-maintenance .maintenance-section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; }
+.page-maintenance .maintenance-section-head h2 { max-width:720px; margin-bottom:0; }
+.page-maintenance .maintenance-section-head>a { flex:0 0 auto; }
+.page-maintenance p.maintenance-price-labels { margin:25px 0 24px; color:var(--maintenance-muted); font-size:12px; }
+.page-maintenance .maintenance-plans { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.page-maintenance .maintenance-plan { position:relative; display:flex; flex-direction:column; align-items:flex-start; min-width:0; padding:30px; background:#fff; border:1px solid var(--home-line); }
+.page-maintenance .maintenance-plan::before { content:''; position:absolute; left:30px; top:0; width:32px; height:3px; background:var(--home-lime); }
+.page-maintenance .maintenance-plan h3 { margin-bottom:23px; font-size:25px; font-weight:500; }
+.page-maintenance p.maintenance-plan__description { margin-bottom:32px; color:var(--maintenance-muted); font-size:15px; line-height:1.75; }
+.page-maintenance .maintenance-plan__rate { width:100%; margin-top:auto; padding-top:5px; }
+.page-maintenance p.maintenance-plan__price { margin-bottom:5px; color:var(--home-ink); font-size:37px; line-height:1.15; letter-spacing:-.05em; font-weight:500; }
+.page-maintenance p.maintenance-plan__unit { margin:0 0 27px; color:var(--maintenance-muted); font-size:13px; }
+.page-maintenance .maintenance-plan>.maintenance-button { width:100%; padding-inline:12px; }
+.page-maintenance .maintenance-extra-prices { margin-top:28px; }
+.page-maintenance .maintenance-extra-rate { display:grid; grid-template-columns:1fr auto; gap:35px; padding:25px 0; border-top:1px solid var(--home-line); color:var(--maintenance-muted); font-size:15px; }
+.page-maintenance .maintenance-extra-rate>p { margin:0; }
+.page-maintenance .maintenance-extra-rate>div { min-width:125px; color:var(--home-ink); }
+.page-maintenance .maintenance-extra-rate span { display:block; font-size:25px; letter-spacing:-.035em; }
+.page-maintenance .maintenance-extra-rate small { display:block; color:var(--maintenance-muted); font-size:13px; }
+.page-maintenance .maintenance-table-scroll { overflow-x:auto; }
+.page-maintenance .maintenance-table-scroll table { min-width:580px; width:100%; font-size:14px; }
+.page-maintenance .maintenance-cms-extra:empty { display:none; }
+.page-maintenance .maintenance-contact { scroll-margin-top:24px; }
+.page-maintenance .maintenance-contact .section-title { max-width:580px; color:#fff; font-size:clamp(36px,4.3vw,58px); font-weight:500; line-height:1.07; letter-spacing:-.05em; }
+.page-maintenance .maintenance-contact .find-cost__content>ul { display:grid; grid-template-columns:1fr 1fr; gap:20px 30px; margin-bottom:42px; }
+.page-maintenance .maintenance-contact .find-cost__content>ul>li { padding-left:20px; color:#e1e4dc; font-size:15px; }
+.page-maintenance .maintenance-contact .find-cost__content>p { margin:auto 0 0; color:#bfc6b7; font-size:14px; }
+.page-maintenance .maintenance-contact .form__confirm { font-size:12px; }
+.page-maintenance.fancybox-active .home-callback { visibility:hidden; }
+.page-maintenance .maintenance-reveal.is-entering { animation:maintenance-reveal .65s ease both; }
+@keyframes maintenance-reveal { from { opacity:.35; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@media(min-width:1001px) and (max-width:1199px) {
+ .page-maintenance .maintenance-hero__copy { padding:30px; }
+ .page-maintenance .maintenance-hero h1 { font-size:40px; }
+ .page-maintenance .maintenance-hero__lead { font-size:16px; }
+}
+@media(max-width:1000px) {
+ .page-maintenance .maintenance-hero { grid-template-columns:1fr; }
+ .page-maintenance .maintenance-hero__copy { padding:40px; }
+ .page-maintenance .maintenance-hero h1 { font-size:clamp(36px,6.8vw,62px); }
+ .page-maintenance .maintenance-hero__lead { max-width:650px; }
+ .page-maintenance .maintenance-hero__photo { background:var(--home-paper); }
+ .page-maintenance .maintenance-hero__photo>img { width:100%; max-height:550px; object-fit:contain; }
+ .page-maintenance .maintenance-opening,.page-maintenance .maintenance-types__intro,.page-maintenance .maintenance-enterprise { gap:35px; }
+ .page-maintenance .maintenance-scope { grid-template-columns:1fr; gap:15px; padding:35px; }
+ .page-maintenance .maintenance-scope h2 { max-width:650px; }
+ .page-maintenance .maintenance-categories { gap:40px; }
+ .page-maintenance .maintenance-periodicity { gap:35px; padding:35px; }
+ .page-maintenance .maintenance-inspections__grid>li:nth-child(n) { padding:23px; }
+ .page-maintenance .maintenance-plan { padding:25px 20px; }
+ .page-maintenance .maintenance-plan::before { left:20px; }
+ .page-maintenance .maintenance-plan h3 { font-size:22px; }
+}
+@media(max-width:760px) {
+ .page-maintenance .maintenance-section { padding-block:60px; }
+ .page-maintenance .maintenance-opening,.page-maintenance .maintenance-types__intro,.page-maintenance .maintenance-enterprise,.page-maintenance .maintenance-categories,.page-maintenance .maintenance-periodicity { grid-template-columns:1fr; gap:25px; }
+ .page-maintenance .maintenance-opening { padding-top:36px; }
+ .page-maintenance .maintenance-opening>p { margin:0; }
+ .page-maintenance .maintenance-opening>p:first-child { font-size:20px; }
+ .page-maintenance .maintenance-landing h2 { max-width:600px; font-size:36px; }
+ .page-maintenance .maintenance-scope { padding:32px; }
+ .page-maintenance .maintenance-scope h2 { font-size:34px; }
+ .page-maintenance .maintenance-scope__body>ul { gap:18px 25px; }
+ .page-maintenance .maintenance-inspections__grid,.page-maintenance .maintenance-plans { grid-template-columns:1fr; }
+ .page-maintenance .maintenance-inspections { margin-top:30px; }
+ .page-maintenance .maintenance-inspections__grid>li:nth-child(n) { padding:27px; }
+ .page-maintenance .maintenance-inspections__grid>li>strong { margin-bottom:14px; }
+ .page-maintenance .maintenance-categories { padding-top:0; }
+ .page-maintenance .maintenance-categories>header h2 { margin-bottom:18px; }
+ .page-maintenance .maintenance-categories__list { margin-top:10px; }
+ .page-maintenance .maintenance-periodicity { padding:32px; }
+ .page-maintenance .maintenance-periodicity h2 { font-size:29px; }
+ .page-maintenance .maintenance-enterprise h2 { margin-bottom:0; }
+ .page-maintenance .maintenance-section-head { align-items:flex-start; flex-direction:column; gap:18px; }
+ .page-maintenance .maintenance-plan { padding:30px; }
+ .page-maintenance .maintenance-plan::before { left:30px; }
+ .page-maintenance .maintenance-plan h3 { font-size:27px; }
+ .page-maintenance p.maintenance-plan__description { margin-bottom:25px; }
+ .page-maintenance .maintenance-prices { padding-top:0; }
+}
+@media(max-width:480px) {
+ .page-maintenance .maintenance-intro { padding-top:22px; }
+ .page-maintenance .maintenance-hero__copy { padding:29px 23px 32px; }
+ .page-maintenance p.maintenance-eyebrow { margin-bottom:23px; font-size:11px; letter-spacing:.045em; }
+ .page-maintenance .maintenance-hero h1 { margin-bottom:23px; font-size:clamp(26px,7.3vw,35px); letter-spacing:-.055em; }
+ .page-maintenance .maintenance-hero__lead { font-size:16px; line-height:1.65; }
+ .page-maintenance .maintenance-hero__actions { gap:15px; margin-top:26px; }
+ .page-maintenance .maintenance-hero__actions>.maintenance-button { width:100%; }
+ .page-maintenance .maintenance-hero__photo>img { max-height:none; }
+ .page-maintenance .maintenance-navigation { gap:14px 21px; padding-block:20px; }
+ .page-maintenance .maintenance-navigation>a { font-size:12px; }
+ .page-maintenance .maintenance-landing h2 { font-size:31px; }
+ .page-maintenance .maintenance-scope { padding:28px 23px; margin-top:30px; }
+ .page-maintenance .maintenance-scope__body>ul { grid-template-columns:1fr; }
+ .page-maintenance .maintenance-periodicity { padding:30px 23px; }
+ .page-maintenance .maintenance-periodicity h2 { font-size:27px; }
+ .page-maintenance .maintenance-periodicity ul { grid-template-columns:1fr; gap:17px; }
+ .page-maintenance .maintenance-inspections__grid>li:nth-child(n) { padding:25px 23px; }
+ .page-maintenance .maintenance-category>summary>h3 { font-size:24px; }
+ .page-maintenance .maintenance-category__body { padding-right:0; }
+ .page-maintenance .maintenance-lead { font-size:20px; }
+ .page-maintenance .maintenance-plan { padding:28px 23px; }
+ .page-maintenance .maintenance-plan::before { left:23px; }
+ .page-maintenance .maintenance-extra-rate { grid-template-columns:1fr; gap:15px; }
+ .page-maintenance .maintenance-contact .section-title { font-size:39px; }
+ .page-maintenance .maintenance-contact .find-cost__content>ul { grid-template-columns:1fr; gap:16px; }
+ .page-maintenance .home-callback { right:12px; bottom:12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .page-maintenance .maintenance-reveal.is-entering { animation:none; }
+ .page-maintenance .maintenance-landing * { scroll-behavior:auto; transition:none; }
+}

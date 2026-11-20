@@ -12,7 +12,14 @@ class NwdEditorialPages
 
 	public static function isEditorial($diafan)
 	{
-		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan) || self::isBlog($diafan);
+		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan) || self::isBlog($diafan) || self::isMaintenance($diafan);
+	}
+
+	public static function isMaintenance($diafan)
+	{
+		$link = (string) $diafan->_site->rewrite;
+		if ($link === '') { $link = $diafan->_route->link((int) $diafan->_site->id); }
+		return trim((string) parse_url($link, PHP_URL_PATH), '/') === 'services/obsluzhivanie-elektroustanovok';
 	}
 
 	public static function isBlog($diafan)
