@@ -122,11 +122,11 @@ function panelShowStatistics($period) {
           <?php foreach ($report['pages'] as $row): ?><tr><th scope="row"><?=panelHtml($row['path'])?></th><td><?=panelStatsNumber($row['total'])?></td></tr><?php endforeach ?>
           </tbody></table><?php endif ?>
         </section>
-        <section class="stats-card"><h2>Статьи журнала</h2>
+        <section class="stats-card"><h2>Статьи</h2>
           <?php if (!$report['articles']): ?><p class="stats-empty">Здесь появятся статьи, которые открывали читатели.</p><?php else: ?>
           <table><thead><tr><th scope="col">Статья</th><th scope="col">Просмотры</th></tr></thead><tbody>
           <?php foreach ($report['articles'] as $row): ?><tr><th scope="row">
-            <?php if ($row['status']==='published' && !$row['deleted']): ?><a href="/zhurnal/<?=rawurlencode($row['slug'])?>/"><?=panelHtml($row['title'])?></a><?php else: ?><?=panelHtml($row['title'] ?: $row['path'])?><?php endif ?>
+            <?php if ($row['status']==='published' && !$row['deleted']): ?><a href="/articles/<?=rawurlencode($row['slug'])?>/"><?=panelHtml($row['title'])?></a><?php else: ?><?=panelHtml($row['title'] ?: $row['path'])?><?php endif ?>
           </th><td><?=panelStatsNumber($row['total'])?></td></tr><?php endforeach ?>
           </tbody></table><?php endif ?>
         </section>

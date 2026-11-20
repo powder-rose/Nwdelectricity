@@ -43,9 +43,9 @@ if (!defined("DIAFAN")) {
       }
    })(document, window, "topmailru-code");
    </script><noscript>
-      <div>
+      <div data-nosnippet>
          <img src="https://top-fwz1.mail.ru/counter?id=3232969;js=na" style="border:0;position:absolute;left:-9999px;"
-            alt="Top.Mail.Ru" />
+            alt="" />
       </div>
    </noscript>
    <!-- //Rating Mail.ru counter -->

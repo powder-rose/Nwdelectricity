@@ -7,6 +7,8 @@ import { safeArticleLink } from '@/features/articles/links';
 import EditorToolbar from './EditorToolbar';
 import EditorLinks, { editorLinks, type EditorLink } from './EditorLinks';
 import EditorLinkDialog from './EditorLinkDialog';
+import EditorDocumentDialog from './EditorDocumentDialog';
+import { DocumentCallout, documentTarget, applyDocument, unwrapDocument, type DocumentTarget } from './DocumentCallout';
 import { imageSelectionError, uploadImage } from '../articles/api';
 
 const ArticleImage = Image.extend({
@@ -36,6 +38,7 @@ export default function RichTextEditor({
   }>();
   const [error, setError] = useState('');
   const [uploading, setUploading] = useState(false);
+  const [documentDialog, setDocumentDialog] = useState<{ from: number; to: number; target?: DocumentTarget }>();
   const editor = useEditor({
     immediatelyRender: false,
     extensions: [
@@ -48,6 +51,7 @@ export default function RichTextEditor({
         },
       }),
       ArticleImage.configure({ allowBase64: false }),
+      DocumentCallout,
       TableKit.configure({ table: { resizable: false, renderWrapper: true } }),
     ],
     content: value || '',
@@ -126,6 +130,7 @@ export default function RichTextEditor({
         onLink={editLink}
         onLinks={() => setLinksOpen(!linksOpen)}
         onImage={addImage}
+        onDocument={() => setDocumentDialog({ from: editor.state.selection.from, to: editor.state.selection.to, target: documentTarget(editor) })}
         disabled={disabled || uploading}
       />
       {linksOpen && (
@@ -144,6 +149,7 @@ export default function RichTextEditor({
         />
       )}
       <EditorContent editor={editor} className="article-editor-content" />
+      {documentDialog && <EditorDocumentDialog title={documentDialog.target?.title || 'Образец документа'} editing={documentDialog.target?.kind === 'documentCallout'} onClose={() => setDocumentDialog(undefined)} onSave={title => { const ok = applyDocument(editor, title, documentDialog, documentDialog.target); if (ok) setDocumentDialog(undefined); return ok; }} onRemove={documentDialog.target?.kind === 'documentCallout' ? () => { if (unwrapDocument(editor, documentDialog.target!)) setDocumentDialog(undefined); } : undefined} />}
       {uploading && <p role="status">Загрузка изображения…</p>}
       {error && (
         <p className="form-error" role="alert">

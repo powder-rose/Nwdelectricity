@@ -28,6 +28,7 @@ echo '
 <input type="hidden" name="form_tag" value="'.$result["form_tag"].'">
 <input type="hidden" name="site_id" value="'.$result["site_id"].'">
 <input type="hidden" name="add_c" value="4l">
+<input type="hidden" name="nwd_request_id" value="'.bin2hex(random_bytes(16)).'">
 <input type="hidden" name="tmpcode" value="'.md5(mt_rand(0, 9999)).'">';
 
 	echo '<div class="form__wrapper">';
@@ -166,14 +167,15 @@ echo '
 		echo '
 		<p class="form__confirm">
 			<span class="form__confirm-field">
-				<input class="visually-hidden" id="' . $formInstanceId . '_confirm" aria-label="Согласие с политикой конфиденциальности" type="checkbox" checked>
+				<input class="visually-hidden" id="' . $formInstanceId . '_confirm" aria-label="Согласие на обработку персональных данных" type="checkbox" name="nwd_consent" value="1" required>
 				<label class="form__confirm-label" for="' . $formInstanceId . '_confirm"></label>
 			</span>
-				Нажимая на кнопку вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a>
+				Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy/" target="_blank" rel="noopener">политикой конфиденциальности</a>
 		</p>';
 
 		echo '<div class="errors error"' . ($result["error"] ? '>' . $result["error"] : ' style="display:none">') . '</div>';
 
 	echo '</div>';
+echo '<p class="errors error_nwd_consent" role="alert" style="display:none"></p>';
 echo '</form>';
 

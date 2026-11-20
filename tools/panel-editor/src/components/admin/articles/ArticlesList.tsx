@@ -5,6 +5,7 @@ import {
   type ArticleRecord,
 } from '@/features/articles/model';
 import { articleRequest, saveArticle } from './api';
+import { publicationDate } from '@/features/articles/scheduling';
 import { createRequestId } from '@/lib/request-id';
 import type {
   AdminArticleSummary,
@@ -72,7 +73,7 @@ export default function ArticlesList() {
     <div>
       <div className="article-admin-heading">
         <div>
-          <h1>Статьи</h1>
+          <h1>Статьи</h1><a className="nwd-plan-link" href="/redaktsiya/index.php?tab=plan">План публикаций ↗</a>
         </div>
         <a
           className="button button-contrast"
@@ -87,6 +88,7 @@ export default function ArticlesList() {
             ['all', 'Все'],
             ['published', 'Опубликованные'],
             ['draft', 'Черновики'],
+            ['scheduled', 'По расписанию'],
           ].map(([value, label]) => (
             <button
               key={value}
@@ -152,7 +154,7 @@ export default function ArticlesList() {
                   >
                     {article.status === 'published'
                       ? 'Опубликовано'
-                      : 'Черновик'}
+                      : article.status === 'scheduled' ? 'По расписанию' : 'Черновик'}
                   </span>
                   <h2>{article.title || 'Без названия'}</h2>
                   <label>
@@ -176,6 +178,7 @@ export default function ArticlesList() {
                       }}
                     />
                   </label>
+                  {article.status === 'scheduled' && article.scheduledAt && <small className="nwd-article-scheduled">Выход · {publicationDate(article.scheduledAt)} МСК</small>}
                   <small>Создано: {articleDate(article.createdAt)}</small>
                 </div>
                 <div className="article-admin-item__actions">
@@ -184,7 +187,7 @@ export default function ArticlesList() {
                   </a>
                   {article.status === 'published' && (
                     <a
-                      href={'/zhurnal/' + article.slug + '/'}
+                      href={'/articles/' + article.slug + '/'}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

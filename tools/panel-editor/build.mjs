@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 const here = dirname(fileURLToPath(import.meta.url));
 await build({
-  entryPoints: { editor: resolve(here,'src/main.tsx') },
+  entryPoints: { editor: resolve(here,'src/main.tsx'), documents: resolve(here,'src/public/documents.ts') },
   outdir: resolve(here,'../../redaktsiya/assets'),
   bundle: true, minify: true, format: 'esm', target: 'es2020',
   supported: { 'template-literal': false },

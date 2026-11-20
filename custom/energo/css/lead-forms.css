@@ -1,0 +1,27 @@
+.nwd-lead-error,
+.errors.error_nwd_consent {
+  margin: 14px 0 0;
+  color: #c33425;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.nwd-lead-error:empty { display: none; }
+form[aria-busy="true"] button[type="submit"],
+form[aria-busy="true"] input[type="submit"] {
+  cursor: progress;
+  opacity: .65;
+}
+.nwd-form-consent {
+  margin: 20px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.nwd-form-consent input {
+  width: 18px;
+  height: 18px;
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+  accent-color: #a8ef45;
+}
+.nwd-form-consent a { color: inherit; text-underline-offset: 3px; }
+.nwd-lead-success { margin: 16px 0 0; color: inherit; font-size: 14px; line-height: 1.6; }

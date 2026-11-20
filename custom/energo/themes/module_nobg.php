@@ -30,8 +30,8 @@ _tmr.push({id: "3232969", type: "pageView", start: (new Date()).getTime()});
   var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
   if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
 })(document, window, "topmailru-code");
-</script><noscript><div>
-<img src="https://top-fwz1.mail.ru/counter?id=3232969;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+</script><noscript><div data-nosnippet>
+<img src="https://top-fwz1.mail.ru/counter?id=3232969;js=na" style="border:0;position:absolute;left:-9999px;" alt="" />
 </div></noscript>
 <!-- //Rating Mail.ru counter -->
 	<div class="page-wrapper page-wrapper--gray">

@@ -24,14 +24,28 @@ if ($this->diafan->configmodules("redhelper_login", "consultant")) {
 	echo "\n" . '<meta http-equiv="X-UA-Compatible" content="IE=8">'
 		. "\n" . '<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"> ';
 }
-if ($this->diafan->_site->canonical) {
-	if (substr($this->diafan->_site->canonical, 0, 4) != 'http') {
-		if (substr($this->diafan->_site->canonical, 0, 1) == '/') {
-			$this->diafan->_site->canonical = substr($this->diafan->_site->canonical, 1);
-		}
-		$this->diafan->_site->canonical = MAIN_PATH . $this->diafan->_site->canonical;
-	}
-	echo "\n" . '<link href="' . $this->diafan->_site->canonical . '" rel="canonical">';
+$site = $this->diafan->_site;
+$searchPages = require ABSOLUTE_PATH . Custom::path('themes/search_pages.php');
+$rewrite = trim((string) $site->rewrite, '/');
+$home = rtrim(MAIN_PATH_HREF, '/') . '/';
+$pageUrl = $home . ($rewrite === '' ? '' : $rewrite . '/');
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+$isLanding = $site->id && !$site->noindex && http_response_code() < 400 && isset($searchPages[$rewrite])
+    && $requestPath === parse_url($pageUrl, PHP_URL_PATH)
+    && ($rewrite !== '' || (int) $site->id === 1);
+$canonical = $site->canonical;
+if ($canonical && substr($canonical, 0, 4) !== 'http') {
+    $canonical = MAIN_PATH . ltrim($canonical, '/');
+}
+if (!$canonical && $isLanding && !$this->diafan->_route->page && !$this->diafan->_route->sort) {
+    $canonical = $pageUrl;
+}
+if ($canonical) {
+    echo "\n" . '<link href="' . htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8') . '" rel="canonical">';
+}
+if ($isLanding && $rewrite === '') {
+    $website = array('@context' => 'https://schema.org', '@type' => 'WebSite', 'name' => 'Спецэнергоразвитие', 'url' => $home);
+    echo "\n" . '<script type="application/ld+json">' . json_encode($website, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG) . '</script>';
 }
 if (!IS_MOBILE && MOBILE_VERSION) {
 	$path = getenv("REQUEST_URI");
@@ -131,10 +145,8 @@ else
 
 echo '<meta property="og:type" content="website"/>';
 
-if (!empty($this->diafan->module->result['url']))
-	echo '<meta property="og:url" content="' . BASE_PATH_HREF . $this->diafan->_site->rewrite . '" />';
-else
-	echo '<meta property="og:url" content="' . BASE_PATH_HREF . $this->diafan->_site->rewrite . '" />';
+$ogUrl = $isLanding ? ($canonical ?: $pageUrl) : BASE_PATH_HREF . $site->rewrite;
+echo '<meta property="og:url" content="' . htmlspecialchars($ogUrl, ENT_QUOTES, 'UTF-8') . '" />';
 
 echo '<meta property="og:locale" content="ru_RU" />';
 

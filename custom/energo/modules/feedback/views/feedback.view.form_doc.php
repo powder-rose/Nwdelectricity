@@ -58,6 +58,7 @@ echo
 	<input type="hidden" name="form_tag" value="'.$result["form_tag"].'">
 	<input type="hidden" name="site_id" value="'.$result["site_id"].'">
 	<input type="hidden" name="add_c" value="4l">
+<input type="hidden" name="nwd_request_id" value="'.bin2hex(random_bytes(16)).'">
 	<input type="hidden" name="tmpcode" value="'.md5(mt_rand(0, 9999)).'">';
 
 	//заголовок блока
@@ -230,7 +231,9 @@ echo
 	//Защитный код
 	echo $result["captcha"];
 
-	//Кнопка Отправить
+	echo '<p class="nwd-form-consent"><label><input type="checkbox" name="nwd_consent" value="1" required> Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy/" target="_blank" rel="noopener">политикой конфиденциальности</a></label></p>';
+
+//Кнопка Отправить
 	if(! empty($result["attributes"]["btn"]))
 	{
 		echo
@@ -259,6 +262,7 @@ echo
 	// 	echo '<div class="required_field"><span class="_asterisk"></span> — '.$this->diafan->_('Поля, обязательные для заполнения').'</div>';
 	// }
 
+echo '<p class="errors error_nwd_consent" role="alert" style="display:none"></p>';
 echo '</form>';
 
 // echo '<div class="errors error"'.($result["error"] ? '>'.$result["error"] : ' style="display:none">').'</div>';

@@ -12,7 +12,14 @@ class NwdEditorialPages
 
 	public static function isEditorial($diafan)
 	{
-		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan);
+		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan) || self::isBlog($diafan);
+	}
+
+	public static function isBlog($diafan)
+	{
+		$path=trim((string)parse_url((string)$diafan->_site->rewrite,PHP_URL_PATH),'/');
+		if ($path==='') { $path=trim((string)parse_url($diafan->_route->link((int)$diafan->_site->id),PHP_URL_PATH),'/'); }
+		return (bool)preg_match('~^articles(?:/|$)~',$path);
 	}
 
 	public static function isResponsible($diafan)

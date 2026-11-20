@@ -25,7 +25,7 @@ function panelEncodedField($value, $limit) {
 function panelWritePage($id, $parent, $theme, $slug, $title, $seoTitle, $description, $body, $active) {
     $lang=panelLanguage();
     $table=panelTable('site');
-    $path=$slug ? 'zhurnal/'.$slug : 'zhurnal';
+    $path=$slug ? 'articles/'.$slug : 'articles';
     if (panelRouteTaken($path,(int)$id)) { panelFail('Этот адрес уже занят страницей или перенаправлением DIAFAN.',409); }
     $values=array((int)$parent,$theme,panelEncodedField($title,100),panelEncodedField($seoTitle,250),panelHtml($description),$body,(string)(int)$active,$path.'/',time());
     $fields="parent_id=?,theme=?,name$lang=?,title_meta$lang=?,descr$lang=?,text$lang=?,act$lang=?,canonical$lang=?,timeedit=?";
@@ -59,7 +59,7 @@ function panelPublish(array $form, $siteId, $publishedAt, $state) {
     if (!$siteId && !$published) { return null; }
     $index=(int)$state['journal_id'];
     if (!$index) {
-        $index=panelWritePage(null,0,'panel_journal.php','','Журнал','Журнал — Спецэнергоразвитие','Статьи об организации обслуживания электрооборудования.','',true);
+        $index=panelWritePage(null,0,'panel_journal.php','','Статьи','Статьи — Спецэнергоразвитие','Статьи об организации обслуживания электрооборудования.','',true);
         panelQuery('UPDATE '.panelTable('panel_state').' SET journal_id=? WHERE id=1',array($index));
     }
     return panelWritePage($siteId,$index,'panel_article.php',$form['slug'],$form['title'],$form['seoTitle'],$form['seoDescription'],panelArticleHtml($form,$publishedAt),$published);
@@ -71,10 +71,10 @@ function panelRefreshJournal($id) {
     $count=(int)panelRow("SELECT COUNT(*) AS n FROM $articles WHERE status='published' AND deleted=0")['n'];
     panelAssertOwned($id,'panel_journal.php');
     $lang=panelLanguage();
-    panelQuery('UPDATE '.panelTable('site')." SET count_children=?, act$lang=?,timeedit=? WHERE id=?",array($count,(string)(int)($count>0),time(),(int)$id));
+    panelQuery('UPDATE '.panelTable('site')." SET count_children=?, act$lang=?,timeedit=? WHERE id=?",array($count,'1',time(),(int)$id));
     $map=panelTable('map_index');
     panelQuery("DELETE FROM $map WHERE module_name='site' AND element_type='element' AND element_id=?",array((int)$id));
     if ($count) {
-        panelQuery("INSERT INTO $map (url,module_name,element_id,element_type,timeedit,changefreq,priority,date_start,date_finish) VALUES ('zhurnalROUTE_END','site',?,'element',?,'weekly','0.7',0,0)",array((int)$id,time()));
+        panelQuery("INSERT INTO $map (url,module_name,element_id,element_type,timeedit,changefreq,priority,date_start,date_finish) VALUES ('articlesROUTE_END','site',?,'element',?,'weekly','0.7',0,0)",array((int)$id,time()));
     }
 }

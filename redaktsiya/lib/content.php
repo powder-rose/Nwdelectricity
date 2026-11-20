@@ -1,5 +1,7 @@
 <?php
 if (!defined('NWD_PANEL')) { http_response_code(404); exit; }
+require_once __DIR__.'/encoding.php';
+require_once __DIR__.'/documents.php';
 
 function panelImageId($url) {
     return preg_match('~^/redaktsiya/image\.php\?id=([a-f0-9]{32})$~D', $url, $match) ? $match[1] : '';
@@ -10,6 +12,7 @@ function panelCleanNode(DOMNode $node, array &$images, $depth = 0) {
     if ($node instanceof DOMText) { return panelHtml($node->nodeValue); }
     if (!($node instanceof DOMElement)) { return ''; }
     $tag = strtolower($node->tagName);
+    if ($tag==='section' && $node->getAttribute('data-nwd-document')==='1') { return panelCleanDocument($node,$images,$depth); }
     if (in_array($tag,array('script','style','iframe','svg','object','template','form','math'),true)) { return ''; }
     if ($tag === 'h1') { $tag = 'h2'; }
     if ($tag === 'br' || $tag === 'hr') { return '<'.$tag.'>'; }
@@ -46,7 +49,13 @@ function panelForm(array $raw, array &$images, $preview = false) {
         if (!isset($raw[$key]) || !is_string($raw[$key]) || mb_strlen($raw[$key],'UTF-8')>$max) { panelFail('Проверьте поле «'.$key.'».'); }
         $form[$key]=trim($raw[$key]);
     }
-    if (!in_array($form['status'],array('draft','published'),true)) { panelFail('Неизвестный статус.'); }
+    if (!in_array($form['status'],array('draft','published','scheduled'),true)) { panelFail('Неизвестный статус.'); }
+    $form['scheduledAt'] = null;
+    if ($form['status'] === 'scheduled') {
+        $stamp = panelScheduleInstant($raw['scheduledAt'] ?? null);
+        if (!$stamp && !$preview) { panelFail('Выберите дату и время публикации по Москве.'); }
+        $form['scheduledAt'] = $stamp ? gmdate('c',$stamp) : null;
+    }
     if ($form['slug'] !== '' && !preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/D',$form['slug'])) { panelFail('Проверьте адрес статьи.'); }
     $images=array();
     if ($form['image'] !== '') {
@@ -54,12 +63,11 @@ function panelForm(array $raw, array &$images, $preview = false) {
         if (!$id) { panelFail('Выберите загруженную обложку.'); }
         $images[$id]=true;
     }
-    $doc=new DOMDocument('1.0','UTF-8');
-    $doc->loadHTML('<!doctype html><html><head><meta charset="utf-8"></head><body>'.$form['content'].'</body></html>', LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING);
+    $doc=panelUtf8Document($form['content']);
     $html='';
     foreach ($doc->getElementsByTagName('body')->item(0)->childNodes as $node) { $html.=panelCleanNode($node,$images); }
     $form['content']=$html;
-    if (!$preview && $form['status']==='published') {
+    if (!$preview && in_array($form['status'],array('published','scheduled'),true)) {
         if ($form['title']==='' || trim(html_entity_decode(strip_tags($html),ENT_QUOTES,'UTF-8')," \t\r\n\xc2\xa0")==='' || $form['seoTitle']==='' || $form['seoDescription']==='') { panelFail('Заполните заголовок, текст, SEO Title и SEO Description.'); }
         if ($form['image'] && !$form['imageAlt']) { panelFail('Добавьте описание обложки (Alt).'); }
     }
@@ -75,10 +83,13 @@ function panelSlug($title) {
 
 function panelArticleHtml(array $form, $date) {
     $html='<article class="nwd-reading"><header class="nwd-reading-head">';
-    $html.='<div class="nwd-reading-meta"><a href="/zhurnal/">Журнал</a>';
+    $html.='<div class="nwd-reading-meta"><a href="/articles/">Статьи</a>';
     if ($form['category']!=='') { $html.='<span>'.panelHtml($form['category']).'</span>'; }
-    if ($date) { $html.='<time datetime="'.gmdate('Y-m-d',$date).'">'.date('d.m.Y',$date).'</time>'; }
+    if ($date) {
+        $day=(new DateTimeImmutable('@'.(int)$date))->setTimezone(new DateTimeZone('Europe/Moscow'));
+        $html.='<time datetime="'.$day->format('Y-m-d').'">'.$day->format('d.m.Y').'</time>';
+    }
     $html.='</div><h1>'.panelHtml($form['title'] ?: 'Статья без названия').'</h1></header>';
     if ($form['image']) { $html.='<figure><img src="'.panelHtml($form['image']).'" alt="'.panelHtml($form['imageAlt']).'"></figure>'; }
-    return $html.'<div class="nwd-prose">'.$form['content'].'</div></article>';
+    return $html.'<div class="nwd-prose">'.panelRenderDocuments($form['content']).'</div></article>';
 }

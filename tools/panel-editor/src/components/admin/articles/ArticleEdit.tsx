@@ -3,6 +3,7 @@ import { useArticleForm } from './useArticleForm';
 import { articleRequest } from './api';
 import { storeArticlePreview } from './preview-storage';
 import ArticleFields from './ArticleFields';
+import PublicationControls from './PublicationControls';
 
 export default function ArticleEdit({ id }: { id?: string }) {
   const editor = useArticleForm(id);
@@ -66,7 +67,7 @@ export default function ArticleEdit({ id }: { id?: string }) {
             </p>
           </div>
           <a
-            href={'/zhurnal/' + editor.record.slug + '/'}
+            href={'/articles/' + editor.record.slug + '/'}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -88,16 +89,17 @@ export default function ArticleEdit({ id }: { id?: string }) {
           className="article-admin-actions"
           aria-label="Действия со статьёй"
         >
-          <h2>Действия</h2>
+          <PublicationControls form={editor.form} record={editor.record} disabled={editor.pending} onChange={editor.change} />
+          <h2 className="nwd-visually-hidden">Действия</h2>
           <button type="button" disabled={editor.pending} onClick={preview}>
             Предпросмотр статьи
           </button>
           <button type="button" disabled={editor.pending} onClick={editor.save}>
-            {editor.pending ? 'Сохранение…' : editor.form.status === 'published' && editor.record?.status !== 'published' ? 'Опубликовать' : 'Сохранить'}
+            {editor.pending ? 'Сохранение…' : editor.form.status === 'scheduled' ? editor.record?.status === 'scheduled' ? 'Сохранить расписание' : 'Запланировать' : editor.form.status === 'published' ? editor.record?.status === 'published' ? 'Сохранить изменения' : 'Опубликовать сейчас' : 'Сохранить черновик'}
           </button>
           {editor.record?.status === 'published' && (
             <a
-              href={'/zhurnal/' + editor.record.slug + '/'}
+              href={'/articles/' + editor.record.slug + '/'}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -6,6 +6,7 @@ export default function EditorToolbar({
   onLink,
   onLinks,
   onImage,
+  onDocument,
   disabled,
 }: {
   editor: Editor;
@@ -14,6 +15,7 @@ export default function EditorToolbar({
   onLink: () => void;
   onLinks: () => void;
   onImage: (file: File) => void;
+  onDocument: () => void;
   disabled: boolean;
 }) {
   const tools = [
@@ -76,6 +78,12 @@ export default function EditorToolbar({
       title: 'Выделенный блок',
       active: editor.isActive('blockquote'),
       run: () => editor.chain().focus().toggleBlockquote().run(),
+    },
+    {
+      label: 'Документ',
+      title: 'Врезка документа',
+      active: editor.isActive('documentCallout'),
+      run: onDocument,
     },
     {
       label: 'Таблица',

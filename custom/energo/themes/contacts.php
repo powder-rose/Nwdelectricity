@@ -28,8 +28,8 @@ _tmr.push({id: "3232969", type: "pageView", start: (new Date()).getTime()});
   var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
   if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
 })(document, window, "topmailru-code");
-</script><noscript><div>
-<img src="https://top-fwz1.mail.ru/counter?id=3232969;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+</script><noscript><div data-nosnippet>
+<img src="https://top-fwz1.mail.ru/counter?id=3232969;js=na" style="border:0;position:absolute;left:-9999px;" alt="" />
 </div></noscript>
 <!-- //Rating Mail.ru counter -->
 
@@ -75,12 +75,12 @@ _tmr.push({id: "3232969", type: "pageView", start: (new Date()).getTime()});
 									</div>
 								</div>
 							</div>
-							<section class="contacts-block__form group-content__form" aria-labelledby="contacts-form-title">
+							<section data-nosnippet class="contacts-block__form group-content__form" aria-labelledby="contacts-form-title">
 								<h2 class="contacts-block__form-title" id="contacts-form-title">Получить консультацию</h2>
 								<insert name="show_form" module="feedback" site_id="166" template="t1" data-btn="Получить консультацию" />
 							</section>
 						</div>
-						<div class="contacts-block__requisites content"><insert name="show_text" /></div>
+						<div class="contacts-block__requisites content" data-nosnippet><insert name="show_text" /></div>
 					</div>
 				</div>
 

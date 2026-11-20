@@ -36,7 +36,7 @@ export default function ArticleFields({
         <label>
           URL статьи
           <div className="article-slug">
-            <span>/zhurnal/</span>
+            <span>/articles/</span>
             <input
               value={form.slug}
               placeholder={articleSlug(form.title).slice(0, 72) || 'url-stati'}
@@ -99,24 +99,11 @@ export default function ArticleFields({
             <option value={category} key={category} />
           ))}
         </datalist>
-        <label>
-          Статус
-          <select
-            value={form.status}
-            disabled={disabled}
-            onChange={(event) =>
-              onChange('status', event.target.value as ArticleForm['status'])
-            }
-          >
-            <option value="draft">Черновик</option>
-            <option value="published">Опубликовано</option>
-          </select>
-        </label>
       </section>
       <section className="article-admin-card">
         <h2>SEO</h2>
         <p>
-          Для черновика поля можно оставить пустыми. Для публикации обязательны
+          Для черновика поля можно оставить пустыми. Для публикации и расписания обязательны
           SEO Title и SEO Description.
         </p>
         <label>

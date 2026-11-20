@@ -28,13 +28,15 @@ if (empty($result["rows"]))
 require_once dirname(__DIR__) . '/service_navigation.php';
 
 echo '<div id="mobMenu">';
-	echo '<ul class="main-menu main-menu__page-header">';
+	$nwdHasArticles=false;
+echo '<ul class="main-menu main-menu__page-header">';
 		foreach ($result["rows"][$result["parent_id"]] as $row)
 		{
 			if (!NwdServiceNavigation::isVisible($row)) {
 				continue;
 			}
 			$isServices = NwdServiceNavigation::isRoot($row);
+        if (NwdServiceNavigation::path($row)==='articles') { $nwdHasArticles=true; $row['name']='Статьи'; }
 
 			echo '<li>';
 
@@ -92,6 +94,10 @@ echo '<div id="mobMenu">';
 
 			echo '</li>';
 		}
-	echo '</ul>';
+	if (!$nwdHasArticles) {
+    $nwdBlogCurrent=(bool)preg_match('~^/articles(?:/|$)~',(string)parse_url($_SERVER['REQUEST_URI'] ?? '',PHP_URL_PATH));
+    echo '<li class="main-menu__item nwd-blog-menu-item"><a class="main-menu__link" href="/articles/"'.($nwdBlogCurrent?' aria-current="page"':'').'>Статьи</a></li>';
+}
+echo '</ul>';
 echo '</div>';
 

@@ -38,7 +38,8 @@ if (! defined('DIAFAN'))
 		$editorialStyle = NwdEditorialPages::isAbout($this->diafan) ? 'about-editorial.css' : 'prices-editorial.css';
 		if (NwdEditorialPages::isContacts($this->diafan)) { $editorialStyle = 'contacts-editorial.css'; }
 		if (NwdEditorialPages::isResponsible($this->diafan)) { $editorialStyle = 'responsible-editorial.css'; }
-		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/' . $editorialStyle), ENT_QUOTES, 'UTF-8') . '">';
+		if (NwdEditorialPages::isBlog($this->diafan)) { $editorialStyle = 'author-blog.css'; }
+		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/' . $editorialStyle), ENT_QUOTES, 'UTF-8') . ($editorialStyle === 'author-blog.css' ? '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/' . $editorialStyle)) : '') . '">';
 	}
 	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/service-navigation.css'), ENT_QUOTES, 'UTF-8') . '">';
 	?>

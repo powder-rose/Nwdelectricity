@@ -13,7 +13,7 @@ if (!defined('DIAFAN')) {
 
 
 <header class="page-header">
-	<div class="container">
+	<div class="container" data-nosnippet>
 		<div class="page-header__row">
 
 			<?php

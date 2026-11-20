@@ -14,7 +14,7 @@ require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
 
 
 <footer class="page-footer" itemscope itemtype="http://schema.org/Organization">
-	<div class="page-footer__main">
+	<div class="page-footer__main" data-nosnippet>
 		<div class="container">
 			<div class="page-footer__row">
 
@@ -67,7 +67,7 @@ require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
 			</div>
 		</div>
 	</div>
-	<div class="copyright">
+	<div class="copyright" data-nosnippet>
 		<div class="container copyright__row">
 			<p>© 2010-<?php echo date('Y'); ?> Copyright ООО «Спецэнергоразвитие»</p>
 			<p><a href="/privacy/">Политика конфиденциальности</a></p>

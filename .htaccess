@@ -10,6 +10,10 @@ AddDefaultCharset utf-8
 
 <IfModule mod_rewrite.c>
   RewriteEngine on
+# NWD editorial /articles/
+RewriteRule ^(?:zhurnal|журнал)/?$ https://nwdelectricity.ru/articles/ [R=301,L,NC]
+RewriteRule ^(?:zhurnal|журнал)/([a-z0-9]+(?:-[a-z0-9]+)*)/?$ https://nwdelectricity.ru/articles/$1/ [R=301,L,NC]
+# End NWD editorial /articles/
 RewriteBase /
 
 RewriteRule /di-otvetstvennyj-za-elektrohozyajstvo\ 2019.pdf https://nwdelectricity.ru/services/otvetstvennyy-za-elektrokhozyaystvo/$1 [R=301,L]

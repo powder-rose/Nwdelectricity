@@ -1,6 +1,6 @@
 <?php
 define('NWD_PANEL',true);
-foreach (array('db','auth','content','publication','articles','media') as $file) { require __DIR__.'/lib/'.$file.'.php'; }
+foreach (array('db','auth','content','publication','scheduling','articles','media') as $file) { require __DIR__.'/lib/'.$file.'.php'; }
 panelHeaders();
 header('Content-Type: application/json; charset=UTF-8');
 try {
@@ -20,6 +20,8 @@ try {
         if (!is_array($input)) { panelFail('Не удалось прочитать поля статьи.'); }
     }
     if ($resource==='article-images' && $method==='POST') { $result=panelUpload(); }
+    elseif ($resource==='article-schedules' && $method==='GET' && $id==='') { $result=panelScheduleList(); }
+    elseif ($resource==='article-schedules' && $method==='POST' && is_string($id) && preg_match('/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/D',$id)) { $result=panelScheduleAction($id,$input); }
     elseif ($resource!=='articles') { panelFail('Адрес не найден.',404); }
     elseif ($id==='preview' && $method==='POST') {
         $images=array();$form=panelForm($input,$images,true);

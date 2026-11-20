@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import type { PublicationSchedule } from './scheduling';
 
 export const articleImagePath = /^\/redaktsiya\/image\.php\?id=[a-f0-9]{32}$/;
 export const articleFormSchema = z.object({
@@ -15,12 +16,14 @@ export const articleFormSchema = z.object({
     .trim()
     .max(80)
     .transform((value) => value.replace(/\s+/g, ' ')),
-  status: z.enum(['draft', 'published']),
+  status: z.enum(['draft', 'published', 'scheduled']),
+  scheduledAt: z.string().nullable().default(null),
   seoTitle: z.string().trim().max(240),
   seoDescription: z.string().trim().max(500),
 });
 export type ArticleForm = z.infer<typeof articleFormSchema>;
 export interface ArticleRecord extends ArticleForm {
+  publicationSchedule?: PublicationSchedule | null;
   id: string;
   revision: number;
   createdAt: string;
@@ -41,6 +44,7 @@ export const emptyArticle = (): ArticleForm => ({
   imageAlt: '',
   category: '',
   status: 'draft',
+  scheduledAt: null,
   seoTitle: '',
   seoDescription: '',
 });

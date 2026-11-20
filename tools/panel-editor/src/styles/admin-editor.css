@@ -257,3 +257,10 @@
     gap: 8px;
   }
 }
+
+.article-editor-content .tiptap section[data-nwd-document="1"] { padding:24px; margin:26px 0; border:1px solid var(--line); border-top:3px solid var(--accent); background:#fff; }
+.article-editor-content .tiptap section[data-nwd-document="1"]::before { display:block; content:attr(data-title); padding-bottom:17px; margin-bottom:20px; border-bottom:1px solid var(--line); color:var(--ink); font-size:20px; font-weight:550; line-height:1.4; }
+.article-editor-content .tiptap section[data-nwd-document="1"]>p:only-child:empty::after { content:'Вставьте сюда текст документа'; color:var(--muted); pointer-events:none; }
+.article-editor-content .tiptap section[data-nwd-document="1"] blockquote { background:transparent; }
+.editor-document-hint { margin:14px 0; color:var(--muted); font-size:12px; line-height:1.75; }
+.article-editor-content .tiptap section[data-nwd-document="1"]>p:only-child:has(>br.ProseMirror-trailingBreak:only-child)::before { content:'Вставьте сюда текст документа'; color:var(--muted); pointer-events:none; }

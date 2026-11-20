@@ -7,3 +7,14 @@
 .nwd-prose .article-table-scroll{overflow:auto;margin:24px 0}.nwd-prose table{width:100%;border-collapse:collapse;font-size:.9em}.nwd-prose th,.nwd-prose td{padding:13px 15px;text-align:left;vertical-align:top;border-bottom:1px solid #ced2c9}.nwd-prose th{background:#e9ebe4;font-weight:600}
 .nwd-journal-list{list-style:none;padding:0}.nwd-journal-list li{padding:22px 0;border-top:1px solid #ced2c9}.nwd-journal-list h2{margin:10px 0;font-size:clamp(23px,3vw,32px);line-height:1.22;letter-spacing:-.03em}
 @media(max-width:480px){.nwd-reading-head h1{font-size:clamp(25px,7.85vw,34px)}}
+
+/* NWD_ARTICLE_COMPACT_TABLES: smaller type in article tables, including document samples. */
+:is(.nwd-blog-page .nwd-blog-prose,.nwd-reading .nwd-prose) :is(table,th,td) { font-size:13px; line-height:1.65; }
+:is(.nwd-blog-page .nwd-blog-prose,.nwd-reading .nwd-prose) :is(th,td) :is(p,li,a,span,strong,b,em,i) { font-size:inherit; line-height:inherit; }
+:is(.nwd-blog-page .nwd-blog-prose,.nwd-reading .nwd-prose) :is(th,td)>p { margin:0 0 .65em; }
+:is(.nwd-blog-page .nwd-blog-prose,.nwd-reading .nwd-prose) :is(th,td)>p:last-child { margin-bottom:0; }
+:is(.nwd-blog-page .nwd-blog-prose,.nwd-reading .nwd-prose) .article-table-scroll { max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+@media(max-width:580px) {
+ :is(.nwd-blog-page .nwd-blog-prose,.nwd-reading .nwd-prose) :is(table,th,td) { font-size:12px; }
+}
+/* /NWD_ARTICLE_COMPACT_TABLES */

@@ -12,7 +12,7 @@ if (! defined('DIAFAN'))
 ?> 
 
 
-<div class="modal-overlay">
+<div class="modal-overlay" data-nosnippet>
 
 	<insert name="show_form" module="feedback" site_id="27" template="popup" />
 

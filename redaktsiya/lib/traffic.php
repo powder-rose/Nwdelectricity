@@ -30,7 +30,7 @@ function panelTrafficRecord(array $event, $now) {
         // Accept only routes published in the site's own routing table.
         $route = panelRow('SELECT module_name,element_type,element_id FROM '.panelTable('rewrite').' WHERE rewrite=? LIMIT 1', array(trim($path,'/')));
         if (!$route) { return; }
-        if (strpos($path, '/zhurnal/') === 0 && $route['module_name'] === 'site' && $route['element_type'] === 'element') {
+        if (strpos($path, '/articles/') === 0 && $route['module_name'] === 'site' && $route['element_type'] === 'element') {
             $article = panelRow('SELECT site_id FROM '.panelTable('panel_article')." WHERE site_id=? AND deleted=0 AND status='published'", array((int)$route['element_id']));
             if ($article) { $articleId = (int)$article['site_id']; }
         }

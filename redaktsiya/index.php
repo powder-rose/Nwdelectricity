@@ -14,7 +14,7 @@ try {
         header('Location: /redaktsiya/index.php',true,303); exit;
     }
     $authorized=panelAuthorized();$csrf=$_SESSION['csrf'];
-    $tab=in_array($_GET['tab'] ?? '',array('leads','visits'),true)?$_GET['tab']:'articles';
+    $tab=in_array($_GET['tab'] ?? '',array('leads','visits','plan'),true)?$_GET['tab']:'articles';
     session_write_close();
 } catch (Throwable $e) { $error=panelErrorResponse($e);$csrf=$_SESSION['csrf'] ?? ''; }
 ?>
@@ -23,8 +23,8 @@ try {
 <title><?= $authorized ? 'Панель редакции' : 'Вход в редакцию' ?> · Спецэнергоразвитие</title>
 <link rel="stylesheet" href="/redaktsiya/assets/panel.css">
 <?php if ($authorized && $tab==='visits'): ?><link rel="stylesheet" href="/redaktsiya/assets/statistics.css"><?php endif ?>
-<?php if ($authorized && $tab==='articles'): ?><link rel="stylesheet" href="/redaktsiya/assets/editor.css"><script type="module" src="/redaktsiya/assets/editor.js"></script><?php endif ?>
-<?php if ($authorized && $preview): ?><link rel="stylesheet" href="/redaktsiya/assets/reading.css"><?php endif ?>
+<?php if ($authorized && in_array($tab,array('articles','plan'),true)): ?><link rel="stylesheet" href="/redaktsiya/assets/editor.css?v=documents-4c09bfe3090b"><script type="module" src="/redaktsiya/assets/editor.js?v=documents-4c09bfe3090b"></script><?php endif ?>
+<?php if ($authorized && $preview): ?><link rel="stylesheet" href="/redaktsiya/assets/reading.css?v=<?=filemtime(__DIR__.'/assets/reading.css')?>"><?php endif ?>
 <link rel="icon" type="image/x-icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico?v=51c83f25">
 <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
 </head><body>
@@ -35,8 +35,8 @@ try {
 <input type="hidden" name="csrf" value="<?=panelHtml($csrf)?>"><button class="lime-button" type="submit">Войти <span aria-hidden="true">↗</span></button></form>
 <?php if ($error): ?><p class="form-error" role="alert"><?=panelHtml($error)?></p><?php endif ?></section></main>
 <?php else: ?>
-<?php if (!$preview): ?><nav class="panel-nav" aria-label="Разделы панели"><?php foreach (array('articles'=>'Статьи','leads'=>'Заявки','visits'=>'Статистика') as $key=>$label): ?><a href="/redaktsiya/index.php?tab=<?=$key?>" <?=$tab===$key?'aria-current="page"':''?>><?=$label?></a><?php endforeach ?></nav><?php endif ?>
-<main class="panel-main"><?php if ($tab==='articles'): ?><div id="editor-root"></div><noscript>Для редактора включите JavaScript.</noscript>
+<?php if (!$preview): ?><nav class="panel-nav" aria-label="Разделы панели"><?php foreach (array('articles'=>'Статьи','plan'=>'План публикаций','leads'=>'Заявки','visits'=>'Статистика') as $key=>$label): ?><a href="/redaktsiya/index.php?tab=<?=$key?>" <?=$tab===$key?'aria-current="page"':''?>><?=$label?></a><?php endforeach ?></nav><?php endif ?>
+<main class="panel-main"><?php if (in_array($tab,array('articles','plan'),true)): ?><div id="editor-root"></div><noscript>Для редактора включите JavaScript.</noscript>
 <?php else:
     require __DIR__.'/lib/reports.php';
     try {

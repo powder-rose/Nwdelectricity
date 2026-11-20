@@ -1,7 +1,7 @@
 <?php
 if (PHP_SAPI!=='cli') { http_response_code(404); exit; }
 define('NWD_PANEL',true);
-foreach (array('db','schema','content','publication','articles') as $file) { require __DIR__.'/lib/'.$file.'.php'; }
+foreach (array('db','schema','content','publication','scheduling','articles') as $file) { require __DIR__.'/lib/'.$file.'.php'; }
 try {
     if (in_array('--sample',$argv,true) && getenv('NWD_LOCAL')!=='1') {
         panelFail('Демонстрационная статья предназначена для локальной копии.');

@@ -12,6 +12,8 @@ function panelRecord($row) {
         $stamp=$row[$key.'_at']; $item[$key.'At']=$stamp ? gmdate('c',(int)$stamp) : null;
     }
     $item['id']=$row['id']; $item['revision']=(int)$row['revision'];
+    $item['publicationSchedule']=panelScheduleRecord(panelScheduleRow($row['id']));
+    $item['scheduledAt']=$item['publicationSchedule']['at'] ?? null;
     return $item;
 }
 
@@ -29,7 +31,7 @@ function panelArticleList(array $query) {
     $table=panelTable('panel_article');
     $where='deleted=0'; $params=array();
     $status=isset($query['status']) ? $query['status'] : 'all';
-    if (in_array($status,array('draft','published'),true)) { $where.=' AND status=?';$params[]=$status; }
+    if (in_array($status,array('draft','published','scheduled'),true)) { $where.=' AND status=?';$params[]=$status; }
     $search=mb_substr((string)($query['q'] ?? ''),0,100);
     if ($search!=='') { $where.=" AND (LOCATE(?,title)>0 OR LOCATE(?,category)>0)";$params[]=$search;$params[]=$search; }
     if (!empty($query['category'])) { $where.=' AND category=?';$params[]=$query['category']; }
@@ -39,6 +41,8 @@ function panelArticleList(array $query) {
     $rows=panelRows("SELECT id,title,slug,category,status,revision,created_at,updated_at,published_at, JSON_UNQUOTE(JSON_EXTRACT(payload,'$.image')) AS image, JSON_UNQUOTE(JSON_EXTRACT(payload,'$.imageAlt')) AS imageAlt FROM $table WHERE $where ORDER BY updated_at DESC,id LIMIT 25 OFFSET ".(($page-1)*25),$params);
     foreach ($rows as &$row) {
         $row['revision']=(int)$row['revision'];
+        $row['publicationSchedule']=panelScheduleRecord(panelScheduleRow($row['id']));
+        $row['scheduledAt']=$row['publicationSchedule']['at'] ?? null;
         foreach (array('created','updated','published') as $key) { $row[$key.'At']=$row[$key.'_at']?gmdate('c',(int)$row[$key.'_at']):null; unset($row[$key.'_at']); }
     }
     return array('articles'=>$rows,'categories'=>panelCategories(),'total'=>$total,'pages'=>$pages,'page'=>$page,'pageSize'=>25,'status'=>$status,'search'=>$search);
@@ -53,7 +57,7 @@ function panelSave(array $input, $id = null, $delete = false) {
     }
     $key=$input['requestId'] ?? '';
     if (!$id && (!is_string($key) || !preg_match('/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/D',$key))) { panelFail('Не указан идентификатор сохранения.'); }
-    return panelTransaction(function() use ($input,$id,$delete,$form,$images,$key) {
+    $result=panelTransaction(function() use ($input,$id,$delete,$form,$images,$key) {
         $state=panelRow('SELECT journal_id FROM '.panelTable('panel_state').' WHERE id=1 FOR UPDATE');
         if (!$state) { panelFail('Панель ещё не установлена.',503); }
         $table=panelTable('panel_article'); $aliases=panelTable('panel_slug');
@@ -70,9 +74,10 @@ function panelSave(array $input, $id = null, $delete = false) {
             $id=panelUuid();
         }
         if ($delete) { $form=json_decode($old['payload'],true);$form['status']='draft'; }
+        $schedule=panelScheduleNext($form,$old,$delete,$input);
         $base=$form['slug'] ?: ($old['slug'] ?? panelSlug($form['title']));
         $slug=$base; $suffix=1;
-        while (panelRow("SELECT 1 FROM $aliases WHERE slug=? AND article_id<>?",array($slug,$id)) || panelRouteTaken('zhurnal/'.$slug,(int)($old['site_id'] ?? 0))) {
+        while (panelRow("SELECT 1 FROM $aliases WHERE slug=? AND article_id<>?",array($slug,$id)) || panelRouteTaken('articles/'.$slug,(int)($old['site_id'] ?? 0))) {
             if ($old || $form['slug']) { panelFail('Такой адрес уже занят. Выберите другой.',409); }
             $tail='-'.(++$suffix); $slug=rtrim(substr($base,0,72-strlen($tail)),'-').$tail;
         }
@@ -93,9 +98,17 @@ function panelSave(array $input, $id = null, $delete = false) {
             if (!panelRow("SELECT 1 FROM $aliases WHERE slug=?",array($slug))) { panelQuery("INSERT INTO $aliases (slug,article_id) VALUES (?,?)",array($slug,$id)); }
         }
         $refs=panelTable('panel_image_ref');
+        panelScheduleStore($id,$schedule);
         panelQuery("DELETE FROM $refs WHERE article_id=?",array($id));
         foreach (array_keys($images) as $image) { panelQuery("INSERT INTO $refs VALUES (?,?)",array($image,$id)); }
         if ($siteId) { panelRefreshJournal(panelRow('SELECT journal_id FROM '.panelTable('panel_state').' WHERE id=1')['journal_id']); }
         return $delete ? null : panelRecord(panelLoad($id));
     });
+    $affectedId=$id ?: ($result['id'] ?? null);
+    if ($affectedId) {
+        $page=panelRow('SELECT site_id FROM '.panelTable('panel_article').' WHERE id=?',array($affectedId));
+        if ($page && $page['site_id']) { panelScheduleCache(); }
+        panelScheduleFinish($affectedId);
+    }
+    return $delete ? null : panelRecord(panelLoad($affectedId));
 }

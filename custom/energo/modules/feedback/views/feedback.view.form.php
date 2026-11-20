@@ -34,6 +34,7 @@ echo '<form method="POST" enctype="multipart/form-data" action="" class="ajax">
 <input type="hidden" name="form_tag" value="'.$result["form_tag"].'">
 <input type="hidden" name="site_id" value="'.$result["site_id"].'">
 <input type="hidden" name="add_c" value="4l">
+<input type="hidden" name="nwd_request_id" value="'.bin2hex(random_bytes(16)).'">
 <input type="hidden" name="tmpcode" value="'.md5(mt_rand(0, 9999)).'">';
 
 
@@ -154,11 +155,14 @@ if ( !empty($result["captcha"]) )
 	echo '<p>'.$result["captcha"].'</p>';
 
 
+echo '<p class="nwd-form-consent"><label><input type="checkbox" name="nwd_consent" value="1" required> Я даю согласие на обработку персональных данных в соответствии с <a href="/privacy/" target="_blank" rel="noopener">политикой конфиденциальности</a></label></p>';
+
 //Кнопка Отправить
 echo '<input type="submit" value="'.$this->diafan->_('Отправить заявку', false).'" class="button solid">';
 
 
 
+echo '<p class="errors error_nwd_consent" role="alert" style="display:none"></p>';
 echo '</form>';
 echo '<div class="errors error"'.($result["error"] ? '>'.$result["error"] : ' style="display:none">').'</div>
 </div>';

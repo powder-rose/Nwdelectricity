@@ -7,6 +7,7 @@
     "build": "node build.mjs"
   },
   "dependencies": {
+    "@tiptap/core": "3.32.2",
     "@tiptap/extension-image": "3.32.2",
     "@tiptap/extension-table": "3.32.2",
     "@tiptap/pm": "3.32.2",

@@ -5,7 +5,7 @@ export interface ArticleQuery {
   page: number;
   category: string;
   search: string;
-  status: 'all' | 'draft' | 'published';
+  status: 'all' | 'draft' | 'published' | 'scheduled';
 }
 export const initialArticleQuery: ArticleQuery = {
   page: 1,
@@ -33,5 +33,5 @@ export function blogPath(
   query: Pick<ArticleQuery, 'page' | 'category' | 'search'>,
 ) {
   const params = articleListParams({ ...query, status: 'all' }).toString();
-  return '/zhurnal/' + (params ? '?' + params : '');
+  return '/articles/' + (params ? '?' + params : '');
 }

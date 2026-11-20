@@ -1,14 +1,18 @@
 import { createRoot } from 'react-dom/client';
 import { useEffect, useState } from 'react';
 import ArticlesList from './components/admin/articles/ArticlesList';
+import PublicationPlan from './components/admin/articles/PublicationPlan';
+import './styles/publication-plan.css';
 import ArticleEdit from './components/admin/articles/ArticleEdit';
 import { readArticlePreview } from './components/admin/articles/preview-storage';
 import { articleJson, articleRequest } from './components/admin/articles/api';
 import './styles/admin-articles.css';
+import { initDocumentActions } from './public/documents';
 
 function Preview() {
   const [html, setHtml] = useState('');
   const [error, setError] = useState('');
+  useEffect(() => { if (html) initDocumentActions(); }, [html]);
   useEffect(() => {
     const controller = new AbortController();
     async function load() {
@@ -34,5 +38,6 @@ function Preview() {
 const query = new URLSearchParams(location.search);
 const root = document.getElementById('editor-root');
 if (root) createRoot(root).render(query.has('preview') ? <Preview /> :
+  query.get('tab') === 'plan' ? <PublicationPlan /> :
   query.has('edit') ? <ArticleEdit id={query.get('edit') || undefined} /> :
   query.has('new') ? <ArticleEdit /> : <ArticlesList />);
