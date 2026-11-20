@@ -13,8 +13,8 @@ if (! defined('DIAFAN'))
 
 require_once dirname(__DIR__) . '/service_navigation.php';
 
-$rows = array_filter($result['rows'][$result['parent_id']] ?? array(), function ($row) {
-    return NwdServiceNavigation::isFeatured($row);
+$rows = array_filter(NwdServiceNavigation::headerRows($result), function ($row) {
+    return NwdServiceNavigation::isHeaderService($row);
 });
 if (!$rows) {
     return true;
@@ -22,8 +22,9 @@ if (!$rows) {
 
 echo '<ul>';
 foreach ($rows as $row) {
+    $url = !empty($row['othurl']) ? $row['othurl'] : BASE_PATH_HREF . $row['link'];
     echo '<li class="nwd-service-mobile-item">';
-    echo '<a class="nwd-service-mobile-link" href="' . NwdServiceNavigation::url() . '"'
+    echo '<a class="nwd-service-mobile-link" href="' . htmlspecialchars($url, ENT_QUOTES, 'UTF-8') . '"'
         . (!empty($row['active']) ? ' aria-current="page"' : '') . '>' . $row['name'] . '</a>';
     echo '</li>';
 }

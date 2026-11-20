@@ -13,9 +13,7 @@ if (! defined('DIAFAN'))
 
 require_once dirname(__DIR__) . '/service_navigation.php';
 
-$rows = array_filter($result['rows'][$result['parent_id']] ?? array(), function ($row) {
-    return !NwdServiceNavigation::isRoot($row) && NwdServiceNavigation::isVisible($row);
-});
+$rows = NwdServiceNavigation::headerRows($result);
 if (!$rows) {
     return true;
 }
