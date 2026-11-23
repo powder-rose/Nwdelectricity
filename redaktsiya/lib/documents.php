@@ -31,19 +31,23 @@ function panelCleanDocument(DOMElement $node,array &$images,$depth){
     if($title===''){$title='Образец документа';}
     return '<section data-nwd-document="1" data-title="'.panelHtml($title).'">'.$inside.'</section>';
 }
-function panelRenderDocuments($html){
+function panelDocumentTitle(DOMElement $node){
+    $title=$node->getAttribute('data-title') ?: panelLegacyDocumentTitle($node->textContent);
+    return mb_substr(trim($title),0,160,'UTF-8') ?: 'Образец документа';
+}
+function panelRenderDocuments($html,$copyAllowed=false){
     if(strpos($html,'data-nwd-document')===false && stripos($html,'<blockquote')===false){return $html;}
     $doc=panelUtf8Document($html);$nodes=array();
     foreach($doc->getElementsByTagName('*') as $node){if(panelIsDocumentNode($node) && !panelInsideDocument($node)){$nodes[]=$node;}}
     if(!$nodes){return $html;}
     foreach($nodes as $index=>$node){
-        $title=$node->getAttribute('data-title') ?: panelLegacyDocumentTitle($node->textContent);
-        $title=mb_substr(trim($title),0,160,'UTF-8') ?: 'Образец документа';
+        $title=panelDocumentTitle($node);
         $body=panelDocumentBodyNode($node);$inside='';foreach($body->childNodes as $child){$inside.=$doc->saveHTML($child);}
         $id='nwd-document-title-'.($index+1);$label=panelHtml($title);
-        $card='<section class="nwd-document" data-nwd-document="1" data-title="'.$label.'" aria-labelledby="'.$id.'">'
+        $card='<section class="nwd-document" id="nwd-document-'.($index+1).'" data-nwd-document="1" data-document-index="'.($index+1).'" data-document-access="'.($copyAllowed?'editor':'visitor').'" data-title="'.$label.'" aria-labelledby="'.$id.'">'
             .'<header class="nwd-document__head"><span class="nwd-document__icon" aria-hidden="true"></span><div><span class="nwd-document__eyebrow">Образец документа</span><p class="nwd-document__title" id="'.$id.'">'.$label.'</p></div>'
-            .'<button type="button" class="nwd-document__copy" data-document-copy hidden>Скопировать образец</button></header>'
+            .'<a class="nwd-document__request" href="/kontakty/" data-document-request'.($copyAllowed?' hidden':'').'>Запросить документ <span aria-hidden="true">↗</span></a>'
+            .'<button type="button" class="nwd-document__copy" data-document-copy'.($copyAllowed?'':' hidden').'>Скопировать образец</button></header>'
             .'<details class="nwd-document__details"><summary><span class="nwd-document__show">Открыть образец</span><span class="nwd-document__hide">Свернуть образец</span><i aria-hidden="true">+</i></summary>'
             .'<div class="nwd-document__body" data-nwd-document-body="1">'.$inside.'</div></details><p class="nwd-document__status" role="status" aria-live="polite"></p></section>';
         $rendered=panelUtf8Document($card)->getElementsByTagName('body')->item(0)->firstChild;

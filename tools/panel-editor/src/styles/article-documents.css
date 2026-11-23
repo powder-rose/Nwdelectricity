@@ -32,3 +32,33 @@
 @media(max-width:600px) {
  .nwd-document { margin-block:28px; }.nwd-document .nwd-document__head { grid-template-columns:28px minmax(0,1fr); gap:13px; padding:21px; }.nwd-document .nwd-document__title { font-size:20px!important; }.nwd-document button.nwd-document__copy { grid-column:2; justify-self:start; }.nwd-document .nwd-document__details>summary { padding:15px 21px; }.nwd-document .nwd-document__body { padding:23px 21px 6px; font-size:15px; }.nwd-document .nwd-document__status { padding:13px 21px!important; }
 }
+
+/* Public cards stay readable; copy controls are unlocked by the editor session endpoint. */
+.nwd-document[data-document-access="visitor"] { -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
+.nwd-document a.nwd-document__request { display:inline-flex; align-items:center; justify-content:center; gap:18px; min-height:44px; padding:11px 15px; border:1px solid #bccba8; background:#eef5e4; color:#26311d; font:inherit; font-size:13px; font-weight:500; line-height:1.5; text-decoration:none; white-space:nowrap; }
+.nwd-document a.nwd-document__request:hover { background:#a9f04a; border-color:#a9f04a; }
+.nwd-document [data-document-request][hidden] { display:none; }
+.nwd-document a.nwd-document__request:focus-visible { outline:2px solid #79a53e; outline-offset:3px; }
+#nwd-document-request { width:560px; max-width:calc(100vw - 32px); padding:38px; background:#f5f3ed; color:#191c16; }
+#nwd-document-request .nwd-document-request__eyebrow { margin:0 0 12px; color:#657057; font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+#nwd-document-request .nwd-document-request__heading { margin:0 30px 16px 0; font-size:34px; font-weight:550; letter-spacing:-.045em; line-height:1.1; }
+#nwd-document-request .nwd-document-request__title { margin:0 0 28px; padding-left:14px; border-left:3px solid #a9f04a; font-size:15px; line-height:1.6; overflow-wrap:anywhere; }
+#nwd-document-request .nwd-document-request__field { display:block; margin:0 0 18px; font-size:13px; line-height:1.6; }
+#nwd-document-request .nwd-document-request__input { display:block; box-sizing:border-box; width:100%; min-height:48px; margin-top:6px; padding:12px 14px; border:1px solid #d4d9ca; border-radius:0; background:#fff; color:#191c16; font:inherit; font-size:16px; }
+#nwd-document-request .nwd-document-request__input:focus { outline:2px solid #89b94b; outline-offset:1px; }
+#nwd-document-request .nwd-document-request__consent { display:flex; align-items:flex-start; gap:10px; margin:8px 0 23px; font-size:12px; line-height:1.7; }
+#nwd-document-request .nwd-document-request__consent input { flex:0 0 18px; width:18px; height:18px; margin-top:2px; accent-color:#78a53b; }
+#nwd-document-request .nwd-document-request__consent a { color:inherit; text-decoration:underline; text-underline-offset:2px; }
+#nwd-document-request .nwd-document-request__submit { display:flex; justify-content:space-between; align-items:center; box-sizing:border-box; width:100%; min-height:52px; padding:14px 18px; border:0; border-radius:0; background:#191c16; color:#fff; font:inherit; font-size:14px; cursor:pointer; }
+#nwd-document-request .nwd-document-request__submit span { position:relative; width:14px; height:14px; font-size:0; }
+#nwd-document-request .nwd-document-request__submit span::before { content:''; position:absolute; top:1px; right:0; width:10px; height:10px; border-top:1.5px solid #a9f04a; border-right:1.5px solid #a9f04a; }
+#nwd-document-request .nwd-document-request__submit span::after { content:''; position:absolute; top:7px; right:-1px; width:16px; height:1.5px; background:#a9f04a; transform:rotate(-45deg); }
+#nwd-document-request .nwd-document-request__submit:hover { background:#303727; }
+#nwd-document-request .nwd-document-request__submit:disabled { opacity:.6; cursor:wait; }
+#nwd-document-request .nwd-document-request__submit:focus-visible { outline:2px solid #79a53e; outline-offset:3px; }
+#nwd-document-request .errors { margin-top:8px; font-size:12px; line-height:1.6; }
+@media(max-width:600px) {
+ .nwd-document a.nwd-document__request { grid-column:2; justify-self:start; white-space:normal; }
+ #nwd-document-request { padding:30px 22px; }
+ #nwd-document-request .nwd-document-request__heading { font-size:29px; }
+}

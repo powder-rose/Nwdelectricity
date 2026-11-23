@@ -1,6 +1,8 @@
 <?php
 if (!defined('DIAFAN')) { http_response_code(404); exit; }
 
+require_once __DIR__.'/document-request.php';
+
 function nwdFeedbackText($value) {
     return html_entity_decode(strip_tags(preg_replace('~<br\s*/?>(?:\r?\n)?~i', "\n", (string)$value)), ENT_QUOTES | ENT_HTML5, 'UTF-8');
 }
@@ -24,6 +26,12 @@ function nwdFeedbackLead($id, $siteId) {
         $field['value'] = nwdFeedbackText($field['value']);
     }
     unset($field);
+    $document=nwdDocumentRequestContext($row['url']);
+    if ($document) {
+        $row['form']='Запрос документа';
+        $row['fields'][]=array('label'=>'Документ','type'=>'text','value'=>$document['title']);
+        $row['url']=$document['url'];
+    }
     return $row;
 }
 

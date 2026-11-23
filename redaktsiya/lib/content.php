@@ -81,7 +81,7 @@ function panelSlug($title) {
     return rtrim(substr(trim(preg_replace('/[^a-z0-9]+/','-',$value),'-'),0,72),'-') ?: 'statya';
 }
 
-function panelArticleHtml(array $form, $date) {
+function panelArticleHtml(array $form, $date, $copyAllowed=false) {
     $html='<article class="nwd-reading"><header class="nwd-reading-head">';
     $html.='<div class="nwd-reading-meta"><a href="/articles/">Статьи</a>';
     if ($form['category']!=='') { $html.='<span>'.panelHtml($form['category']).'</span>'; }
@@ -91,5 +91,5 @@ function panelArticleHtml(array $form, $date) {
     }
     $html.='</div><h1>'.panelHtml($form['title'] ?: 'Статья без названия').'</h1></header>';
     if ($form['image']) { $html.='<figure><img src="'.panelHtml($form['image']).'" alt="'.panelHtml($form['imageAlt']).'"></figure>'; }
-    return $html.'<div class="nwd-prose">'.panelRenderDocuments($form['content']).'</div></article>';
+    return $html.'<div class="nwd-prose">'.panelRenderDocuments($form['content'],$copyAllowed).'</div></article>';
 }

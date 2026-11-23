@@ -2,6 +2,7 @@
 if (!defined('NWD_PANEL')) { http_response_code(404); exit; }
 
 function panelLeads() {
+    require_once dirname(__DIR__,2).'/custom/energo/modules/feedback/document-request.php';
     $lang=panelLanguage(); $table=panelTable('feedback');
     $total=(int)panelRow("SELECT COUNT(*) n FROM $table WHERE trash='0'")['n'];
     $pages=max(1,(int)ceil($total/25));$page=max(1,min((int)($_GET['page'] ?? 1),$pages));
@@ -11,12 +12,14 @@ function panelLeads() {
     if (!$rows) { echo '<p>В формах DIAFAN пока нет сохранённых заявок.</p>';return; }
     $fields=panelTable('feedback_param_element');$params=panelTable('feedback_param');$options=panelTable('feedback_param_select');
     foreach ($rows as $row) {
-        $form=$row['form_name'] ?: 'Обратная связь';
+        $document=nwdDocumentRequestContext($row['url']);
+        $form=$document ? 'Запрос документа' : ($row['form_name'] ?: 'Обратная связь');
         echo '<details class="report-row"><summary><span>'.panelHtml($form).'</span><time>'.date('d.m.Y · H:i',(int)$row['created']).'</time></summary><dl>';
         $values=panelRows("SELECT p.name$lang label,CASE WHEN p.type IN ('select','multiple','radio') THEN COALESCE(o.name$lang,v.value) WHEN p.type='checkbox' THEN IF(v.value='1','Да','Нет') ELSE v.value END value FROM $fields v LEFT JOIN $params p ON p.id=v.param_id LEFT JOIN $options o ON o.param_id=v.param_id AND o.id=v.value AND o.trash='0' WHERE v.element_id=? AND v.trash='0' ORDER BY p.sort,v.id",array((int)$row['id']));
         foreach ($values as $field) { echo '<dt>'.panelHtml($field['label'] ?: 'Поле формы').'</dt><dd>'.nl2br(panelHtml($field['value'])).'</dd>'; }
+        if ($document) { echo '<dt>Документ</dt><dd>'.panelHtml($document['title']).'</dd>'; }
         if ($row['text']) { echo '<dt>Сообщение</dt><dd>'.nl2br(panelHtml(strip_tags($row['text']))).'</dd>'; }
-        if ($row['url']) { echo '<dt>Страница формы</dt><dd>'.panelHtml($row['url']).'</dd>'; }
+        if ($row['url']) { echo '<dt>Страница формы</dt><dd>'.panelHtml($document ? $document['url'] : $row['url']).'</dd>'; }
         echo '</dl></details>';
     }
     if ($pages>1) {

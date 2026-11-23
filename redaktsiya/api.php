@@ -25,7 +25,7 @@ try {
     elseif ($resource!=='articles') { panelFail('Адрес не найден.',404); }
     elseif ($id==='preview' && $method==='POST') {
         $images=array();$form=panelForm($input,$images,true);
-        $result=array('html'=>panelArticleHtml($form,time()));
+        $result=array('html'=>panelArticleHtml($form,time(),true));
     } elseif ($id==='' && $method==='GET') { $result=panelArticleList($_GET); }
     elseif ($id==='' && $method==='POST') { $result=array('ok'=>true,'article'=>panelSave($input)); }
     elseif (!is_string($id) || !preg_match('/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/D',$id)) { panelFail('Статья не найдена.',404); }

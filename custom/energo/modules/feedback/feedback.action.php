@@ -59,13 +59,26 @@ class Feedback_action extends Action
 			$this->check_captcha();
 		}
 		$params = $this->model->get_params(array("module" => "feedback", "where" => "site_id=".$this->site_id));
+        $documentContext=null;
+        if (isset($_POST['nwd_document_request'])) {
+            if ($_POST['nwd_document_request']!=='1' || (int)$this->site_id!==27) {
+                $this->result['errors'][0]='Неверная форма запроса документа.';return;
+            }
+            require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/document-request.php';
+            $errors=array();
+            try { $documentContext=nwdDocumentRequestValidate($params,$_POST,$errors); }
+            catch (Throwable $error) { $errors[0]='Не удалось проверить документ. Обновите статью и попробуйте ещё раз.'; }
+            if ($errors) { $this->result['errors']=$errors;return; }
+        }
 		$this->empty_required_field(array("params" => $params));
 
 		if ($this->result())
 			return;
 
         require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/lead.php';
+        $source=$documentContext ? $documentContext['source'] : nwdFeedbackSource();
         $raw = array('site_id' => $this->site_id);
+        if ($documentContext) { $raw['document_source']=$source; }
         foreach ($params as $param) {
             $key = 'p'.$param['id'];
             $raw[$key] = $_POST[$key] ?? '';
@@ -84,7 +97,7 @@ class Feedback_action extends Action
                 $repeated = true;
             } else {
                 $save = DB::query("INSERT INTO {feedback} (created,site_id,lang_id,url,user_id) VALUES (%d,%d,%d,'%h',%d)",
-                    time(), $this->site_id, _LANG, nwdFeedbackSource(), $this->diafan->_users->id);
+                    time(), $this->site_id, _LANG, $source, $this->diafan->_users->id);
                 if (!empty($_POST["tmpcode"])) {
                     DB::query("UPDATE {images} SET element_id=%d,tmpcode='' WHERE module_name='feedback' AND element_id=0 AND tmpcode='%s'", $save, $_POST["tmpcode"]);
                 }

@@ -5,7 +5,7 @@
     <h1 id="blog-title">Электрохозяйство.<br><span>По существу</span><b aria-hidden="true">.</b></h1>
     <p class="nwd-blog-hero__lead">О безопасности, документах<br>и ответственности бизнеса.</p>
     <p class="nwd-blog-hero__description">Разбираю вопросы эксплуатации электроустановок и делюсь практикой. Понятным языком — о том, что важно руководителю и специалисту.</p>
-    <div class="nwd-blog-hero__author" id="nikolay-boykov"><strong>Николай Бойков</strong><span>Основатель БОЙКОВ ГРУПП.<br>Руководитель «Спецэнергоразвития».</span></div>
+    <div class="nwd-blog-hero__author" id="nikolay-boykov"><strong>Николай Бойков</strong><span>Руководитель «Спецэнергоразвития».</span></div>
     <a class="nwd-blog-text-link" href="#materials">Читать статьи <span aria-hidden="true">↘</span></a>
   </div>
   <figure class="nwd-blog-portrait">

@@ -23,7 +23,7 @@ try {
 <title><?= $authorized ? 'Панель редакции' : 'Вход в редакцию' ?> · Спецэнергоразвитие</title>
 <link rel="stylesheet" href="/redaktsiya/assets/panel.css">
 <?php if ($authorized && $tab==='visits'): ?><link rel="stylesheet" href="/redaktsiya/assets/statistics.css"><?php endif ?>
-<?php if ($authorized && in_array($tab,array('articles','plan'),true)): ?><link rel="stylesheet" href="/redaktsiya/assets/editor.css?v=documents-4c09bfe3090b"><script type="module" src="/redaktsiya/assets/editor.js?v=documents-4c09bfe3090b"></script><?php endif ?>
+<?php if ($authorized && in_array($tab,array('articles','plan'),true)): ?><link rel="stylesheet" href="/redaktsiya/assets/editor.css?v=document-request-v1"><script type="module" src="/redaktsiya/assets/editor.js?v=document-request-v1"></script><?php endif ?>
 <?php if ($authorized && $preview): ?><link rel="stylesheet" href="/redaktsiya/assets/reading.css?v=<?=filemtime(__DIR__.'/assets/reading.css')?>"><?php endif ?>
 <link rel="icon" type="image/x-icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico?v=51c83f25">
 <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
