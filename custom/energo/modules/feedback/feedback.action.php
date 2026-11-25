@@ -73,12 +73,17 @@ class Feedback_action extends Action
         $serviceContext=null;
         if (isset($_POST['nwd_service'])) {
             require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/phase-neutral.php';
+            $serviceCopy=nwdPhaseNeutralCopy();
+            if ($_POST['nwd_service']==='rcd') {
+                require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/rcd.php';
+                $serviceCopy=nwdRcdCopy();
+            }
             $errors=array();
-            if ($_POST['nwd_service']!=='phase-neutral' || (int)$this->site_id!==27 || $documentContext) {
-                $errors[0]=nwdPhaseNeutralCopy()['errors']['failure'];
+            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd'),true) || (int)$this->site_id!==27 || $documentContext) {
+                $errors[0]=$serviceCopy['errors']['failure'];
             } else {
-                try { $serviceContext=nwdPhaseNeutralValidate($params,$_POST,$errors); }
-                catch (Throwable $error) { $errors[0]=nwdPhaseNeutralCopy()['errors']['failure']; }
+                try { $serviceContext=$_POST['nwd_service']==='rcd' ? nwdRcdValidate($params,$_POST,$errors) : nwdPhaseNeutralValidate($params,$_POST,$errors); }
+                catch (Throwable $error) { $errors[0]=$serviceCopy['errors']['failure']; }
             }
             if ($errors) { $this->result['errors']=$errors;return; }
         }
@@ -136,7 +141,7 @@ class Feedback_action extends Action
         } catch (Throwable $error) {
             DB::query('ROLLBACK');
             error_log('NWD feedback: could not save lead and mail notification ('.get_class($error).').');
-            $this->result["errors"][0] = $serviceContext ? nwdPhaseNeutralCopy()['errors']['failure'] : 'Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам.';
+            $this->result["errors"][0] = $serviceContext ? $serviceCopy['errors']['failure'] : 'Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам.';
             return;
         }
         if (!$repeated) {
@@ -147,7 +152,7 @@ class Feedback_action extends Action
             $this->send_sms();
         }
 
-		$mes = $serviceContext ? nwdPhaseNeutralCopy()['errors']['success'] : $this->diafan->configmodules('add_message', 'feedback', $this->site_id, _LANG);
+		$mes = $serviceContext ? $serviceCopy['errors']['success'] : $this->diafan->configmodules('add_message', 'feedback', $this->site_id, _LANG);
 		$this->result["errors"][0] = $mes ? $mes : ' ';
 		$this->result["result"] = 'success';
 		$this->result["data"] = array("form" => false);

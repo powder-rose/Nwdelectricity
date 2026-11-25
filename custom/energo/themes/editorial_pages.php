@@ -12,8 +12,15 @@ class NwdEditorialPages
 
 	public static function isEditorial($diafan)
 	{
-		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan) || self::isBlog($diafan) || self::isMaintenance($diafan) || self::isServices($diafan) || self::isPhaseNeutral($diafan);
+		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan) || self::isBlog($diafan) || self::isMaintenance($diafan) || self::isServices($diafan) || self::isPhaseNeutral($diafan) || self::isRcd($diafan);
 	}
+
+    public static function isRcd($diafan)
+    {
+        $link=(string)$diafan->_site->rewrite;
+        if ($link==='') { $link=$diafan->_route->link((int)$diafan->_site->id); }
+        return trim((string)parse_url($link,PHP_URL_PATH),'/')==='services/proverka-uzo';
+    }
 
 	public static function isPhaseNeutral($diafan)
     {

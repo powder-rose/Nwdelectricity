@@ -33,7 +33,8 @@ function nwdFeedbackLead($id, $siteId) {
         $row['url']=$document['url'];
     }
     require_once __DIR__.'/phase-neutral.php';
-    return nwdPhaseNeutralLead($row);
+    require_once __DIR__.'/rcd.php';
+    return nwdRcdLead(nwdPhaseNeutralLead($row));
 }
 
 function nwdFeedbackEscape($text) {

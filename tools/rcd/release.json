@@ -1,0 +1,171 @@
+{
+  "feature": "rcd",
+  "baseline": "ce1a6a74c43698569f99dd489cd15ab40a1e472f",
+  "requires": [
+    {
+      "path": "custom/energo/css/phase-neutral.css",
+      "text": true,
+      "sha256": "2c4fbc4abed864359fe1a7c071297e855aaf262d61460c34f034513c94acae91"
+    },
+    {
+      "path": "custom/energo/modules/feedback/phase-neutral.php",
+      "text": true,
+      "sha256": "a454c00330efec47fc9601c22bb58c0b1b1bc86d1027a5da1077c4d7c22156b1"
+    },
+    {
+      "path": "scripts/phase-neutral-schema.php",
+      "text": true,
+      "sha256": "bedac1ab14d4b3d6c2bed316462605e35f7314ec9a644e526aa551ab00a119ba"
+    }
+  ],
+  "files": [
+    {
+      "path": "custom/energo/css/rcd-service.css",
+      "text": true,
+      "base": null,
+      "sha256": "20ef21446117a7092da0a027a274979d8013989c78ecf637d9af52015e635c12",
+      "previous": [
+        "9e1bc82fc7d2f9a8cdd3ecf8a63e79e3d5ad362e89752d96ef334fa5683ee384",
+        "d38a44f1bcf4af05af7b7f05cd9f9e07aaa2df3642471516a160b25f0363715c"
+      ]
+    },
+    {
+      "path": "custom/energo/images/rcd/proverka-uzo-elektrolaboratoriya.webp",
+      "text": false,
+      "base": null,
+      "sha256": "f22a9af982112ec24e235330deed81cf8408d799c74d78684a872294fddb3208"
+    },
+    {
+      "path": "custom/energo/js/rcd-service.js",
+      "text": true,
+      "base": null,
+      "sha256": "a52b2cf04957bce1e6cb43c2fa2fb65940271b0b9008cf116783e6e42c4044db"
+    },
+    {
+      "path": "custom/energo/modules/feedback/feedback.action.php",
+      "text": true,
+      "base": "7a64add5ef89cfddda24737ba596504048b46051f8ba6f56dc0a9dffb282e321",
+      "sha256": "5c2c3e628b4acba09e8c585c84e19d7eb6f5a0f4085231a47201e1dcbf1bd69c"
+    },
+    {
+      "path": "custom/energo/modules/feedback/lead.php",
+      "text": true,
+      "base": "7248a25a662c21f26e5cb47f0e6d9d213d20686fec31f4b5ace8d0a38997213e",
+      "sha256": "b5925473c8f098f830381048a6d4e35a8b77d4bab2de515ce8e815d013b26553"
+    },
+    {
+      "path": "custom/energo/modules/feedback/rcd.php",
+      "text": true,
+      "base": null,
+      "sha256": "140eb1a4fe436b320f51545006725af00868175f15c82cc82890c12aa5deab86"
+    },
+    {
+      "path": "custom/energo/modules/feedback/views/feedback.view.form_rcd.php",
+      "text": true,
+      "base": null,
+      "sha256": "05fbfa2aa32c4fc77bd75e14f303fbe3a785cd0fc31da6a3b4b95628ebfa20f7"
+    },
+    {
+      "path": "custom/energo/themes/blocks/head.php",
+      "text": true,
+      "base": "81613d4c66a22181e0262e8bdc999a4ad1e301e0066c9ee59b576846cb9166c8",
+      "sha256": "72367edf6d0e136838066c6c6d0976beb7b9bd14ff55d9b9af786eb725143b9a"
+    },
+    {
+      "path": "custom/energo/themes/editorial_pages.php",
+      "text": true,
+      "base": "0b231c5314531af0900e906c891df1d887de596b2a28553595968c930d9ce012",
+      "sha256": "0bddcaa4017e935989b913c795b08570847c6d44fd6563517b684a4d19622900"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_rcd_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "b15f11a651ddb659e9c5a0677a785c2f7f8eb97c5206e8d6247e11d88912ef58",
+      "previous": [
+        "e6790e8cbd7353f05d4960f45827f21414e55831e1d049c609fdab63dbade39d",
+        "aad533883e102494ae884a4b2e09e9f90ee04509065d62b654ed121a9e599f56"
+      ]
+    },
+    {
+      "path": "custom/energo/themes/rcd.php",
+      "text": true,
+      "base": null,
+      "sha256": "ab4b8d5871f8bff1ea7b4b3feb1700998bfc108c4a10da005d73cfe3e4f1bf42"
+    },
+    {
+      "path": "custom/energo/themes/rcd_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "a9e8e09edfc6d64b41cbbf71da8a94d8d3e19110b006377c26c607fa08b4c4fd"
+    },
+    {
+      "path": "docs/RCD.md",
+      "text": true,
+      "base": null,
+      "sha256": "595e455d18c414f7cc7b39907318f70320d96a1f2e1f5fd459977753506ae821",
+      "previous": [
+        "74bfccc7e9d34b717d6c04dd3d20f5a0437186a7239cca9a9848be5340a08294",
+        "63436cb1b505ced28048008973d6217afc0d4d7ef704535607af658f8e3fb8ed",
+        "e99e50f28506f870fbbdcdfe57184133163c17ff0fa4a9f05f266bfa006f3aca"
+      ]
+    },
+    {
+      "path": "scripts/install-rcd.php",
+      "text": true,
+      "base": null,
+      "sha256": "dd3b412bef98910f30cfa05709570cf7cdd3f073f6af7bb385e42bd352ec2dc4",
+      "previous": [
+        "b04e79bcd28b0c2144d0c564824254ac77c66904593d1246cc82c62fad150aa3"
+      ]
+    },
+    {
+      "path": "scripts/rcd-lab-link.php",
+      "text": true,
+      "base": null,
+      "sha256": "7cf5092e59d45f987edb14aa90afa005bdbcc3e6d0db0821f618c5be40fe5239",
+      "previous": [
+        "5013fdae674ed9dd4df7d536d891bcf636895fbed00872addff3e0238994f7e5"
+      ]
+    },
+    {
+      "path": "scripts/test-rcd-lab-link.php",
+      "text": true,
+      "base": null,
+      "sha256": "807329909622118e1ee7328edbc9fc1c7a023004334f834b8116ed842ab95ddf"
+    },
+    {
+      "path": "scripts/test-rcd-laboratory.php",
+      "text": true,
+      "base": null,
+      "sha256": "2593617c43481914e9b7a9430a758da11ecd9cfdc7a774e4b097d8b42b46ca86"
+    },
+    {
+      "path": "scripts/test-rcd-render.php",
+      "text": true,
+      "base": null,
+      "sha256": "91be22b3d3b18fd913fb1c144f7451ca4fb1c6a55580d055322c1596b63df04e"
+    },
+    {
+      "path": "scripts/test-rcd.php",
+      "text": true,
+      "base": null,
+      "sha256": "9cf5e76bc7c3b3ece59f064a1362f1d5b0cc2e5c4515cde79a97de2122710de1"
+    },
+    {
+      "path": "tools/rcd/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "43fc8a4d4e40d58f124300adffffae2b357e96118efd5e11209635b76e8006a7",
+      "previous": [
+        "9789360b9090ddb07c75fc8ad853a85dff5d06d7f502759a82b401a226953e41"
+      ]
+    },
+    {
+      "path": "tools/rcd/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "b538be511f8726446b97c5afc733a3024eda625fd0bffdd4e1c6f0d37d475754"
+    }
+  ]
+}
