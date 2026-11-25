@@ -1,0 +1,33 @@
+<?php
+/** Six sections in the exact order and wording of the insulation brief. */
+if(!defined('DIAFAN')){http_response_code(404);exit;}
+$nwd=require ABSOLUTE_PATH.'custom/energo/themes/insulation_content.php';
+$e=function($s){return htmlspecialchars($s,ENT_QUOTES | ENT_SUBSTITUTE,'UTF-8');};
+$link=function($s,$label,$path)use($e){return str_replace($e($label),'<a href="'.$e($path).'">'.$e($label).'</a>',$e($s));};
+$arrow='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg>';
+$art=function($id,$class='')use($e){return '<svg class="ins-art '.$e($class).'" viewBox="0 0 240 150" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="/custom/energo/images/insulation/illustrations.svg#'.$e($id).'"></use></svg>';};
+?>
+<section class="ins-hero" aria-labelledby="ins-title"><div class="container ins-hero__grid"><div class="ins-hero__copy">
+<h1 id="ins-title">Измерение<br> сопротивления<br> <span>изоляции</span></h1>
+<div class="ins-hero__intro"><?php $intro=explode('. ',$nwd['intro'],2); ?><p><?= $e($intro[0]) ?>.</p><p><?= $e($intro[1]) ?></p></div>
+<p class="ins-geography"><?= $e($nwd['geography']) ?></p><p class="ins-registration"><?= $e($nwd['registration']) ?></p>
+<div class="ins-offer"><p class="ins-price"><?= $e($nwd['price']) ?></p><p class="ins-included"><?= $e($nwd['included']) ?></p></div>
+<a class="fn-button ins-cta" href="#raschet-stoimosti" data-fn-price><?= $e($nwd['cta']) ?><span><?= $arrow ?></span></a></div>
+<figure class="ins-hero__photo"><img src="/custom/energo/images/insulation/izmerenie-soprotivleniya-izolyatsii.webp" width="1448" height="1086" alt="<?= $e($nwd['alt']) ?>" fetchpriority="high" decoding="async"></figure>
+</div></section>
+<section class="ins-section ins-scope container" aria-labelledby="ins-scope-title"><div class="ins-heading"><h2 id="ins-scope-title"><?= $e($nwd['scopeTitle']) ?></h2><p><?= $e($nwd['scopeIntro']) ?></p></div>
+<ul class="ins-objects"><?php $ids=array('wiring','cable','apparatus','secondary');foreach($nwd['scopeItems'] as $i=>$s){$parts=explode('. ',$s,2);echo '<li>'.$art($ids[$i]).'<div><strong>'.$e($parts[0]).'.</strong><p>'.$e($parts[1]).'</p></div></li>';} ?></ul>
+<div class="ins-scope__notes"><p><?= $e($nwd['scopeOutro']) ?></p><p><?= $link($nwd['scopeRelated'],'Испытание силовых кабельных линий','/services/ispytanie-silovykh-kabelnykh-liniy-napryazheniem/') ?></p></div></section>
+<section class="ins-section ins-when" aria-labelledby="ins-when-title"><div class="container"><div class="ins-heading"><h2 id="ins-when-title"><?= $e($nwd['whenTitle']) ?></h2><p><?= $e($nwd['whenIntro']) ?></p></div>
+<ul class="ins-cases"><?php foreach($nwd['whenItems'] as $i=>$s){$parts=explode('. ',$s,2);echo '<li><span class="ins-case-number" aria-hidden="true">0'.($i+1).'</span><div><strong>'.$e($parts[0]).'.</strong><p>'.$e($parts[1]).'</p></div></li>';} ?></ul>
+<p class="ins-when__outro"><?= $link($nwd['whenOutro'],'приёмо-сдаточные и эксплуатационные испытания электроустановок','/services/ekspluatatsionnye-i-priemo-sdatochnye-ispytaniya/') ?></p></div></section>
+<section class="ins-section ins-process container" aria-labelledby="ins-process-title"><h2 id="ins-process-title"><?= $e($nwd['processTitle']) ?></h2>
+<ol class="ins-steps"><?php foreach($nwd['steps'] as $i=>$s){$parts=explode('. ',$s,2);echo '<li><div class="ins-step-top"><span aria-hidden="true">0'.($i+1).'</span>'.$art('step-'.($i+1)).'</div><h3>'.$e($parts[0]).'.</h3><p>'.$e($parts[1]).'</p></li>';} ?></ol>
+<div class="ins-report"><div class="ins-report__copy"><h3><?= $e($nwd['reportTitle']) ?></h3><p><?= $e($nwd['report'][0]) ?></p><p><?php $s=$link($nwd['report'][1],'электроизмерительная лаборатория ООО «Спецэнергоразвитие»','/services/elektroizmeritelnaya-laboratoriya/');echo str_replace($e('Технический отчёт по электроизмерениям'),'<a href="/services/tekhnicheskiy-otchet-po-elektroizmereniyam/">'.$e('Технический отчёт по электроизмерениям').'</a>',$s); ?></p></div><?= $art('report','ins-report__art') ?></div></section>
+<section class="ins-section ins-cost" aria-labelledby="ins-cost-title"><div class="container ins-cost__grid"><div class="ins-cost__copy"><h2 id="ins-cost-title"><?= $e($nwd['costTitle']) ?></h2><p class="ins-price"><?= $e($nwd['price']) ?></p><p class="ins-included"><?= $e($nwd['included']) ?></p><p class="ins-cost__intro"><?= $e($nwd['costIntro']) ?></p><h3><?= $e($nwd['costListTitle']) ?></h3><ul class="ins-factors"><?php foreach($nwd['costList'] as $s){echo '<li>'.$e($s).'</li>';} ?></ul><p class="ins-cost__outro"><?= $e($nwd['costOutro']) ?></p></div>
+<div class="fn-cost__form ins-form" id="raschet-stoimosti"><h3><?= $e($nwd['formTitle']) ?></h3><p><?= $e($nwd['formIntro']) ?></p><?= $this->get_function_in_theme('<insert name="show_form" module="feedback" site_id="27" template="insulation" />') ?></div></div></section>
+<section class="ins-section ins-faq container" aria-labelledby="ins-faq-title"><h2 id="ins-faq-title"><?= $e($nwd['faqTitle']) ?></h2><div class="ins-faq__items"><?php foreach($nwd['faq'] as $s){echo '<details><summary>'.$e($s[0]).'<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="m5 8 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></summary><p>'.$e($s[1]).'</p></details>';} ?></div></section>
+<?php
+$url='https://nwdelectricity.ru/'.$nwd['path'].'/';$crumbs=array(array('Главная','https://nwdelectricity.ru/'),array('Услуги','https://nwdelectricity.ru/services/'),array('Электроизмерительная лаборатория','https://nwdelectricity.ru/services/elektroizmeritelnaya-laboratoriya/'),array($nwd['name'],$url));$items=array();foreach($crumbs as $i=>$c){$items[]=array('@type'=>'ListItem','position'=>$i+1,'name'=>$c[0],'item'=>$c[1]);}
+$schema=array('@context'=>'https://schema.org','@graph'=>array(array('@type'=>'Organization','@id'=>'https://nwdelectricity.ru/#organization','name'=>'ООО «Спецэнергоразвитие»','url'=>'https://nwdelectricity.ru/','telephone'=>'+78002012069'),array('@type'=>'Service','name'=>$nwd['name'],'url'=>$url,'description'=>$nwd['description'].' '.$nwd['included'],'provider'=>array('@id'=>'https://nwdelectricity.ru/#organization'),'areaServed'=>array('@type'=>'Country','name'=>'Россия'),'offers'=>array('@type'=>'Offer','priceCurrency'=>'RUB','price'=>'9900','url'=>$url,'description'=>$nwd['included'])),array('@type'=>'BreadcrumbList','itemListElement'=>$items)));
+echo '<script type="application/ld+json">'.json_encode($schema,JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG).'</script>';

@@ -86,12 +86,17 @@ class Feedback_action extends Action
                 require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/laboratory.php';
                 $serviceCopy=nwdLaboratoryCopy();
             }
+            if ($_POST['nwd_service']==='insulation') {
+                require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/insulation.php';
+                $serviceCopy=nwdInsulationCopy();
+            }
             $errors=array();
-            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools','laboratory'),true) || (int)$this->site_id!==27 || $documentContext) {
+            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools','laboratory','insulation'),true) || (int)$this->site_id!==27 || $documentContext) {
                 $errors[0]=$serviceCopy['errors']['failure'];
             } else {
                 try {
-                    if ($_POST['nwd_service']==='laboratory') { $serviceContext=nwdLaboratoryValidate($params,$_POST,$errors); }
+                    if ($_POST['nwd_service']==='insulation') { $serviceContext=nwdInsulationValidate($params,$_POST,$errors); }
+                    elseif ($_POST['nwd_service']==='laboratory') { $serviceContext=nwdLaboratoryValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='power-tools') { $serviceContext=nwdPowerToolsValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='rcd') { $serviceContext=nwdRcdValidate($params,$_POST,$errors); }
                     else { $serviceContext=nwdPhaseNeutralValidate($params,$_POST,$errors); }

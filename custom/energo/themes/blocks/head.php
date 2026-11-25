@@ -40,11 +40,12 @@ if (! defined('DIAFAN'))
 		if (NwdEditorialPages::isResponsible($this->diafan)) { $editorialStyle = 'responsible-editorial.css'; }
 		if (NwdEditorialPages::isBlog($this->diafan)) { $editorialStyle = 'author-blog.css'; }
 		if (NwdEditorialPages::isMaintenance($this->diafan)) { $editorialStyle = 'maintenance-editorial.css'; }
-		if (NwdEditorialPages::isPhaseNeutral($this->diafan) || NwdEditorialPages::isRcd($this->diafan) || NwdEditorialPages::isPowerTools($this->diafan) || NwdEditorialPages::isLaboratory($this->diafan)) { $editorialStyle = 'phase-neutral.css'; }
+		if (NwdEditorialPages::isPhaseNeutral($this->diafan) || NwdEditorialPages::isRcd($this->diafan) || NwdEditorialPages::isPowerTools($this->diafan) || NwdEditorialPages::isLaboratory($this->diafan) || NwdEditorialPages::isInsulation($this->diafan)) { $editorialStyle = 'phase-neutral.css'; }
 		if (NwdEditorialPages::isServices($this->diafan)) { $editorialStyle = 'services-directory.css'; }
 		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/' . $editorialStyle), ENT_QUOTES, 'UTF-8') . (in_array($editorialStyle,array('author-blog.css','phase-neutral.css'),true) ? '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/' . $editorialStyle)) : '') . '">';
         if (NwdEditorialPages::isPowerTools($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/power-tools.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/power-tools.css')) . '">'; }
         if (NwdEditorialPages::isLaboratory($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/laboratory.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/laboratory.css')) . '">'; }
+        if (NwdEditorialPages::isInsulation($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/insulation.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/insulation.css')) . '">'; }
 	}
 	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/service-navigation.css'), ENT_QUOTES, 'UTF-8') . '">';
 	?>

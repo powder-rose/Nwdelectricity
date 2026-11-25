@@ -1,0 +1,183 @@
+/* Insulation: same NWD visual language, a distinct six-section composition. */
+.page-insulation{background:#f4f2ed;color:var(--home-ink)}
+
+.page-insulation .page-main{padding:0}
+.page-insulation .ins-breadcrumbs{padding:22px 0;background:#f4f2ed}
+.page-insulation .ins-breadcrumbs ol{font-size:11px;gap:6px 15px}
+.page-insulation .ins-breadcrumbs li+li::before{margin-right:15px}
+
+.page-insulation main h1,.page-insulation main h2,.page-insulation main h3{font-family:inherit;letter-spacing:-.045em;text-wrap:balance}
+
+.page-insulation main p{margin:0;line-height:1.75}
+.page-insulation .ins-hero{padding:62px 0 68px;background:#141612;color:#f4f2ed;overflow:hidden}
+
+.ins-hero__grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:38px;align-items:center}
+.ins-hero__copy{min-width:0}
+.page-insulation main h1{font-size:clamp(42px,4.5vw,66px);font-weight:550;line-height:1.01;max-width:780px;letter-spacing:-.055em}
+.ins-hero h1 span{color:#a7ef43}
+.ins-hero__intro{max-width:670px;margin-top:27px}
+.page-insulation .ins-hero__intro p{font-size:16px;line-height:1.75;color:#e1e4da}
+.page-insulation .ins-hero__intro p+p{margin-top:12px;font-size:14px;color:#aab2a0}
+.page-insulation .ins-geography{margin-top:23px;max-width:620px;font-size:13px;color:#dce3d0}
+.page-insulation .ins-registration{margin-top:8px;font-size:11px;color:#98a38a}
+.ins-offer{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:22px;align-items:center;max-width:640px;margin-top:28px}
+.page-insulation main .ins-price{font-size:32px;line-height:1.1;font-weight:750;letter-spacing:-.04em;color:#a7ef43}
+.page-insulation .ins-offer .ins-included{max-width:400px;font-size:12px;line-height:1.65;color:#b6bfa8}
+.page-insulation .ins-cta{margin-top:26px;min-width:280px}
+.ins-cta svg{display:block}
+.ins-hero__photo{position:relative;margin:0;isolation:isolate}
+.ins-hero__photo:before{content:'';position:absolute;inset:-22px 22px 22px -22px;border:1px solid #39422d;z-index:-1}
+.ins-hero__photo:after{content:'';position:absolute;left:-22px;top:-23px;width:62px;height:3px;background:#a7ef43}
+.ins-hero__photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.62) brightness(.91)}
+
+.page-insulation .ins-section{padding-block:86px}
+.page-insulation main h2{font-size:clamp(34px,3.65vw,50px);line-height:1.08;font-weight:550;max-width:960px}
+.page-insulation main h3{font-size:25px;line-height:1.25;font-weight:550}
+.page-insulation main a:not(.fn-button){color:inherit;text-decoration-color:#83a85c;text-underline-offset:4px}
+.page-insulation main a:not(.fn-button):hover{text-decoration-color:currentColor}
+.ins-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.88fr);gap:70px;align-items:start;margin-bottom:36px}
+.page-insulation .ins-heading p{font-size:15px;color:#65705a;line-height:1.85;padding-top:3px}
+.ins-art{display:block;width:100%;height:auto;color:#405031}
+
+.ins-objects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.ins-objects li{padding:28px 30px 31px;background:#fff;min-width:0}
+.ins-objects li:first-child{grid-column:1/-1;display:grid;grid-template-columns:230px minmax(0,1fr);gap:54px;align-items:center;padding:22px 45px;background:#e6edda}
+.ins-objects li:first-child .ins-art{width:230px}
+.ins-objects li:not(:first-child) .ins-art{height:118px;width:190px;max-width:100%;margin-bottom:20px}
+.ins-objects strong{display:block;font-size:25px;line-height:1.25;font-weight:550;letter-spacing:-.035em}
+.page-insulation .ins-objects p{margin-top:13px;font-size:15px;color:#616b57;line-height:1.8}
+.ins-objects li:first-child strong{font-size:30px}
+.ins-objects li:first-child p{max-width:720px;font-size:17px}
+.ins-scope__notes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;margin-top:30px}
+.page-insulation .ins-scope__notes p{font-size:13px;color:#66705c;line-height:1.8}
+
+.page-insulation .ins-when{background:#e8eddf}
+.ins-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none}
+.ins-cases li{display:grid;grid-template-columns:35px minmax(0,1fr);gap:18px;padding:31px 33px;background:#f9faf6}
+.ins-case-number{font-size:13px;font-variant-numeric:tabular-nums;color:#7c8c6b;padding-top:5px}
+.ins-cases strong{display:block;max-width:490px;font-size:23px;line-height:1.3;font-weight:550;letter-spacing:-.03em}
+.page-insulation .ins-cases p{font-size:14px;line-height:1.8;color:#647057;margin-top:13px}
+.page-insulation .ins-when__outro{margin-top:29px;font-size:14px;max-width:1000px;color:#4f5e42}
+
+.ins-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:38px 0 0;padding:0;list-style:none}
+.ins-steps li{position:relative;min-width:0;padding:25px 35px 34px;background:#eeeee6}
+.ins-steps li:first-child{background:#e0e9d2}
+.ins-step-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:25px}
+.ins-step-top>span{color:#7d8f69;font-size:48px;line-height:1;font-weight:350;letter-spacing:-.06em}
+.ins-step-top .ins-art{width:160px;height:100px}
+.page-insulation .ins-steps h3{font-size:25px;line-height:1.25}
+.page-insulation .ins-steps p{font-size:14px;color:#657059;margin-top:13px;max-width:530px;line-height:1.8}
+.ins-report{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:45px;align-items:center;margin-top:24px;padding:42px 45px;background:white;overflow:hidden}
+.page-insulation .ins-report h3{max-width:740px;font-size:29px}
+.page-insulation .ins-report p{font-size:14px;color:#627055;line-height:1.85;margin-top:20px}
+.ins-report__art{height:240px;width:280px;max-width:none;margin-left:-15px;transform:rotate(-6deg)}
+
+.page-insulation .ins-cost{background:#141612;color:#f4f2ed}
+.ins-cost__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:70px;align-items:start}
+.page-insulation .ins-cost h2{font-size:clamp(33px,3.3vw,46px);max-width:650px}
+.page-insulation .ins-cost .ins-price{font-size:36px;margin-top:29px}
+.page-insulation .ins-cost .ins-included{margin-top:13px;color:#d1dac5;font-size:14px;max-width:590px}
+.page-insulation .ins-cost__intro{margin-top:27px;max-width:610px;font-size:14px;color:#aebba0}
+.page-insulation .ins-cost h3{margin:30px 0 0;font-size:23px}
+.ins-factors{margin:20px 0 0;padding:0;list-style:none;display:grid;gap:14px;max-width:610px}
+.ins-factors li{position:relative;padding-left:20px;font-size:14px;line-height:1.65;color:#dce2d2}
+.ins-factors li:before{content:'';position:absolute;top:9px;left:0;width:5px;height:5px;background:#a7ef43}
+.page-insulation .ins-cost__outro{font-size:13px;line-height:1.8;margin-top:24px;color:#99a88a}
+.page-insulation .ins-form{background:#f4f2ed;color:#171a13;padding:35px 34px;scroll-margin-top:120px}
+.page-insulation .ins-form h3{font-size:28px;margin:0}
+.page-insulation .ins-form>p{font-size:14px;color:#66705d;margin-top:16px;line-height:1.75}
+.page-insulation .ins-form form{margin-top:25px}
+.page-insulation .ins-form .fn-button{width:100%;font-size:14px}
+.page-insulation .ins-form .fn-form__consent{font-size:11px;line-height:1.6}
+
+.ins-faq__items{margin-top:36px}
+.ins-faq details{border-bottom:1px solid #d9dece}
+.ins-faq summary{display:flex;justify-content:space-between;align-items:center;gap:30px;cursor:pointer;list-style:none;padding:27px 0;font-size:23px;line-height:1.35;letter-spacing:-.03em}
+.ins-faq summary::-webkit-details-marker{display:none}
+.ins-faq summary svg{flex:none;color:#5e7346;transition:transform .2s}
+.ins-faq details[open] summary svg{transform:rotate(180deg)}
+.page-insulation .ins-faq details>p{max-width:950px;padding:0 40px 28px 0;font-size:15px;color:#626e57;line-height:1.85}
+.page-insulation main :focus-visible{outline:2px solid #668d36;outline-offset:6px}
+
+@media(hover:hover){.ins-objects li,.ins-cases li{transition:transform .22s,background-color .22s}
+.ins-objects li:hover,.ins-cases li:hover{transform:translateY(-3px)}
+.ins-objects li:not(:first-child):hover{background:#fafff2}
+}
+
+@media(min-width:768px) and (max-width:1100px){.ins-hero__grid{gap:30px}
+.page-insulation .ins-hero{padding-block:45px}
+.page-insulation main h1{font-size:46px}
+.ins-heading{gap:40px}
+.ins-objects li{padding:23px}
+.ins-objects strong{font-size:23px}
+.ins-cost__grid{gap:35px}
+.page-insulation .ins-form{padding:28px}
+.ins-report{grid-template-columns:minmax(0,1fr) 180px;padding:35px;gap:25px}
+.ins-report__art{width:220px}
+.ins-cases li{padding:27px;gap:12px}
+.ins-offer{grid-template-columns:minmax(0,1fr)}
+.page-insulation .ins-offer .ins-included{max-width:440px}
+.ins-hero__photo:before{inset:-15px 15px 15px -15px}
+.ins-hero__photo:after{left:-15px;top:-16px}
+}
+
+@media(max-width:767px){.page-insulation .ins-breadcrumbs{padding-block:18px}
+.page-insulation .ins-breadcrumbs ol{font-size:10px;gap:4px 10px}
+.page-insulation .ins-breadcrumbs li+li::before{margin-right:10px}
+.page-insulation .ins-hero{padding-block:36px 42px}
+.ins-hero__grid{grid-template-columns:minmax(0,1fr);gap:40px}
+.page-insulation main h1{font-size:clamp(37px,10.2vw,54px)}
+.ins-hero__intro{margin-top:23px}
+.page-insulation .ins-hero__intro p{font-size:15px}
+.page-insulation .ins-hero__intro p+p{font-size:14px}
+.page-insulation .ins-geography{font-size:12px;margin-top:21px}
+.page-insulation .ins-registration{font-size:11px;max-width:330px}
+.ins-offer{margin-top:25px;grid-template-columns:minmax(0,1fr);gap:10px}
+.page-insulation main .ins-price{font-size:28px}
+.page-insulation .ins-cta{width:100%;min-width:0;box-sizing:border-box;margin-top:22px}
+.ins-hero__photo:before{inset:-12px 12px 12px -12px}
+.ins-hero__photo:after{left:-12px;top:-13px;width:45px}
+.page-insulation .ins-section{padding-block:52px}
+.page-insulation main h2{font-size:34px;line-height:1.1}
+.ins-heading{grid-template-columns:minmax(0,1fr);gap:21px;margin-bottom:27px}
+.page-insulation .ins-heading p{font-size:14px;line-height:1.8}
+.ins-objects{grid-template-columns:minmax(0,1fr);gap:12px}
+.ins-objects li,.ins-objects li:first-child{grid-column:auto;display:block;padding:23px 24px}
+.ins-objects li:first-child .ins-art,.ins-objects li:not(:first-child) .ins-art{width:190px;height:110px;margin:0 0 20px}
+.ins-objects strong,.ins-objects li:first-child strong{font-size:25px}
+.page-insulation .ins-objects p,.ins-objects li:first-child p{font-size:14px}
+.ins-scope__notes{grid-template-columns:minmax(0,1fr);gap:17px;margin-top:24px}
+.page-insulation .ins-scope__notes p{font-size:13px}
+.ins-cases{grid-template-columns:minmax(0,1fr);gap:12px}
+.ins-cases li{grid-template-columns:25px minmax(0,1fr);padding:25px 22px;gap:12px}
+.ins-cases strong{font-size:22px}
+.page-insulation .ins-cases p{font-size:14px;margin-top:11px}
+.page-insulation .ins-when__outro{font-size:13px;margin-top:23px}
+.ins-steps{grid-template-columns:minmax(0,1fr);gap:13px;margin-top:28px}
+.ins-steps li{padding:19px 25px 26px}
+.ins-step-top{margin-bottom:16px}
+.ins-step-top>span{font-size:42px}
+.ins-step-top .ins-art{width:140px;height:90px}
+.page-insulation .ins-steps h3{font-size:24px}
+.page-insulation .ins-steps p{font-size:14px}
+.ins-report{grid-template-columns:minmax(0,1fr);gap:12px;padding:29px 25px;margin-top:16px}
+.page-insulation .ins-report h3{font-size:26px}
+.page-insulation .ins-report p{font-size:14px;margin-top:17px}
+.ins-report__art{height:150px;width:220px;justify-self:end;margin:0 0 -15px}
+.ins-cost__grid{grid-template-columns:minmax(0,1fr);gap:32px}
+.page-insulation .ins-cost h2{font-size:34px}
+.page-insulation .ins-cost .ins-price{font-size:30px;margin-top:25px}
+.page-insulation .ins-cost .ins-included{font-size:14px}
+.page-insulation .ins-form{padding:28px 25px;scroll-margin-top:95px}
+.page-insulation .ins-form h3{font-size:26px}
+.page-insulation .ins-form>p{font-size:13px}
+.ins-faq__items{margin-top:25px}
+.ins-faq summary{padding-block:23px;font-size:20px;gap:20px}
+.page-insulation .ins-faq details>p{font-size:14px;padding-right:18px}
+}
+
+@media(prefers-reduced-motion:reduce){.page-insulation main *{transition:none!important;scroll-behavior:auto!important}
+}
+
+
+.page-insulation .ins-section a:not(.fn-button){text-decoration:underline;text-decoration-color:#83a85c;text-underline-offset:4px}

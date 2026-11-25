@@ -1,0 +1,283 @@
+{
+  "feature": "insulation",
+  "baseline": "48ad26f6ef5c513f2325810a907d1169c6d5d6e2",
+  "requires": [
+    {
+      "path": "custom/energo/css/phase-neutral.css",
+      "text": true,
+      "sha256": "2c4fbc4abed864359fe1a7c071297e855aaf262d61460c34f034513c94acae91"
+    },
+    {
+      "path": "custom/energo/css/editorial-pages.css",
+      "text": true,
+      "sha256": "90da5c11d15adf651e55c0ef1c655a96fb22052bdfa70403dc7c2c46d7acf137"
+    },
+    {
+      "path": "custom/energo/js/lead-forms.js",
+      "text": true,
+      "sha256": "33297a2b4ffc6ca076f96edd7dd152a2a72ce95858ab9d0654dd1fd5979664e7"
+    },
+    {
+      "path": "custom/energo/modules/feedback/phase-neutral.php",
+      "text": true,
+      "sha256": "a454c00330efec47fc9601c22bb58c0b1b1bc86d1027a5da1077c4d7c22156b1"
+    },
+    {
+      "path": "custom/energo/modules/feedback/rcd.php",
+      "text": true,
+      "sha256": "140eb1a4fe436b320f51545006725af00868175f15c82cc82890c12aa5deab86"
+    },
+    {
+      "path": "custom/energo/modules/feedback/power-tools.php",
+      "text": true,
+      "sha256": "0b03708506f10c3c57850baed9e0f819a3165791fc5ab4e963ec55a91f8fc74f"
+    },
+    {
+      "path": "custom/energo/modules/feedback/laboratory.php",
+      "text": true,
+      "sha256": "478733089241f40be9e3a92942e226089779fecc9c5eb59d28b8032ab36cb3c8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/document-request.php",
+      "text": true,
+      "sha256": "ef6ac1ae2b00416fe34e3c6983cffc5c2c3e5efe33043107bd598f6d69bed2e8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/boykov-hub.php",
+      "text": true,
+      "sha256": "591ac5a7e271ec9dab2155c839b982e75b0c2d1cf186be9db354d2ffa28ba86c"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_content.php",
+      "text": true,
+      "sha256": "d0216e97fb017df9dcd8e6b49c75ddb7ae10c168ab5cb2bdfee3ad7a9ce02539"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_links.php",
+      "text": true,
+      "sha256": "a16e990933503ec5589e5faef838081ac33fdbb51be94279ea3db9765a4e0ea8"
+    },
+    {
+      "path": "custom/energo/themes/blocks/header.php",
+      "text": true,
+      "sha256": "08afd0c9b55df50b1b7dc45170c2d955888b94e195a7fd613999e115ec6f9830"
+    },
+    {
+      "path": "custom/energo/themes/blocks/footer.php",
+      "text": true,
+      "sha256": "5efffba7d605f83431672251927ee9cebb743799a65488186c653e91b105629b"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_head.php",
+      "text": true,
+      "sha256": "fa03acb81b07e1745a7ec9bb39594f24a210bc95c9de5b3f490a809c770fbe9d"
+    },
+    {
+      "path": "redaktsiya/lib/db.php",
+      "text": true,
+      "sha256": "1e3e3aaad8bc5eead211db4a0ff21831c800ab5938ef43769250b4c1985599cd"
+    },
+    {
+      "path": "scripts/phase-neutral-schema.php",
+      "text": true,
+      "sha256": "bedac1ab14d4b3d6c2bed316462605e35f7314ec9a644e526aa551ab00a119ba"
+    },
+    {
+      "path": "scripts/rcd-lab-link.php",
+      "text": true,
+      "sha256": "7cf5092e59d45f987edb14aa90afa005bdbcc3e6d0db0821f618c5be40fe5239"
+    },
+    {
+      "path": "scripts/test-phase-neutral-schema.php",
+      "text": true,
+      "sha256": "8096cd8e91248b74b974ebac06fa1842c99a0aaa1e9e005a46296939d740527a"
+    },
+    {
+      "path": "scripts/test-document-request.php",
+      "text": true,
+      "sha256": "f2227a03fc75ab275dfe2593aacedc279584a985a1b0396bb8647fef7782e47e"
+    },
+    {
+      "path": "scripts/test-rcd-laboratory.php",
+      "text": true,
+      "sha256": "2593617c43481914e9b7a9430a758da11ecd9cfdc7a774e4b097d8b42b46ca86"
+    },
+    {
+      "path": "scripts/test-power-tools.php",
+      "text": true,
+      "sha256": "574d6b16bef9f1747661f30c2b63b5bc8cc2c04ef60d92bf184d2fea30ad2d62"
+    },
+    {
+      "path": "scripts/test-rcd.php",
+      "text": true,
+      "sha256": "9cf5e76bc7c3b3ece59f064a1362f1d5b0cc2e5c4515cde79a97de2122710de1"
+    },
+    {
+      "path": "scripts/test-phase-neutral.php",
+      "text": true,
+      "sha256": "4235d56f105b138cce1b7e92effe9a6d3b24f42935334304af8d2c7d253d8ea6"
+    },
+    {
+      "path": "scripts/test-laboratory.php",
+      "text": true,
+      "sha256": "7e05397ffb57df8dccff25957caac56eb5dd653a16f09f977f630789bb3c6048"
+    },
+    {
+      "path": "scripts/test-laboratory-queries.php",
+      "text": true,
+      "sha256": "39c516cb2772765d57d5253dfb9a18aa64a3ce85c244f0f3586d88c35c7ddc68"
+    }
+  ],
+  "files": [
+    {
+      "path": "custom/energo/css/insulation.css",
+      "text": true,
+      "base": null,
+      "sha256": "dd31669848c7775cdd2e05c556c36383dd16897b0c90a887ffc3d4474f9f1821"
+    },
+    {
+      "path": "custom/energo/images/insulation/illustrations.svg",
+      "text": true,
+      "base": null,
+      "sha256": "3bca569545e501a182ac14a02480957087c3ac27b16eeacab33d575ae4744046"
+    },
+    {
+      "path": "custom/energo/images/insulation/izmerenie-soprotivleniya-izolyatsii.webp",
+      "text": false,
+      "base": null,
+      "sha256": "9607e2821983923cf46d6bb53a0ab1b566a5a0efa18d384766b127fe9cf3c6eb"
+    },
+    {
+      "path": "custom/energo/js/insulation.js",
+      "text": true,
+      "base": null,
+      "sha256": "21c0ca69d0f17b53bce76b24893e68ae2226624da45cba268c5a02e3ba9eb971"
+    },
+    {
+      "path": "custom/energo/modules/feedback/feedback.action.php",
+      "text": true,
+      "base": "b0d240964ea97ab1c05b98da226605dfafec0ef699c54f03a141803bd9ebcb38",
+      "sha256": "5f824fcd35de5881775d5741fa120405e6232bdaf063d68f5fe897d59b4b5744"
+    },
+    {
+      "path": "custom/energo/modules/feedback/insulation.php",
+      "text": true,
+      "base": null,
+      "sha256": "a3ec5aa67a7e9f108881e20645bcb0a1ac6485acc7aef51122aa460588fc2400"
+    },
+    {
+      "path": "custom/energo/modules/feedback/lead.php",
+      "text": true,
+      "base": "6b1025c47a5d76ba76da02dd653f7c1b0ce6d5f8eed8067e7be3912664cb03a3",
+      "sha256": "c7c886746729532a51daa262c1341fadb6e7b89bcd587d23b24efcc37f8e30a2"
+    },
+    {
+      "path": "custom/energo/modules/feedback/views/feedback.view.form_insulation.php",
+      "text": true,
+      "base": null,
+      "sha256": "18b840dcd49381ed8ec43cad50366609e5e557e85615955ab2f140a2cdc0170a"
+    },
+    {
+      "path": "custom/energo/themes/blocks/head.php",
+      "text": true,
+      "base": "f1c590342464c1a88698ad41dd84124feee639d31df6b8e3879bf2e52465c485",
+      "sha256": "ecc0bbce6f82f1e96b62303f471a546dabfe77f918ea7544914967d5e03b4535"
+    },
+    {
+      "path": "custom/energo/themes/editorial_pages.php",
+      "text": true,
+      "base": "db649f186c28e55c2b3ebbfe79f2e68387dd83b89496fd053736ba24ca8f66d3",
+      "sha256": "1a0411a7ada4a9242a2ee484545e6488bed1f7147e3af27a7f3981cfc855a7a9"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_insulation_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "4b31a4957e58ff491f3313894f6a85b1f092f7ec1018f526f88b9f3b0a401e8d"
+    },
+    {
+      "path": "custom/energo/themes/insulation.php",
+      "text": true,
+      "base": null,
+      "sha256": "e89cd3c41678926b464a7b9748093884cf1585eb1694153bd00133585a92f0db"
+    },
+    {
+      "path": "custom/energo/themes/insulation_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "e0e72d2aac630191288956cc8585b8c29f6368e6dab6afdc3881c7cc5000b159"
+    },
+    {
+      "path": "custom/energo/themes/m/insulation.php",
+      "text": true,
+      "base": null,
+      "sha256": "558fc04d88b545faab6387d15a11b40656db3d876b4dc68bf89daac88f115f85"
+    },
+    {
+      "path": "docs/INSULATION.md",
+      "text": true,
+      "base": null,
+      "sha256": "be9191a1d8e2341942a1cc6b55eb55744410c989957292a2790d146e46ad011b"
+    },
+    {
+      "path": "scripts/check-insulation-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "e3adb453d37fddcebe0c92fb6fde16b3b3480fa3e98c49d471040521462f6b59"
+    },
+    {
+      "path": "scripts/install-insulation.php",
+      "text": true,
+      "base": null,
+      "sha256": "61a3d22031e82535a5867a3121ff5a10fbde91ac86306cb27df265bce368d9ee"
+    },
+    {
+      "path": "scripts/insulation-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "ec3b3dee86e1ba31ba0fb477b7b32c390bed5fb1273f3c33a33cf30c7651ce5e"
+    },
+    {
+      "path": "scripts/test-insulation-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "4ff4fe5f191fb49b6573e47580d74c8bb269f09c5a5ef7fd5be9b40855234b31"
+    },
+    {
+      "path": "scripts/test-insulation-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "0cf35c8e9714995bbd1f7ea9ba1b3dd800e8b3842daa444cdfd9780e7f4cf9c4"
+    },
+    {
+      "path": "scripts/test-insulation-render.php",
+      "text": true,
+      "base": null,
+      "sha256": "2b566afd64436dc7a95cbeace5da00e3ec217def1341c324e0083134dfdb70ba"
+    },
+    {
+      "path": "scripts/test-insulation-shell.php",
+      "text": true,
+      "base": null,
+      "sha256": "9ad241350189bdb793619ad286d0e887004f56fc88c89fd3e3509900e3770aaa"
+    },
+    {
+      "path": "scripts/test-insulation.php",
+      "text": true,
+      "base": null,
+      "sha256": "9c39e63fa7a9979accfce36b0bbd0fcc1c3160ce79d9b67a375b09deb52ecf28"
+    },
+    {
+      "path": "tools/insulation/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "4d0d69c7a805234ec4faf5ec34c98a2a832f2af10f083b5b483e7dcc095d1a47"
+    },
+    {
+      "path": "tools/insulation/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "b602bd842b92523d2fea2df0fdda6fdfb253b7a165c8189a93ab8600087f1063"
+    }
+  ]
+}
