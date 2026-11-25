@@ -3,9 +3,11 @@ if (!defined('DIAFAN')) { http_response_code(404); exit; }
 if (!defined('NWD_PANEL')) { define('NWD_PANEL',true); }
 require_once ABSOLUTE_PATH.'redaktsiya/lib/db.php';
 require_once ABSOLUTE_PATH.'redaktsiya/lib/content.php';
+require_once ABSOLUTE_PATH.'redaktsiya/lib/author-role.php';
 
 final class NwdAuthorBlog {
     const AUTHOR_IMAGE='/custom/energo/images/blog/nikolai-boykov-blog.webp';
+    public static function role() { return NWD_AUTHOR_ROLE; }
     public static function h($value) { return htmlspecialchars((string)$value,ENT_QUOTES | ENT_SUBSTITUTE,'UTF-8'); }
     public static function visible() {
         $language=panelLanguage();

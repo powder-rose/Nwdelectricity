@@ -48,7 +48,7 @@ function panelRenderDocuments($html,$copyAllowed=false){
             .'<header class="nwd-document__head"><span class="nwd-document__icon" aria-hidden="true"></span><div><span class="nwd-document__eyebrow">Образец документа</span><p class="nwd-document__title" id="'.$id.'">'.$label.'</p></div>'
             .'<a class="nwd-document__request" href="/kontakty/" data-document-request'.($copyAllowed?' hidden':'').'>Запросить документ <span aria-hidden="true">↗</span></a>'
             .'<button type="button" class="nwd-document__copy" data-document-copy'.($copyAllowed?'':' hidden').'>Скопировать образец</button></header>'
-            .'<details class="nwd-document__details"><summary><span class="nwd-document__show">Открыть образец</span><span class="nwd-document__hide">Свернуть образец</span><i aria-hidden="true">+</i></summary>'
+            .'<details class="nwd-document__details"><summary><span class="nwd-document__show">Открыть образец</span><span class="nwd-document__hide">Скрыть образец</span><i aria-hidden="true">+</i></summary>'
             .'<div class="nwd-document__body" data-nwd-document-body="1">'.$inside.'</div></details><p class="nwd-document__status" role="status" aria-live="polite"></p></section>';
         $rendered=panelUtf8Document($card)->getElementsByTagName('body')->item(0)->firstChild;
         $node->parentNode->replaceChild($doc->importNode($rendered,true),$node);

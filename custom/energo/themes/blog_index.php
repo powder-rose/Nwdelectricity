@@ -5,7 +5,7 @@
     <h1 id="blog-title">Электрохозяйство.<br><span>По существу</span><b aria-hidden="true">.</b></h1>
     <p class="nwd-blog-hero__lead">О безопасности, документах<br>и ответственности бизнеса.</p>
     <p class="nwd-blog-hero__description">Разбираю вопросы эксплуатации электроустановок и делюсь практикой. Понятным языком — о том, что важно руководителю и специалисту.</p>
-    <div class="nwd-blog-hero__author" id="nikolay-boykov"><strong>Николай Бойков</strong><span>Руководитель «Спецэнергоразвития».</span></div>
+    <div class="nwd-blog-hero__author" id="nikolay-boykov"><strong>Николай Бойков</strong><span><?=NwdAuthorBlog::h(NwdAuthorBlog::role())?>.</span></div>
     <a class="nwd-blog-text-link" href="#materials">Читать статьи <span aria-hidden="true">↘</span></a>
   </div>
   <figure class="nwd-blog-portrait">
@@ -31,4 +31,4 @@
   <?php if($blog['pages']>1): ?><nav class="nwd-blog-pagination" aria-label="Страницы блога"><?php if($blog['page']>1): ?><a href="<?=NwdAuthorBlog::h(NwdAuthorBlog::query(array('page'=>$blog['page']-1),$blog))?>">← Назад</a><?php endif ?><span>Страница <?=$blog['page']?> из <?=$blog['pages']?></span><?php if($blog['page']<$blog['pages']): ?><a href="<?=NwdAuthorBlog::h(NwdAuthorBlog::query(array('page'=>$blog['page']+1),$blog))?>">Далее →</a><?php endif ?></nav><?php endif ?>
 </section>
 <section class="nwd-blog-contact container"><div><span class="nwd-blog-eyebrow">От чтения — к решению</span><h2>Есть вопрос<br>по электрохозяйству<span>?</span></h2><p>Обсудим вашу задачу и подходящий формат обслуживания.</p></div><a href="#modal" data-fancybox data-src="#modal" class="nwd-blog-contact__button">Обсудить задачу <span aria-hidden="true">↗</span></a></section>
-<?php NwdAuthorBlog::jsonld(array('@context'=>'https://schema.org','@type'=>'Blog','name'=>'Личный блог Николая Бойкова','url'=>'https://nwdelectricity.ru/articles/','author'=>array('@type'=>'Person','@id'=>'https://nwdelectricity.ru/articles/#nikolay-boykov','name'=>'Николай Бойков','image'=>'https://nwdelectricity.ru'.NwdAuthorBlog::AUTHOR_IMAGE))); ?>
+<?php NwdAuthorBlog::jsonld(array('@context'=>'https://schema.org','@type'=>'Blog','name'=>'Личный блог Николая Бойкова','url'=>'https://nwdelectricity.ru/articles/','author'=>array('@type'=>'Person','@id'=>'https://nwdelectricity.ru/articles/#nikolay-boykov','name'=>'Николай Бойков','jobTitle'=>NwdAuthorBlog::role(),'image'=>'https://nwdelectricity.ru'.NwdAuthorBlog::AUTHOR_IMAGE))); ?>

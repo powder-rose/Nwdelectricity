@@ -1,0 +1,85 @@
+{
+  "feature": "author-polish",
+  "baseline": "7f13936d50c76fd046e89312fe84588c4d660ad0",
+  "requires": [],
+  "files": [
+    {
+      "path": "custom/energo/themes/author_blog.php",
+      "text": true,
+      "base": "c58ec851028983933f3990d636a1422e74299d5b843adeadc7d78631a27078ed",
+      "sha256": "7b74a4a756cccc8d7292b99bd0e83801f46830548a1ec7f35d9ba4c8969a1e54"
+    },
+    {
+      "path": "custom/energo/themes/blog_article.php",
+      "text": true,
+      "base": "ccf7e441080a807a5070aaed06aca7ee0fc16afed98cbd632a583b685b522db3",
+      "sha256": "da84ffcf414474db0ed26571900f78b22bf06d4e4b10b781c57b3e6d8eea3916"
+    },
+    {
+      "path": "custom/energo/themes/blog_index.php",
+      "text": true,
+      "base": "7eabd8d18602737d003586dc55f5619f89cabf13685c85094927f41c19aeb51c",
+      "sha256": "29bed3774c8cd923d485ecf9d7a683d2c5d4c264caff7b79173cfcdbf6fd6dcc"
+    },
+    {
+      "path": "docs/AUTHOR_POLISH.md",
+      "text": true,
+      "base": null,
+      "sha256": "60c060d7e038841987acdf5fdd907891166abf83681676e32a5400be47e19362"
+    },
+    {
+      "path": "docs/DOCUMENT_REQUESTS.md",
+      "text": true,
+      "base": "00a8d12ade83644ab53eb9a986c743eabac1bff03fa5778851a525ffb5b9fe3c",
+      "sha256": "54e8e53930dafc6e4613630f95523c4d3abe8f39435d5073d9db97a8b35216c8"
+    },
+    {
+      "path": "redaktsiya/assets/documents.css",
+      "text": true,
+      "base": "4cf0a2fba48a7edd0f2dd689b521dfb1e80483f2fa4ce12590ab11ab265fb76e",
+      "sha256": "6233c9d2534701424ef16b1573761a690adfa8fe5df8fed97ebbf43edb14bcb5"
+    },
+    {
+      "path": "redaktsiya/lib/author-role.php",
+      "text": true,
+      "base": null,
+      "sha256": "3e8e330e42b29f1975444f2c1eb5a3fbed8e8c054c77eb01c7acfd3f674dc5ef"
+    },
+    {
+      "path": "redaktsiya/lib/documents.php",
+      "text": true,
+      "base": "93dfaaad383e7a736ebc9c6d97b1f8053f84c47da481588e250f314cb81d7d46",
+      "sha256": "ce3d06acc974c3ddf023053fcb9537e3a06fca1a31fe44775c9532096d1699c2"
+    },
+    {
+      "path": "scripts/test-author-role.php",
+      "text": true,
+      "base": null,
+      "sha256": "09f4ad1486c3c74ff38010ccf8f235e243250b29c6f98c61bc44926468c1a7e1"
+    },
+    {
+      "path": "scripts/update-author-role.php",
+      "text": true,
+      "base": null,
+      "sha256": "ddff8e7d563ba700abda55f17417765da679d3902ccd4cd8e9219dcdb38535a3"
+    },
+    {
+      "path": "tools/author-polish/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "47a360ee9a9b2a6c6fc0cfb1f9f85d5455472aebe2bda3d322dc264f830d4398"
+    },
+    {
+      "path": "tools/author-polish/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "e06b7ad514c1dc6274cf06a4d79e78f55f724c57d3ba76e371a274d772204f69"
+    },
+    {
+      "path": "tools/panel-editor/src/styles/article-documents.css",
+      "text": true,
+      "base": "d3f17f46370dcfc625dbda7974a48da2c35385bfeef7f15dcd81688c229e6249",
+      "sha256": "c96cb7cf2aa32c6805ccdf341442b6e38f3fd50fcd5b05bedd2339e25aff355a"
+    }
+  ]
+}
