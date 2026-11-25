@@ -2,12 +2,16 @@
 set -Eeuo pipefail
 umask 077
 commit=${1:-}
+saved_response=${2:-}
 [[ "$commit" =~ ^[a-f0-9]{40}$ ]] || { echo 'LABORATORY_FAILED=Supply the published GitHub commit'; exit 1; }
 site=${NWD_SITE:-/home/i/infonwt4/nwdelectricity.ru/public_html}
 [[ -d "$site" && -f "$site/config.php" ]] || { echo 'LABORATORY_FAILED=Site root not found'; exit 1; }
 site=$(cd "$site" && pwd -P)
 private="$HOME/.nwd-production"
 mkdir -p "$private"
+if [[ -n "$saved_response" ]]; then
+    [[ "$saved_response" == "$private"/laboratory-*/page.html && -f "$saved_response" && ! -L "$saved_response" ]] || { echo 'LABORATORY_FAILED=Saved response must be an existing laboratory backup page.html'; exit 1; }
+fi
 exec 9>"$private/deployment.lock"
 flock -n 9 || { echo 'LABORATORY_FAILED=Another deployment is active'; exit 1; }
 backup=$(mktemp -d "$private/laboratory-XXXXXXXX")
@@ -78,6 +82,14 @@ done < "$backup/restore.list"
 "$phpbin" "$source/scripts/test-phase-neutral.php"
 "$phpbin" "$source/scripts/test-laboratory-shell.php"
 "$phpbin" "$source/scripts/test-laboratory-shell.php" --mobile
+"$phpbin" "$source/scripts/test-laboratory-public.php"
+if [[ -n "$saved_response" ]]; then
+    step=saved-public-response
+    # Prove the repaired validator accepts the exact response that caused rollback,
+    # before replacing files or changing the database on this retry.
+    "$phpbin" "$source/scripts/check-laboratory-public.php" "$saved_response"
+    echo 'LABORATORY_SAVED_PUBLIC_OK'
+fi
 step=activate
 changed=1
 for target_existed in 0 1; do

@@ -1,5 +1,6 @@
-param([string]$ProjectRoot=(Get-Location).Path)
+param([string]$ProjectRoot=(Get-Location).Path,[string]$SavedResponse='')
 $ErrorActionPreference='Stop'
+if ($SavedResponse -and ($SavedResponse -notmatch '^/home/[A-Za-z0-9_./-]+/\.nwd-production/laboratory-[A-Za-z0-9]+/page\.html$' -or $SavedResponse.Contains('..'))) { throw 'SavedResponse must point to page.html inside the private laboratory backup.' }
 $root=(Resolve-Path $ProjectRoot).Path
 Set-Location $root
 $utf8=New-Object System.Text.UTF8Encoding($false)
@@ -41,6 +42,7 @@ Invoke-NwdGit -Arguments @('push','origin','HEAD:refs/heads/main')
 $commit=(& git rev-parse HEAD).Trim()
 if ($LASTEXITCODE -ne 0 -or $commit -notmatch '^[a-f0-9]{40}$') { throw 'Cannot resolve published commit.' }
 $command='bash -c "$(curl -fsSL https://raw.githubusercontent.com/powder-rose/Nwdelectricity/'+$commit+'/tools/laboratory/deploy-beget.sh)" -- '+$commit
+if ($SavedResponse) { $command+=' '+"'"+$SavedResponse+"'" }
 $commandFile=Join-Path $env:TEMP 'nwd-laboratory-beget.txt'
 [IO.File]::WriteAllText($commandFile,$command+"`n",$utf8)
 Write-Host "GITHUB_MAIN_OK=$commit"

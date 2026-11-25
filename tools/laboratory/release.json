@@ -261,24 +261,26 @@
       "path": "docs/LABORATORY.md",
       "text": true,
       "base": null,
-      "sha256": "e86f3e636c3a413cceb3dcd756b7b8ff62f5ee648de9cb9f73b500e766ab05d7",
+      "sha256": "481deb14e116f30d3c91530546b1f7836539bc8be833a5850f65c39200cec3dd",
       "previous": [
         "a8152395fd29b5891c379c21a3a4f46b62572e23b998f259a88a323f1aeba161",
         "0ef9abdd2d4f83b628d4f675ed2703ebca984976ee95ab751a49d9a2d9f1a468",
         "bc19e361fbd3813789f3d66a9538c995ba19bb788e6fce246355b7f4a20d92d5",
         "ca628f2b2664c86e5130db7a5752579a9cc861d74db37cb8c82cee0f7e5a7ea0",
         "e932232f1621167bfb0824eb18d05c8d481910ab039c30730cb8a45aa9704d67",
-        "eeedbbf347be42dac83df7d110faeb19179c2acabdd8ec49a99e04f4c95ca54d"
+        "eeedbbf347be42dac83df7d110faeb19179c2acabdd8ec49a99e04f4c95ca54d",
+        "e86f3e636c3a413cceb3dcd756b7b8ff62f5ee648de9cb9f73b500e766ab05d7"
       ]
     },
     {
       "path": "scripts/check-laboratory-public.php",
       "text": true,
       "base": null,
-      "sha256": "7a53d8e90db9c59b15578db5322fc26b8f18e2fa0c722d925ff4bb15046b4fe3",
+      "sha256": "d0726279e6f23a3d85d094dc0ec79fbdb1ca65a89485c7b4f60db2421e4f3d44",
       "previous": [
         "fea5674f969447a07b7272f33f479c28ce0c0e0b3610d08ce8c8b279e912b5a0",
-        "c569d5d8e51408b00ef81dfeb6bd052260a1514ecd7e3ec9cc5fb081bb7c2e9d"
+        "c569d5d8e51408b00ef81dfeb6bd052260a1514ecd7e3ec9cc5fb081bb7c2e9d",
+        "7a53d8e90db9c59b15578db5322fc26b8f18e2fa0c722d925ff4bb15046b4fe3"
       ]
     },
     {
@@ -304,6 +306,12 @@
       "previous": [
         "4b4b6382de9edbfdf94dbfa0b562fe1e4903175d6dfa80e01bf764149c1d1f11"
       ]
+    },
+    {
+      "path": "scripts/test-laboratory-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "4c1c6eeef2723b9d15aee745ad652de3d8ea93052f30b5094fd44ddb326e7d72"
     },
     {
       "path": "scripts/test-laboratory-queries.php",
@@ -336,18 +344,22 @@
       "path": "tools/laboratory/deploy-beget.sh",
       "text": true,
       "base": null,
-      "sha256": "60c7d20060dc0851ce8d52c2b58572cf95ce7e42bb0f03613a25914d246299a2",
+      "sha256": "ef8227037edecf24320f0b7aed9fcb8e80e621ea170aa675d349b4f9cb559eb5",
       "previous": [
         "f5da01b49688595b62e056df3d4cac6883f79c3caef340fe0818399deeee6883",
         "89bda0694698b76cf096164e8520454e2cb45cf48ae550c750a6f15d9d16933b",
-        "f1423704fe70f821d81522e94f96951e43ef1946879539dfff5abe2bc1e43295"
+        "f1423704fe70f821d81522e94f96951e43ef1946879539dfff5abe2bc1e43295",
+        "60c7d20060dc0851ce8d52c2b58572cf95ce7e42bb0f03613a25914d246299a2"
       ]
     },
     {
       "path": "tools/laboratory/publish-github.ps1",
       "text": true,
       "base": null,
-      "sha256": "42bafb7a8da6676b224e64bea916dd8986ae6e67b9567cd9054586a7f702c504"
+      "sha256": "fb7d650b54b613859ee46d2de301805b7917b4ef6904afe6943790a5e445ba63",
+      "previous": [
+        "42bafb7a8da6676b224e64bea916dd8986ae6e67b9567cd9054586a7f702c504"
+      ]
     }
   ]
 }
