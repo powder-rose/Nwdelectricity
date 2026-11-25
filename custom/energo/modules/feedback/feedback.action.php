@@ -78,11 +78,19 @@ class Feedback_action extends Action
                 require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/rcd.php';
                 $serviceCopy=nwdRcdCopy();
             }
+            if ($_POST['nwd_service']==='power-tools') {
+                require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/power-tools.php';
+                $serviceCopy=nwdPowerToolsCopy();
+            }
             $errors=array();
-            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd'),true) || (int)$this->site_id!==27 || $documentContext) {
+            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools'),true) || (int)$this->site_id!==27 || $documentContext) {
                 $errors[0]=$serviceCopy['errors']['failure'];
             } else {
-                try { $serviceContext=$_POST['nwd_service']==='rcd' ? nwdRcdValidate($params,$_POST,$errors) : nwdPhaseNeutralValidate($params,$_POST,$errors); }
+                try {
+                    if ($_POST['nwd_service']==='power-tools') { $serviceContext=nwdPowerToolsValidate($params,$_POST,$errors); }
+                    elseif ($_POST['nwd_service']==='rcd') { $serviceContext=nwdRcdValidate($params,$_POST,$errors); }
+                    else { $serviceContext=nwdPhaseNeutralValidate($params,$_POST,$errors); }
+                }
                 catch (Throwable $error) { $errors[0]=$serviceCopy['errors']['failure']; }
             }
             if ($errors) { $this->result['errors']=$errors;return; }
