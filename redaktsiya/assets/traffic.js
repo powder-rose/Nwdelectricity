@@ -7,6 +7,18 @@
   var page = script.getAttribute('data-page');
   if (!page) return;
 
+  // Preserve tagged landing attribution for the service form after internal navigation.
+  var attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'yclid', 'gclid'];
+  var landing = new URLSearchParams(location.search);
+  var attribution = {};
+  attributionKeys.forEach(function (key) {
+    var value = landing.get(key);
+    if (value && value.length <= 256 && !/[\u0000-\u001f\u007f]/.test(value)) { attribution[key] = value; }
+  });
+  if (Object.keys(attribution).length) {
+    try { sessionStorage.setItem('nwd_service_attribution', JSON.stringify(attribution)); } catch (unavailable) {}
+  }
+
   function randomId() {
     var bytes = crypto.getRandomValues(new Uint8Array(16));
     return Array.from(bytes, function (byte) { return ('0' + byte.toString(16)).slice(-2); }).join('');

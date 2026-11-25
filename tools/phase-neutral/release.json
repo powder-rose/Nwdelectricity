@@ -1,0 +1,164 @@
+{
+  "feature": "phase-neutral",
+  "baseline": "9db73a0b3e26f28a29b68d18bf5f0fc3a2e84d82",
+  "files": [
+    {
+      "path": "custom/energo/css/phase-neutral.css",
+      "text": true,
+      "base": null,
+      "sha256": "2c4fbc4abed864359fe1a7c071297e855aaf262d61460c34f034513c94acae91",
+      "previous": [
+        "7503e86c0e7a009225141f4c47e897fe18b6f94619787509fe907ccb9e68edbb",
+        "f5a344786d871d74f550799c423d5317f09f93f9ea417960bfb8bba59f963870"
+      ]
+    },
+    {
+      "path": "custom/energo/images/phase-neutral/izmerenie-petli-faza-nul.webp",
+      "text": false,
+      "base": null,
+      "sha256": "dbbd45f8eaf709781fcc9cecca8d12ea2521b6ffd829066206f33934550d60e8"
+    },
+    {
+      "path": "custom/energo/js/phase-neutral.js",
+      "text": true,
+      "base": null,
+      "sha256": "09009b1629a4ab2e6823ff345d8967fb710a3679a65e9b746dbb9c11cf2de296"
+    },
+    {
+      "path": "custom/energo/modules/feedback/boykov-hub.php",
+      "text": true,
+      "base": "5c315c3c15f766435aa69fc4fa114aedf2ff19a5be00d8300c376628dae9258a",
+      "sha256": "591ac5a7e271ec9dab2155c839b982e75b0c2d1cf186be9db354d2ffa28ba86c"
+    },
+    {
+      "path": "custom/energo/modules/feedback/feedback.action.php",
+      "text": true,
+      "base": "eb4de55769a28e80924ee8ce21e515b13adc7975cb666d9549f4ca158f56d6ba",
+      "sha256": "7a64add5ef89cfddda24737ba596504048b46051f8ba6f56dc0a9dffb282e321"
+    },
+    {
+      "path": "custom/energo/modules/feedback/lead.php",
+      "text": true,
+      "base": "8330d4e4a3cdc17ae75985e69ba981fec55efc436459031657fb6406f04e2146",
+      "sha256": "7248a25a662c21f26e5cb47f0e6d9d213d20686fec31f4b5ace8d0a38997213e"
+    },
+    {
+      "path": "custom/energo/modules/feedback/phase-neutral.php",
+      "text": true,
+      "base": null,
+      "sha256": "a454c00330efec47fc9601c22bb58c0b1b1bc86d1027a5da1077c4d7c22156b1"
+    },
+    {
+      "path": "custom/energo/modules/feedback/views/feedback.view.form_phase_neutral.php",
+      "text": true,
+      "base": null,
+      "sha256": "c121c267c17056e99823620ca4a8d50ef6955db7df161bf83e4c1691e90d03a0",
+      "previous": [
+        "544ece61e859c4ebd570eb004d66567952fba15aea15aa6956ee8be8f6778c3e"
+      ]
+    },
+    {
+      "path": "custom/energo/themes/blocks/head.php",
+      "text": true,
+      "base": "a7250135a558eca3a5d1715b474742b7d2a115957b32dc643c863def989465c9",
+      "sha256": "81613d4c66a22181e0262e8bdc999a4ad1e301e0066c9ee59b576846cb9166c8",
+      "previous": [
+        "ff9e1ec24f5745e3e958d6eafcbf7b9776f784a89e9eb3e4168d3c20496dad2b"
+      ]
+    },
+    {
+      "path": "custom/energo/themes/editorial_pages.php",
+      "text": true,
+      "base": "658be26f9e7a19ab40bcd4c2732fd70195f30bcb583f042d982b4187f9d85b2e",
+      "sha256": "0b231c5314531af0900e906c891df1d887de596b2a28553595968c930d9ce012"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_phase_neutral_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "c9dc347556d40489f704abec80e6535a32d8b9586a59aa6172e6fceddbf325e9",
+      "previous": [
+        "c7ce3495751fad8134a9ed8cd1ae272bbf562fa4423cc01b95f790ccfc427424",
+        "2b2f4fd7b1c7702124e8f18ee0fa6df2a514e13eae568809efedb473dc0d6a29"
+      ]
+    },
+    {
+      "path": "custom/energo/themes/phase_neutral.php",
+      "text": true,
+      "base": null,
+      "sha256": "629955c58f28300f9a41db189628a824751a37a8ec403cae8db04b43cd200d3b"
+    },
+    {
+      "path": "custom/energo/themes/phase_neutral_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "ec8ac336144003b4aad6fa91dfff2e6a0512e3037552008011dbbba8f9c4c521"
+    },
+    {
+      "path": "docs/PHASE_NEUTRAL.md",
+      "text": true,
+      "base": null,
+      "sha256": "beb81897eb3ed570304f05d4bbc65a2fa273a71a466d00b510dd8960424a195e",
+      "previous": [
+        "1bd57ddf4f26cde6dd832249d3bde21f0f9224c791cd399bc7e7e5e495985d76",
+        "453061264f33b7b3123707c9b68c2a74f0e30a28c56e9cf1f7ac5e9ba1f2b2b6",
+        "8a1b041dd74df61cef3020e4a0f722f4e4831e47c5f6a97dd963f974b92478a8"
+      ]
+    },
+    {
+      "path": "redaktsiya/assets/traffic.js",
+      "text": true,
+      "base": "9f9d0eb64636076d58c9d7e87e2c8caf7e138e799f0a2a109e672cf47fc148c8",
+      "sha256": "f5b03d1bb97bce4ccb6638d6b7bc6ac0a9f5a1719dfcd5b075bffb39adc436ae"
+    },
+    {
+      "path": "scripts/install-phase-neutral.php",
+      "text": true,
+      "base": null,
+      "sha256": "2658241510b8fdfdf0d9bf0253193640c5810f254b2d9283ade81a073da567ee",
+      "previous": [
+        "dd4fdec8d104de28c8a5b305ee3a129af82e19f80ecc23be6c0158c4daf260eb"
+      ]
+    },
+    {
+      "path": "scripts/phase-neutral-schema.php",
+      "text": true,
+      "base": null,
+      "sha256": "bedac1ab14d4b3d6c2bed316462605e35f7314ec9a644e526aa551ab00a119ba"
+    },
+    {
+      "path": "scripts/test-phase-neutral-render.php",
+      "text": true,
+      "base": null,
+      "sha256": "a9735f01dda8e761da75b679c2ccf3171f922962ccd2164746d36b4b5bb59b52"
+    },
+    {
+      "path": "scripts/test-phase-neutral-schema.php",
+      "text": true,
+      "base": null,
+      "sha256": "8096cd8e91248b74b974ebac06fa1842c99a0aaa1e9e005a46296939d740527a"
+    },
+    {
+      "path": "scripts/test-phase-neutral.php",
+      "text": true,
+      "base": null,
+      "sha256": "4235d56f105b138cce1b7e92effe9a6d3b24f42935334304af8d2c7d253d8ea6"
+    },
+    {
+      "path": "tools/phase-neutral/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "0275e24b80ae691d0ee3be051a46fe58cba1d1a9bd4f784de9528c504a9a1718",
+      "previous": [
+        "502dcd069cab9001982a14f64686802de2ff88efce12d6156211a952e6261a14",
+        "151ca6caee1e085e9817a11fc0c96d1d13e6bafa6e5abbe229859979ce7fefc2"
+      ]
+    },
+    {
+      "path": "tools/phase-neutral/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "54e885867e0dd70a9a40a593e8bae13582957f84a0ce3d540152ca80fb2febb9"
+    }
+  ]
+}

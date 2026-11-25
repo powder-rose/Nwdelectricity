@@ -40,8 +40,9 @@ if (! defined('DIAFAN'))
 		if (NwdEditorialPages::isResponsible($this->diafan)) { $editorialStyle = 'responsible-editorial.css'; }
 		if (NwdEditorialPages::isBlog($this->diafan)) { $editorialStyle = 'author-blog.css'; }
 		if (NwdEditorialPages::isMaintenance($this->diafan)) { $editorialStyle = 'maintenance-editorial.css'; }
+		if (NwdEditorialPages::isPhaseNeutral($this->diafan)) { $editorialStyle = 'phase-neutral.css'; }
 		if (NwdEditorialPages::isServices($this->diafan)) { $editorialStyle = 'services-directory.css'; }
-		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/' . $editorialStyle), ENT_QUOTES, 'UTF-8') . ($editorialStyle === 'author-blog.css' ? '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/' . $editorialStyle)) : '') . '">';
+		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/' . $editorialStyle), ENT_QUOTES, 'UTF-8') . (in_array($editorialStyle,array('author-blog.css','phase-neutral.css'),true) ? '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/' . $editorialStyle)) : '') . '">';
 	}
 	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/service-navigation.css'), ENT_QUOTES, 'UTF-8') . '">';
 	?>

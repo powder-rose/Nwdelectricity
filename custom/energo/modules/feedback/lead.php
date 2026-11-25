@@ -32,7 +32,8 @@ function nwdFeedbackLead($id, $siteId) {
         $row['fields'][]=array('label'=>'Документ','type'=>'text','value'=>$document['title']);
         $row['url']=$document['url'];
     }
-    return $row;
+    require_once __DIR__.'/phase-neutral.php';
+    return nwdPhaseNeutralLead($row);
 }
 
 function nwdFeedbackEscape($text) {

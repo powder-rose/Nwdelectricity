@@ -70,15 +70,29 @@ class Feedback_action extends Action
             catch (Throwable $error) { $errors[0]='Не удалось проверить документ. Обновите статью и попробуйте ещё раз.'; }
             if ($errors) { $this->result['errors']=$errors;return; }
         }
-		$this->empty_required_field(array("params" => $params));
+        $serviceContext=null;
+        if (isset($_POST['nwd_service'])) {
+            require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/phase-neutral.php';
+            $errors=array();
+            if ($_POST['nwd_service']!=='phase-neutral' || (int)$this->site_id!==27 || $documentContext) {
+                $errors[0]=nwdPhaseNeutralCopy()['errors']['failure'];
+            } else {
+                try { $serviceContext=nwdPhaseNeutralValidate($params,$_POST,$errors); }
+                catch (Throwable $error) { $errors[0]=nwdPhaseNeutralCopy()['errors']['failure']; }
+            }
+            if ($errors) { $this->result['errors']=$errors;return; }
+        }
+        if (!$serviceContext) { $this->empty_required_field(array("params" => $params)); }
+
 
 		if ($this->result())
 			return;
 
         require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/lead.php';
-        $source=$documentContext ? $documentContext['source'] : nwdFeedbackSource();
+        $source=$serviceContext ? $serviceContext['source'] : ($documentContext ? $documentContext['source'] : nwdFeedbackSource());
         $raw = array('site_id' => $this->site_id);
         if ($documentContext) { $raw['document_source']=$source; }
+        if ($serviceContext) { $raw['service_source']=$source; }
         foreach ($params as $param) {
             $key = 'p'.$param['id'];
             $raw[$key] = $_POST[$key] ?? '';
@@ -122,7 +136,7 @@ class Feedback_action extends Action
         } catch (Throwable $error) {
             DB::query('ROLLBACK');
             error_log('NWD feedback: could not save lead and mail notification ('.get_class($error).').');
-            $this->result["errors"][0] = 'Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам.';
+            $this->result["errors"][0] = $serviceContext ? nwdPhaseNeutralCopy()['errors']['failure'] : 'Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам.';
             return;
         }
         if (!$repeated) {
@@ -133,7 +147,7 @@ class Feedback_action extends Action
             $this->send_sms();
         }
 
-		$mes = $this->diafan->configmodules('add_message', 'feedback', $this->site_id, _LANG);
+		$mes = $serviceContext ? nwdPhaseNeutralCopy()['errors']['success'] : $this->diafan->configmodules('add_message', 'feedback', $this->site_id, _LANG);
 		$this->result["errors"][0] = $mes ? $mes : ' ';
 		$this->result["result"] = 'success';
 		$this->result["data"] = array("form" => false);

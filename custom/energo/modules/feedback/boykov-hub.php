@@ -20,7 +20,7 @@ function nwdHubPayload(array $lead, $requestId = '') {
         if ($payload['phone'] === '' && ($type === 'phone' || preg_match('/телефон|phone/ui', $label))) $payload['phone'] = $value;
         if ($payload['email'] === '' && ($type === 'email' || preg_match('/e.?mail|почт/ui', $label))) $payload['email'] = $value;
         if ($payload['name'] === '' && preg_match('/имя|фио|фамил/ui', $label)) $payload['name'] = $value;
-        if (preg_match('/комментар|сообщени|задач|описани/ui', $label) && $value !== '') $payload['message'] .= ($payload['message'] === '' ? '' : "\n").$value;
+        if (($type === 'textarea' || preg_match('/комментар|сообщени|задач|описани/ui', $label)) && $value !== '') $payload['message'] .= ($payload['message'] === '' ? '' : "\n").$value;
     }
     if ($requestId !== '') $payload['fields'][] = array('label'=>'Номер заявки на сайте','value'=>(string)$lead['id']);
     $url = isset($lead['url']) ? parse_url($lead['url']) : false;
