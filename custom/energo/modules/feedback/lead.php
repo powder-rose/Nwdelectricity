@@ -35,7 +35,8 @@ function nwdFeedbackLead($id, $siteId) {
     require_once __DIR__.'/phase-neutral.php';
     require_once __DIR__.'/rcd.php';
     require_once __DIR__.'/power-tools.php';
-    return nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row)));
+    require_once __DIR__.'/laboratory.php';
+    return nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row))));
 }
 
 function nwdFeedbackEscape($text) {

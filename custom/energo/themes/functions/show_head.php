@@ -40,6 +40,7 @@ if ($canonical && substr($canonical, 0, 4) !== 'http') {
 if (!$canonical && $isLanding && !$this->diafan->_route->page && !$this->diafan->_route->sort) {
     $canonical = $pageUrl;
 }
+if ($rewrite === 'services/elektroizmeritelnaya-laboratoriya') { $canonical = $pageUrl; }
 if ($canonical) {
     echo "\n" . '<link href="' . htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8') . '" rel="canonical">';
 }
