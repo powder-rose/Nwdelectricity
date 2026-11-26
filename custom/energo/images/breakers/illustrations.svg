@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+<symbol id="breaker" viewBox="0 0 480 360">
+<path d="m170 55 118-20 75 49v221l-118 23-75-51z" stroke="#adc09b"/><path d="m170 55 75 49 118-20M245 104v224" stroke="#adc09b"/>
+<path d="m191 77 96-16 53 34v186l-96 18-53-35z" fill="#f6f9ef"/><path d="m191 77 53 35 96-17m-96 17v187"/>
+<path d="m208 122 27 18v53l-27-18z" fill="#d9e7c8"/><path d="m235 140 36-8v53l-36 8m36-61 26 18v53l-26-18"/><path d="m218 151 30 19 29-6v-24l-29 6-30-19z" fill="#a7ef43" stroke="#597640"/>
+<path d="m205 222 25 17m-25-5 25 17m31-22 57-10m-57 23 57-10m-57 23 57-10" stroke="#9fb38c"/>
+<path d="m209 72 0-22 14-3v22m29-4V42l14-3v23m29-4V35l14-3v22M208 276v24l14 9v-25m30 14v24l14-3v-24m28-5v24l14-3v-24" stroke-width="3"/>
+<path d="M151 144h-38v87h38m225-87h31v87h-31" stroke="#91bd5c" stroke-width="3"/><path d="m104 159 9-15 10 15m273 56 11 16 10-16" stroke="#91bd5c" stroke-width="3"/>
+</symbol>
+<symbol id="installation" viewBox="0 0 480 360"><path d="M148 62h184v240H148zM165 80h150v202H165z"/><path d="M180 142h120m-120 97h120m-108-77h24v52h-24zm48 0h24v52h-24zm48 0h24v52h-24z"/><path d="M197 184h14m34 0h14m34 0h14M220 104h42m-42 15h25" stroke="#96c94f" stroke-width="5"/></symbol>
+<symbol id="replace" viewBox="0 0 480 360"><path d="M144 105h76v147h-76zm116 0h76v147h-76zM158 150h47v41h-47zm116 0h47v41h-47z"/><path d="M162 105V82m40 23V82m76 23V82m40 23V82M162 252v22m40-22v22m76-22v22m40-22v22"/><path d="M169 55h143m-20-14 20 14-20 14M312 307H169m20-14-20 14 20 14" stroke="#88b64c" stroke-width="4"/></symbol>
+<symbol id="schedule" viewBox="0 0 480 360"><path d="M132 89h216v206H132zM132 135h216M180 67v44m120-44v44"/><path d="M167 163h26m34 0h26m34 0h26m-146 34h26m34 0h26m-86 34h26" stroke="#a4b98e"/><circle cx="286" cy="244" r="38" fill="#edf4e2"/><path d="m268 245 13 13 25-30" stroke="#7cae3b" stroke-width="4"/></symbol>
+<symbol id="protection" viewBox="0 0 480 360"><path d="m240 58 95 33v98c0 58-95 113-95 113s-95-55-95-113V91z"/><path d="m246 106-39 75h32l-6 62 43-88h-34z" fill="#dbeac8" stroke="#86b44b" stroke-width="3"/><path d="m123 152-18-7m18 48-18 5m252-46 18-7m-18 48 18 5" stroke="#a5bb8e"/></symbol>
+<symbol id="report" viewBox="0 0 480 360"><path d="M145 53h143l51 51v203H145z" fill="#f5f8ee"/><path d="M288 53v51h51M176 144h128m-128 24h100m-100 24h128m-128 24h75"/><path d="M122 85h-17v240h197v-14" stroke="#a3b88d"/><path d="m261 266 15 16 30-36" stroke="#7fae43" stroke-width="4"/></symbol>
+</svg>

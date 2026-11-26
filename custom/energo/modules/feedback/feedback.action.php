@@ -94,12 +94,17 @@ class Feedback_action extends Action
                 require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/grounding.php';
                 $serviceCopy=nwdGroundingCopy();
             }
+            if ($_POST['nwd_service']==='breakers') {
+                require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/breakers.php';
+                $serviceCopy=nwdBreakersCopy();
+            }
             $errors=array();
-            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools','laboratory','insulation','grounding'),true) || (int)$this->site_id!==27 || $documentContext) {
+            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools','laboratory','insulation','grounding','breakers'),true) || (int)$this->site_id!==27 || $documentContext) {
                 $errors[0]=$serviceCopy['errors']['failure'];
             } else {
                 try {
-                    if ($_POST['nwd_service']==='grounding') { $serviceContext=nwdGroundingValidate($params,$_POST,$errors); }
+                    if ($_POST['nwd_service']==='breakers') { $serviceContext=nwdBreakersValidate($params,$_POST,$errors); }
+                    elseif ($_POST['nwd_service']==='grounding') { $serviceContext=nwdGroundingValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='insulation') { $serviceContext=nwdInsulationValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='laboratory') { $serviceContext=nwdLaboratoryValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='power-tools') { $serviceContext=nwdPowerToolsValidate($params,$_POST,$errors); }

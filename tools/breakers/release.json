@@ -1,0 +1,309 @@
+{
+  "feature": "breakers",
+  "baseline": "1aa34e8c4667ad2d2a7df40f8907b97bedf6fa8b",
+  "requires": [
+    {
+      "path": "custom/energo/css/phase-neutral.css",
+      "text": true,
+      "sha256": "2c4fbc4abed864359fe1a7c071297e855aaf262d61460c34f034513c94acae91"
+    },
+    {
+      "path": "custom/energo/css/editorial-pages.css",
+      "text": true,
+      "sha256": "90da5c11d15adf651e55c0ef1c655a96fb22052bdfa70403dc7c2c46d7acf137"
+    },
+    {
+      "path": "custom/energo/js/lead-forms.js",
+      "text": true,
+      "sha256": "33297a2b4ffc6ca076f96edd7dd152a2a72ce95858ab9d0654dd1fd5979664e7"
+    },
+    {
+      "path": "custom/energo/modules/feedback/phase-neutral.php",
+      "text": true,
+      "sha256": "a454c00330efec47fc9601c22bb58c0b1b1bc86d1027a5da1077c4d7c22156b1"
+    },
+    {
+      "path": "custom/energo/modules/feedback/rcd.php",
+      "text": true,
+      "sha256": "140eb1a4fe436b320f51545006725af00868175f15c82cc82890c12aa5deab86"
+    },
+    {
+      "path": "custom/energo/modules/feedback/power-tools.php",
+      "text": true,
+      "sha256": "0b03708506f10c3c57850baed9e0f819a3165791fc5ab4e963ec55a91f8fc74f"
+    },
+    {
+      "path": "custom/energo/modules/feedback/laboratory.php",
+      "text": true,
+      "sha256": "478733089241f40be9e3a92942e226089779fecc9c5eb59d28b8032ab36cb3c8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/document-request.php",
+      "text": true,
+      "sha256": "ef6ac1ae2b00416fe34e3c6983cffc5c2c3e5efe33043107bd598f6d69bed2e8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/boykov-hub.php",
+      "text": true,
+      "sha256": "591ac5a7e271ec9dab2155c839b982e75b0c2d1cf186be9db354d2ffa28ba86c"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_content.php",
+      "text": true,
+      "sha256": "d0216e97fb017df9dcd8e6b49c75ddb7ae10c168ab5cb2bdfee3ad7a9ce02539"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_links.php",
+      "text": true,
+      "sha256": "a16e990933503ec5589e5faef838081ac33fdbb51be94279ea3db9765a4e0ea8"
+    },
+    {
+      "path": "custom/energo/themes/blocks/header.php",
+      "text": true,
+      "sha256": "08afd0c9b55df50b1b7dc45170c2d955888b94e195a7fd613999e115ec6f9830"
+    },
+    {
+      "path": "custom/energo/themes/blocks/footer.php",
+      "text": true,
+      "sha256": "5efffba7d605f83431672251927ee9cebb743799a65488186c653e91b105629b"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_head.php",
+      "text": true,
+      "sha256": "fa03acb81b07e1745a7ec9bb39594f24a210bc95c9de5b3f490a809c770fbe9d"
+    },
+    {
+      "path": "redaktsiya/lib/db.php",
+      "text": true,
+      "sha256": "1e3e3aaad8bc5eead211db4a0ff21831c800ab5938ef43769250b4c1985599cd"
+    },
+    {
+      "path": "scripts/phase-neutral-schema.php",
+      "text": true,
+      "sha256": "bedac1ab14d4b3d6c2bed316462605e35f7314ec9a644e526aa551ab00a119ba"
+    },
+    {
+      "path": "scripts/rcd-lab-link.php",
+      "text": true,
+      "sha256": "7cf5092e59d45f987edb14aa90afa005bdbcc3e6d0db0821f618c5be40fe5239"
+    },
+    {
+      "path": "scripts/test-phase-neutral-schema.php",
+      "text": true,
+      "sha256": "8096cd8e91248b74b974ebac06fa1842c99a0aaa1e9e005a46296939d740527a"
+    },
+    {
+      "path": "scripts/test-document-request.php",
+      "text": true,
+      "sha256": "f2227a03fc75ab275dfe2593aacedc279584a985a1b0396bb8647fef7782e47e"
+    },
+    {
+      "path": "scripts/test-rcd-laboratory.php",
+      "text": true,
+      "sha256": "2593617c43481914e9b7a9430a758da11ecd9cfdc7a774e4b097d8b42b46ca86"
+    },
+    {
+      "path": "scripts/test-power-tools.php",
+      "text": true,
+      "sha256": "574d6b16bef9f1747661f30c2b63b5bc8cc2c04ef60d92bf184d2fea30ad2d62"
+    },
+    {
+      "path": "scripts/test-rcd.php",
+      "text": true,
+      "sha256": "9cf5e76bc7c3b3ece59f064a1362f1d5b0cc2e5c4515cde79a97de2122710de1"
+    },
+    {
+      "path": "scripts/test-phase-neutral.php",
+      "text": true,
+      "sha256": "4235d56f105b138cce1b7e92effe9a6d3b24f42935334304af8d2c7d253d8ea6"
+    },
+    {
+      "path": "scripts/test-laboratory.php",
+      "text": true,
+      "sha256": "7e05397ffb57df8dccff25957caac56eb5dd653a16f09f977f630789bb3c6048"
+    },
+    {
+      "path": "scripts/test-laboratory-queries.php",
+      "text": true,
+      "sha256": "39c516cb2772765d57d5253dfb9a18aa64a3ce85c244f0f3586d88c35c7ddc68"
+    },
+    {
+      "path": "custom/energo/modules/feedback/insulation.php",
+      "text": true,
+      "sha256": "a3ec5aa67a7e9f108881e20645bcb0a1ac6485acc7aef51122aa460588fc2400"
+    },
+    {
+      "path": "scripts/test-insulation.php",
+      "text": true,
+      "sha256": "9c39e63fa7a9979accfce36b0bbd0fcc1c3160ce79d9b67a375b09deb52ecf28"
+    },
+    {
+      "path": "custom/energo/modules/feedback/grounding.php",
+      "text": true,
+      "sha256": "86ee9988dc60418a10809abbab193fb4a14dac8e70257fdd22d1630787206f99"
+    },
+    {
+      "path": "scripts/test-grounding.php",
+      "text": true,
+      "sha256": "5049a9699e6702a5b9a496ed9ae76d40a1763808d078bec14ed73dfce14ac108"
+    }
+  ],
+  "files": [
+    {
+      "path": "custom/energo/css/breakers.css",
+      "text": true,
+      "base": null,
+      "sha256": "7a18b3d0b07a8ce43a59bf1cd0061ff16cf693f6378aa90c4b5370be2d7af485"
+    },
+    {
+      "path": "custom/energo/images/breakers/illustrations.svg",
+      "text": true,
+      "base": null,
+      "sha256": "7a4b597710d079c7175e7ded69d158647cbc2972c28f6907bad6aa2a157ff0be"
+    },
+    {
+      "path": "custom/energo/images/breakers/proverka-avtomaticheskikh-vyklyuchateley.webp",
+      "text": false,
+      "base": null,
+      "sha256": "cb9acd4007a6510079c829c6e5ee05d7c4b692106d791d6b8e494e0aaacb374a"
+    },
+    {
+      "path": "custom/energo/js/breakers.js",
+      "text": true,
+      "base": null,
+      "sha256": "8883903911c5d90222e93c394b7d3544664bc9c508f9cf9e2938e972bfb441f7"
+    },
+    {
+      "path": "custom/energo/modules/feedback/breakers.php",
+      "text": true,
+      "base": null,
+      "sha256": "3036bef120a4e44b1b44ed352defbb6ea4934d91364239bcee8480250be787cb"
+    },
+    {
+      "path": "custom/energo/modules/feedback/feedback.action.php",
+      "text": true,
+      "base": "5a1fb2ceb34028f1177e240d2bdf677a96001b815b60174a24219f253f2f81ba",
+      "sha256": "1cda6682f4c5442b572fb50bfe41adde836d18c99cf58b26746e87bf4e2d5112"
+    },
+    {
+      "path": "custom/energo/modules/feedback/lead.php",
+      "text": true,
+      "base": "2a0e2f4281983e513db97d1ac4a168a6aaee6d69ec1880caa4fc57a50d733103",
+      "sha256": "3cb448304b02c08f2df2e3326d61e0ebedd137cb2455c89478904c982f323023"
+    },
+    {
+      "path": "custom/energo/modules/feedback/views/feedback.view.form_breakers.php",
+      "text": true,
+      "base": null,
+      "sha256": "c8aba34d643a7b2ca92773d8aec4bec630ba3e4c7645add35676f3249c906078"
+    },
+    {
+      "path": "custom/energo/themes/blocks/head.php",
+      "text": true,
+      "base": "73b478405f634b53e7a5b1f1edc732706e4ed9040612dc91c863ce4f04cc4789",
+      "sha256": "ffd9b82ffb3b8e74ba1d9ab2793de2ccc856a1d39cbd24a616176c5415ba277d"
+    },
+    {
+      "path": "custom/energo/themes/breakers.php",
+      "text": true,
+      "base": null,
+      "sha256": "3a2f0b4de83742de317acef17c71648fa7234848922b675bb3bd9c4a4da7a6fd"
+    },
+    {
+      "path": "custom/energo/themes/breakers_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "a0e2472a8e8434d8ad49e099fbba825c62452d6da825e1fc0cd9ac69626ea52f"
+    },
+    {
+      "path": "custom/energo/themes/editorial_pages.php",
+      "text": true,
+      "base": "7c4f9fad9728aa09a6b915ff02f6fd5fca0b8a7feb55ab616f5a1239c984f020",
+      "sha256": "8c8a389e6d0e3a0384835142472d150a6a93f84ea32af4bccd45d04a58e6e194"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_breakers_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "b086ea26a299fbed4d3c128397c4195f44b2c627eec6d7079b25bfc3a8af3108"
+    },
+    {
+      "path": "custom/energo/themes/m/breakers.php",
+      "text": true,
+      "base": null,
+      "sha256": "990a097aab482ff0caa96de17e1b27cf863286f5b5507cb087259f985e36bb15"
+    },
+    {
+      "path": "docs/BREAKERS.md",
+      "text": true,
+      "base": null,
+      "sha256": "b07e47a7d6d5a36ceb57aa78f7b528d3663bdfbb6577cb84b0d9ad0fa1813ea1"
+    },
+    {
+      "path": "scripts/breakers-html.php",
+      "text": true,
+      "base": null,
+      "sha256": "3e121c5b6261cbdf128e71cb30ea0dc67a85e5749705a9892ad29cb95fb1438e"
+    },
+    {
+      "path": "scripts/breakers-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "c3ce9715ccd1c29a4d7998eebe0618a22320ae136ff76b1e17029e5545e7966a"
+    },
+    {
+      "path": "scripts/check-breakers-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "a3cdbf7d617459108136b89bb0aa64bdb2769e421ce91728dd3455108423ce1f"
+    },
+    {
+      "path": "scripts/install-breakers.php",
+      "text": true,
+      "base": null,
+      "sha256": "ca030064b0087181298866e888a520c1839cc952da28bfd1c80a5553bcaa1818"
+    },
+    {
+      "path": "scripts/test-breakers-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "6c5acaa8c0e8f6b46d5f5cf431e8f3f9193ab8ce0e68b39d8209cb6f58b1563e"
+    },
+    {
+      "path": "scripts/test-breakers-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "b5e3e420612661f78a9ae77140c954e66f532403006f097710f5b8ce91ae4600"
+    },
+    {
+      "path": "scripts/test-breakers-render.php",
+      "text": true,
+      "base": null,
+      "sha256": "41497125bd1eca6fb0ab0c0ba6446c53806620fcd11f11b30ea3d8627f191f90"
+    },
+    {
+      "path": "scripts/test-breakers-shell.php",
+      "text": true,
+      "base": null,
+      "sha256": "747233a0326d7771928f266510a3c5cb18c646193b31442732e8d67277314330"
+    },
+    {
+      "path": "scripts/test-breakers.php",
+      "text": true,
+      "base": null,
+      "sha256": "dfce36da9c3b23d1f6b34a2d9ed634d6b9256186518b649842c37a4a91dfbf08"
+    },
+    {
+      "path": "tools/breakers/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "35f2e2122a066e36f6f8e6fcabfbeed003d7a1dc54d668b6b27a27bed8fe416d"
+    },
+    {
+      "path": "tools/breakers/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "b7b9f75848125e87244934046f7ff928bb4fb5d6b02843917869c7ee6b68f64c"
+    }
+  ]
+}
