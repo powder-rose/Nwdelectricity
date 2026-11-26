@@ -1,0 +1,377 @@
+{
+  "feature": "continuity",
+  "baseline": "717f3c109853a0e5d38373069e2eceeaa862f6ea",
+  "requires": [
+    {
+      "path": "custom/energo/css/phase-neutral.css",
+      "text": true,
+      "sha256": "2c4fbc4abed864359fe1a7c071297e855aaf262d61460c34f034513c94acae91"
+    },
+    {
+      "path": "custom/energo/css/editorial-pages.css",
+      "text": true,
+      "sha256": "90da5c11d15adf651e55c0ef1c655a96fb22052bdfa70403dc7c2c46d7acf137"
+    },
+    {
+      "path": "custom/energo/js/lead-forms.js",
+      "text": true,
+      "sha256": "33297a2b4ffc6ca076f96edd7dd152a2a72ce95858ab9d0654dd1fd5979664e7"
+    },
+    {
+      "path": "custom/energo/modules/feedback/phase-neutral.php",
+      "text": true,
+      "sha256": "a454c00330efec47fc9601c22bb58c0b1b1bc86d1027a5da1077c4d7c22156b1"
+    },
+    {
+      "path": "custom/energo/modules/feedback/rcd.php",
+      "text": true,
+      "sha256": "140eb1a4fe436b320f51545006725af00868175f15c82cc82890c12aa5deab86"
+    },
+    {
+      "path": "custom/energo/modules/feedback/power-tools.php",
+      "text": true,
+      "sha256": "0b03708506f10c3c57850baed9e0f819a3165791fc5ab4e963ec55a91f8fc74f"
+    },
+    {
+      "path": "custom/energo/modules/feedback/laboratory.php",
+      "text": true,
+      "sha256": "478733089241f40be9e3a92942e226089779fecc9c5eb59d28b8032ab36cb3c8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/document-request.php",
+      "text": true,
+      "sha256": "ef6ac1ae2b00416fe34e3c6983cffc5c2c3e5efe33043107bd598f6d69bed2e8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/boykov-hub.php",
+      "text": true,
+      "sha256": "591ac5a7e271ec9dab2155c839b982e75b0c2d1cf186be9db354d2ffa28ba86c"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_content.php",
+      "text": true,
+      "sha256": "d0216e97fb017df9dcd8e6b49c75ddb7ae10c168ab5cb2bdfee3ad7a9ce02539"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_links.php",
+      "text": true,
+      "sha256": "a16e990933503ec5589e5faef838081ac33fdbb51be94279ea3db9765a4e0ea8"
+    },
+    {
+      "path": "custom/energo/themes/blocks/header.php",
+      "text": true,
+      "sha256": "08afd0c9b55df50b1b7dc45170c2d955888b94e195a7fd613999e115ec6f9830"
+    },
+    {
+      "path": "custom/energo/themes/blocks/footer.php",
+      "text": true,
+      "sha256": "5efffba7d605f83431672251927ee9cebb743799a65488186c653e91b105629b"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_head.php",
+      "text": true,
+      "sha256": "fa03acb81b07e1745a7ec9bb39594f24a210bc95c9de5b3f490a809c770fbe9d"
+    },
+    {
+      "path": "redaktsiya/lib/db.php",
+      "text": true,
+      "sha256": "1e3e3aaad8bc5eead211db4a0ff21831c800ab5938ef43769250b4c1985599cd"
+    },
+    {
+      "path": "scripts/phase-neutral-schema.php",
+      "text": true,
+      "sha256": "bedac1ab14d4b3d6c2bed316462605e35f7314ec9a644e526aa551ab00a119ba"
+    },
+    {
+      "path": "scripts/rcd-lab-link.php",
+      "text": true,
+      "sha256": "7cf5092e59d45f987edb14aa90afa005bdbcc3e6d0db0821f618c5be40fe5239"
+    },
+    {
+      "path": "scripts/test-phase-neutral-schema.php",
+      "text": true,
+      "sha256": "8096cd8e91248b74b974ebac06fa1842c99a0aaa1e9e005a46296939d740527a"
+    },
+    {
+      "path": "scripts/test-document-request.php",
+      "text": true,
+      "sha256": "f2227a03fc75ab275dfe2593aacedc279584a985a1b0396bb8647fef7782e47e"
+    },
+    {
+      "path": "scripts/test-rcd-laboratory.php",
+      "text": true,
+      "sha256": "2593617c43481914e9b7a9430a758da11ecd9cfdc7a774e4b097d8b42b46ca86"
+    },
+    {
+      "path": "scripts/test-power-tools.php",
+      "text": true,
+      "sha256": "574d6b16bef9f1747661f30c2b63b5bc8cc2c04ef60d92bf184d2fea30ad2d62"
+    },
+    {
+      "path": "scripts/test-rcd.php",
+      "text": true,
+      "sha256": "9cf5e76bc7c3b3ece59f064a1362f1d5b0cc2e5c4515cde79a97de2122710de1"
+    },
+    {
+      "path": "scripts/test-phase-neutral.php",
+      "text": true,
+      "sha256": "4235d56f105b138cce1b7e92effe9a6d3b24f42935334304af8d2c7d253d8ea6"
+    },
+    {
+      "path": "scripts/test-laboratory.php",
+      "text": true,
+      "sha256": "7e05397ffb57df8dccff25957caac56eb5dd653a16f09f977f630789bb3c6048"
+    },
+    {
+      "path": "scripts/test-laboratory-queries.php",
+      "text": true,
+      "sha256": "39c516cb2772765d57d5253dfb9a18aa64a3ce85c244f0f3586d88c35c7ddc68"
+    },
+    {
+      "path": "custom/energo/modules/feedback/insulation.php",
+      "text": true,
+      "sha256": "a3ec5aa67a7e9f108881e20645bcb0a1ac6485acc7aef51122aa460588fc2400"
+    },
+    {
+      "path": "scripts/test-insulation.php",
+      "text": true,
+      "sha256": "9c39e63fa7a9979accfce36b0bbd0fcc1c3160ce79d9b67a375b09deb52ecf28"
+    },
+    {
+      "path": "custom/energo/modules/feedback/grounding.php",
+      "text": true,
+      "sha256": "86ee9988dc60418a10809abbab193fb4a14dac8e70257fdd22d1630787206f99"
+    },
+    {
+      "path": "scripts/test-grounding.php",
+      "text": true,
+      "sha256": "5049a9699e6702a5b9a496ed9ae76d40a1763808d078bec14ed73dfce14ac108"
+    },
+    {
+      "path": "custom/energo/modules/feedback/breakers.php",
+      "text": true,
+      "sha256": "3036bef120a4e44b1b44ed352defbb6ea4934d91364239bcee8480250be787cb"
+    },
+    {
+      "path": "scripts/test-breakers.php",
+      "text": true,
+      "sha256": "dfce36da9c3b23d1f6b34a2d9ed634d6b9256186518b649842c37a4a91dfbf08"
+    },
+    {
+      "path": "custom/energo/css/service-callback.css",
+      "text": true,
+      "sha256": "2046471374e69aea0186df51ce364f23376ebaa2a0a4fb4cbee3fb7ac4e33bf0"
+    },
+    {
+      "path": "custom/energo/themes/blocks/callback.php",
+      "text": true,
+      "sha256": "15da2fe10432fd42a9a51893c2ec1146273a705db8c59843eb8e2ad4fcc9f7c8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/cables.php",
+      "text": true,
+      "sha256": "8a9c2e81bbe2f174703164708e6b4b44bb534b9534bf78ec70aa9aa8a2b12769"
+    },
+    {
+      "path": "scripts/test-cables.php",
+      "text": true,
+      "sha256": "97a7babde0fa3a6e03f33e7c7e93eda39be7fb6c9dee12b3d9f0b9d5a93b1b9d"
+    },
+    {
+      "path": "custom/energo/modules/feedback/commissioning.php",
+      "text": true,
+      "sha256": "ecd0ec93ab9555944e1e2a78d017a49270be908244213b74e60eddf6fb2419c0"
+    },
+    {
+      "path": "scripts/test-commissioning.php",
+      "text": true,
+      "sha256": "74dadebd27e60c946467a1fa8d0174c7db36322fa226ba31c62567fc7052fc84"
+    },
+    {
+      "path": "custom/energo/modules/feedback/tehotchet.php",
+      "text": true,
+      "sha256": "70de26beb9563ed821c28f324fc6cc24f8f66a25c6b4566a1abb9f4385e82eef"
+    },
+    {
+      "path": "scripts/test-tehotchet.php",
+      "text": true,
+      "sha256": "125b3ca818146383f822f000cd1ecf5c1a7754665e01b95aacdfb0a2e37f164b"
+    }
+  ],
+  "files": [
+    {
+      "path": "custom/energo/css/continuity.css",
+      "text": true,
+      "base": null,
+      "sha256": "4381ba417473491804a8b83d670de0125e7df8ce9adfafc79518547f8b53d2cb"
+    },
+    {
+      "path": "custom/energo/images/continuity/illustrations.svg",
+      "text": true,
+      "base": null,
+      "sha256": "389591f25ce045092daa897e2cacb19c1ec8174f79eb94541e762b88f42b4865"
+    },
+    {
+      "path": "custom/energo/images/continuity/proverka-metallosvyazi.webp",
+      "text": false,
+      "base": null,
+      "sha256": "2936967e5436d78ed194d9b0a66c20961007b36efe6be66d9c4efe0553835944"
+    },
+    {
+      "path": "custom/energo/js/continuity.js",
+      "text": true,
+      "base": null,
+      "sha256": "f405f2190684924cea635c900dbf891602e309cc0f69391860dc2948ba9c53b4"
+    },
+    {
+      "path": "custom/energo/modules/feedback/continuity.php",
+      "text": true,
+      "base": null,
+      "sha256": "705807a1f890f9144c53b4051ed331aa5f0e7163c074d678c8ed4c83c783d931"
+    },
+    {
+      "path": "custom/energo/modules/feedback/feedback.action.php",
+      "text": true,
+      "base": "f6e10aecc8e2e9f45fb7d01336b41050129e56d7e79aa9b07b3419d29610f0cb",
+      "sha256": "ab0411448562e422d30c429374648fd53719a143d792bb5ea858e5fa483b44a9"
+    },
+    {
+      "path": "custom/energo/modules/feedback/lead.php",
+      "text": true,
+      "base": "ec093f7cbe9063301632634e7f6ff7d2cf113a17666a6951e5ed0af1a93fee67",
+      "sha256": "1de6ea83fd3c3c2adff2293a0300611706ae1ac5333dfd390d95c072f652a6b1"
+    },
+    {
+      "path": "custom/energo/modules/feedback/views/feedback.view.form_continuity.php",
+      "text": true,
+      "base": null,
+      "sha256": "b4038a3c226f457d501d12c14e756ee8347020e872aef7244fdb6a8f548cd24b"
+    },
+    {
+      "path": "custom/energo/themes/blocks/head.php",
+      "text": true,
+      "base": "f1a8e20592eb737ed994aa1adf9ffc93bdf1be9907224294ef56ad0388cdcc6b",
+      "sha256": "6c00ef31cbaad93a64b88f93e0ba3e2dacbfb0c1cd42ce5a4b82e4dc474870fc"
+    },
+    {
+      "path": "custom/energo/themes/blocks/modal.php",
+      "text": true,
+      "base": "8779da7a17e4dfb09f9dc31962f04b1ea40308562160f1f2125417b84dc048cd",
+      "sha256": "d1bfe971f78e324cb59b5e458d71d02b4984d42610ca56eb6b8ed9ef023d9f26"
+    },
+    {
+      "path": "custom/energo/themes/commissioning_content.php",
+      "text": true,
+      "base": "e52bf1bed90a42d63796c5bfa27b045dbe73a64cbed54775a63634575a951b9a",
+      "sha256": "720755e67c1ea233c63f5f051400ad52fa8b962e55c8e7e8f8865c623aac3e56"
+    },
+    {
+      "path": "custom/energo/themes/continuity.php",
+      "text": true,
+      "base": null,
+      "sha256": "00d2ff3457562ff806080e491e6b91221c751b41323001136c6c00e992ac9cb4"
+    },
+    {
+      "path": "custom/energo/themes/continuity_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "dc525a047ece4af72f581effb9138f444e6b3332a6433d0c3e759e937c22767f"
+    },
+    {
+      "path": "custom/energo/themes/editorial_pages.php",
+      "text": true,
+      "base": "e6210161074c3e5f84fdebd38cdfe947c6ab1b410e9465d2c58b9f7ed38007d7",
+      "sha256": "c8ec7e6ac478a75dfef187c4fd4a8329a084686ad4668d9c9dddfa2e5935eed3"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_commissioning_content.php",
+      "text": true,
+      "base": "4328cf5bc4390e5efe9870379043f02d82a29093d81c62eed42fe082a231a6a1",
+      "sha256": "92045c4789076c3989c619b1e5a60fb7e998973c96d02f02a7cb555db6967144"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_continuity_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "f1226cdafa4813ba1f6d0e54e5a545d631a3bbd0e39141b264c11b363a41bd9b"
+    },
+    {
+      "path": "custom/energo/themes/m/continuity.php",
+      "text": true,
+      "base": null,
+      "sha256": "c1f282085e3a84909372385a3a4f327924a7cd3baee5572b3b864c5eb3c491e8"
+    },
+    {
+      "path": "docs/CONTINUITY.md",
+      "text": true,
+      "base": null,
+      "sha256": "7dcb5863824eedc65ac7ef62b07ca5dbf4e0e06dd2054e8a1b807baf9075abd0"
+    },
+    {
+      "path": "scripts/check-continuity-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "e49a391514b729a0270aa5719290796654de55a952bdf52c732798b2a374eb84"
+    },
+    {
+      "path": "scripts/continuity-html.php",
+      "text": true,
+      "base": null,
+      "sha256": "65096bebf5df384cd20672d8f6b02f99a99e5eb74abc6c40f744540f337e5b00"
+    },
+    {
+      "path": "scripts/continuity-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "002cc21c7d52343ee1562e400db1f313907de69f73417a9cace76fe42512ad52"
+    },
+    {
+      "path": "scripts/install-continuity.php",
+      "text": true,
+      "base": null,
+      "sha256": "b7eb2b08dc3fe8da32d47c3f9585c9eb23678e804876d2fb4cc761c1fb47e5ea"
+    },
+    {
+      "path": "scripts/test-continuity-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "061c8bd303da5783e106c27e2cc787f87f407ff074316e78c3c85c231f3ab509"
+    },
+    {
+      "path": "scripts/test-continuity-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "074e47b72ba78dc1c2ea10efa06ad6b70ef1c4c70cbff5e049b17894f54101c1"
+    },
+    {
+      "path": "scripts/test-continuity-render.php",
+      "text": true,
+      "base": null,
+      "sha256": "448dcd48d6507df2698a39490f840ff6d3a60ce0f0cd18641ea5cfdf14a3aa0d"
+    },
+    {
+      "path": "scripts/test-continuity-shell.php",
+      "text": true,
+      "base": null,
+      "sha256": "571c868530f1071787566b4f3b90e413f52b762c4a1536af0cda1957960bc97d"
+    },
+    {
+      "path": "scripts/test-continuity.php",
+      "text": true,
+      "base": null,
+      "sha256": "848ddb338bc698be1cfcc226fc05781ce238296b323ae435c944969468375781"
+    },
+    {
+      "path": "tools/continuity/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "48cc4e95b7ac602a9de92f827c1cbd11ae29929e6cafcf263724e71646c5699b"
+    },
+    {
+      "path": "tools/continuity/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "2e9a749b105cd11b9a4e3c8b5e2c87059786ce83bb5d6ed9dfe57e90e3cbaa4f"
+    }
+  ]
+}

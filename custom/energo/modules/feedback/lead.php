@@ -42,7 +42,8 @@ function nwdFeedbackLead($id, $siteId) {
     require_once __DIR__.'/cables.php';
     require_once __DIR__.'/commissioning.php';
     require_once __DIR__.'/tehotchet.php';
-    return nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row))))))))));
+    require_once __DIR__.'/continuity.php';
+    return nwdContinuityLead(nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row)))))))))));
 }
 
 function nwdFeedbackEscape($text) {

@@ -24,7 +24,8 @@ if (NwdEditorialPages::isEditorial($this->diafan) && in_array($nwdCallbackPath, 
     'services/proverka-avtomaticheskikh-vyklyuchateley',
     'services/ispytanie-silovykh-kabelnykh-liniy-napryazheniem',
     'services/ekspluatatsionnye-i-priemo-sdatochnye-ispytaniya',
-    'services/tekhnicheskiy-otchet-po-elektroizmereniyam'
+    'services/tekhnicheskiy-otchet-po-elektroizmereniyam',
+    'services/zamer-metallosvyazi'
 ), true)) {
     echo '<insert name="show_include" file="callback" />';
 }

@@ -40,7 +40,7 @@ if (! defined('DIAFAN'))
 		if (NwdEditorialPages::isResponsible($this->diafan)) { $editorialStyle = 'responsible-editorial.css'; }
 		if (NwdEditorialPages::isBlog($this->diafan)) { $editorialStyle = 'author-blog.css'; }
 		if (NwdEditorialPages::isMaintenance($this->diafan)) { $editorialStyle = 'maintenance-editorial.css'; }
-		if (NwdEditorialPages::isPhaseNeutral($this->diafan) || NwdEditorialPages::isRcd($this->diafan) || NwdEditorialPages::isPowerTools($this->diafan) || NwdEditorialPages::isLaboratory($this->diafan) || NwdEditorialPages::isInsulation($this->diafan) || NwdEditorialPages::isGrounding($this->diafan) || NwdEditorialPages::isBreakers($this->diafan) || NwdEditorialPages::isCables($this->diafan) || NwdEditorialPages::isCommissioning($this->diafan) || NwdEditorialPages::isTehotchet($this->diafan)) { $editorialStyle = 'phase-neutral.css'; }
+		if (NwdEditorialPages::isPhaseNeutral($this->diafan) || NwdEditorialPages::isRcd($this->diafan) || NwdEditorialPages::isPowerTools($this->diafan) || NwdEditorialPages::isLaboratory($this->diafan) || NwdEditorialPages::isInsulation($this->diafan) || NwdEditorialPages::isGrounding($this->diafan) || NwdEditorialPages::isBreakers($this->diafan) || NwdEditorialPages::isCables($this->diafan) || NwdEditorialPages::isCommissioning($this->diafan) || NwdEditorialPages::isTehotchet($this->diafan) || NwdEditorialPages::isContinuity($this->diafan)) { $editorialStyle = 'phase-neutral.css'; }
 		if (NwdEditorialPages::isServices($this->diafan)) { $editorialStyle = 'services-directory.css'; }
 		echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/' . $editorialStyle), ENT_QUOTES, 'UTF-8') . (in_array($editorialStyle,array('author-blog.css','phase-neutral.css'),true) ? '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/' . $editorialStyle)) : '') . '">';
         if (NwdEditorialPages::isPowerTools($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/power-tools.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/power-tools.css')) . '">'; }
@@ -50,6 +50,11 @@ if (! defined('DIAFAN'))
         if (NwdEditorialPages::isBreakers($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/breakers.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/breakers.css')) . '">'; }
         if (NwdEditorialPages::isCables($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/cables.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/cables.css')) . '">'; }
         if (NwdEditorialPages::isCommissioning($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/commissioning.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/commissioning.css')) . '">'; }
+        if (NwdEditorialPages::isContinuity($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/continuity.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/continuity.css')) . '">'; }
+        if (NwdEditorialPages::isContinuity($this->diafan) && ((defined('IS_MOBILE') && IS_MOBILE) || !($this->diafan->configmodules('use_animation') || $this->diafan->configmodules('use_animation','site') || !empty($this->diafan->_users->useradmin)))) {
+            echo '<link rel="stylesheet" href="'.htmlspecialchars(BASE_PATH.Custom::path('css/jquery.fancybox.min.css'),ENT_QUOTES,'UTF-8').'">';
+        }
+
         if (NwdEditorialPages::isTehotchet($this->diafan)) { echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/tehotchet.css'), ENT_QUOTES, 'UTF-8') . '?v=' . filemtime(ABSOLUTE_PATH . Custom::path('css/tehotchet.css')) . '">'; }
 	}
 	echo '<link rel="stylesheet" href="' . htmlspecialchars(BASE_PATH . Custom::path('css/service-navigation.css'), ENT_QUOTES, 'UTF-8') . '">';
