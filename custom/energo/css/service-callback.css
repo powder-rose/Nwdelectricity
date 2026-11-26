@@ -1,0 +1,12 @@
+/* The homepage callback, shared by the standalone service pages. */
+.home-callback.nwd-service-callback{position:fixed;z-index:50;right:28px;bottom:28px;display:inline-flex;align-items:center;min-width:48px;min-height:48px;gap:10px;padding:7px 12px 7px 7px;border:1px solid #333;border-radius:2px;background:#151515;color:#fff;text-decoration:none;box-sizing:border-box;box-shadow:0 6px 24px rgba(21,21,21,.1);transition:transform .2s ease,background-color .2s ease}
+.nwd-service-callback .home-callback__icon{display:grid;place-items:center;flex:none;width:32px;height:32px;background:#a7ef43;color:#151515}
+.nwd-service-callback .home-callback__icon svg{width:18px;height:18px}
+.nwd-service-callback .home-callback__label{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:500;line-height:1.4}
+.nwd-service-callback .home-callback__label span{color:#a7ef43;font-size:17px}
+.home-callback.nwd-service-callback:hover{transform:translateY(-3px);background:#292929;color:#fff;text-decoration:none}
+.home-callback.nwd-service-callback:focus-visible{outline:2px solid #a7ef43;outline-offset:4px}
+.fancybox-active .nwd-service-callback,.mm-wrapper.open .nwd-service-callback{visibility:hidden;pointer-events:none}
+@media(max-width:767px){.home-callback.nwd-service-callback{right:15px;bottom:max(15px,env(safe-area-inset-bottom))}}
+@media(max-width:480px){.home-callback.nwd-service-callback{gap:0;padding:6px}.nwd-service-callback .home-callback__label{display:none}}
+@media(prefers-reduced-motion:reduce){.home-callback.nwd-service-callback{transition:none}.home-callback.nwd-service-callback:hover{transform:none}}

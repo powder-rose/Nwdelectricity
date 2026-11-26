@@ -1,0 +1,66 @@
+{
+  "feature": "callback",
+  "baseline": "90f0c8ebb5f58018a09897cde23da737d4c3d3cf",
+  "files": [
+    {
+      "path": "custom/energo/css/service-callback.css",
+      "text": true,
+      "base": null,
+      "sha256": "2046471374e69aea0186df51ce364f23376ebaa2a0a4fb4cbee3fb7ac4e33bf0"
+    },
+    {
+      "path": "custom/energo/themes/blocks/callback.php",
+      "text": true,
+      "base": null,
+      "sha256": "15da2fe10432fd42a9a51893c2ec1146273a705db8c59843eb8e2ad4fcc9f7c8"
+    },
+    {
+      "path": "custom/energo/themes/blocks/modal.php",
+      "text": true,
+      "base": "c53345ccf654df0d9991dba640908586f6ddf85f06679bfbca393a6ce8cb363c",
+      "sha256": "bcecf52912d5d9a03d223c0f29d32cab025b082675b8ac360c0920c3059eeb9d"
+    },
+    {
+      "path": "custom/energo/themes/m/phase_neutral.php",
+      "text": true,
+      "base": null,
+      "sha256": "0297e4127c04c5e2505a19a2a33c80c100419153f7c5c40c66249b96bd1bb374"
+    },
+    {
+      "path": "custom/energo/themes/m/power_tools.php",
+      "text": true,
+      "base": null,
+      "sha256": "1318dd190b3b01173a571ba7698e0f9e86f68586e27a5270273aa4d97a008157"
+    },
+    {
+      "path": "custom/energo/themes/m/rcd.php",
+      "text": true,
+      "base": null,
+      "sha256": "096e0a307eafe057c3afe0ad8e77a1cb2326f81cc88b58a460e3eb30a1f04e45"
+    },
+    {
+      "path": "docs/SERVICE_CALLBACK.md",
+      "text": true,
+      "base": null,
+      "sha256": "5fa13bbe19aa0056bcaa9c33877724f71d590e5cb055be6176f9a07f8416f283"
+    },
+    {
+      "path": "scripts/check-service-callback.php",
+      "text": true,
+      "base": null,
+      "sha256": "6845f2c17c77ac995ae9c97c3b8d61821da517d6b2f112cc7f02004bc6ee799d"
+    },
+    {
+      "path": "tools/callback/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "e4643349fb35af66485e29f7083bd8fffbce0057caa609714d676ce443f98186"
+    },
+    {
+      "path": "tools/callback/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "779a6f01b508ea8c29b1ad8f9fea3b0a940e351b3ff33662b6c874d651d0cc45"
+    }
+  ]
+}

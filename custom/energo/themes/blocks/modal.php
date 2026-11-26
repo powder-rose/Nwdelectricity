@@ -9,6 +9,22 @@ if (! defined('DIAFAN'))
 	}
 	include $path.'/includes/404.php';
 }
+// Standalone service shells share this block; the older editorial shells already have a callback.
+require_once ABSOLUTE_PATH . Custom::path('themes/editorial_pages.php');
+$nwdCallbackPath = (string) $this->diafan->_site->rewrite;
+if ($nwdCallbackPath === '') { $nwdCallbackPath = $this->diafan->_route->link((int) $this->diafan->_site->id); }
+$nwdCallbackPath = trim((string) parse_url($nwdCallbackPath, PHP_URL_PATH), '/');
+if (NwdEditorialPages::isEditorial($this->diafan) && in_array($nwdCallbackPath, array(
+    'services/izmerenie-petli-faza-nul',
+    'services/proverka-uzo',
+    'services/ispytanie-elektroinstrumenta',
+    'services/elektroizmeritelnaya-laboratoriya',
+    'services/zamer-soprotivleniya-izolyatsii',
+    'services/proverka-soprotivleniya-zazemliteley',
+    'services/proverka-avtomaticheskikh-vyklyuchateley'
+), true)) {
+    echo '<insert name="show_include" file="callback" />';
+}
 ?> 
 
 
