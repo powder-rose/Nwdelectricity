@@ -43,7 +43,8 @@ function nwdFeedbackLead($id, $siteId) {
     require_once __DIR__.'/commissioning.php';
     require_once __DIR__.'/tehotchet.php';
     require_once __DIR__.'/continuity.php';
-    return nwdContinuityLead(nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row)))))))))));
+    require_once __DIR__.'/lightning.php';
+    return nwdLightningLead(nwdContinuityLead(nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row))))))))))));
 }
 
 function nwdFeedbackEscape($text) {

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="building" viewBox="0 0 480 400">
+    <path d="m46 296 179-88 211 88-179 80z" fill="#d5dfc6" stroke="none"/>
+    <path d="m96 158 179-61 112 67-180 66z" fill="#f5f8ef"/>
+    <path d="m96 158 111 72v90L96 247z" fill="#e4ecd8"/><path d="m207 230 180-66v90l-180 66z" fill="#f1f6e9"/>
+    <path d="m124 194 20 13v23l-20-13z m35 23 20 13v23l-20-13z" stroke="#91a77c"/>
+    <path d="m235 244 30-11v27l-30 11z m46-17 30-11v27l-30 11z m46-17 30-11v27l-30 11z" stroke="#91a77c"/>
+    <path d="M119 134V91m148 10V57m98 72V86" stroke="#6d8457" stroke-width="3"/>
+    <path d="m119 134 148-49 98 58-148 57z M217 200v114l30 13v28m118-212v113l23 17v38" stroke="#88b84a" stroke-width="4"/>
+    <path d="m105 296 111-39 171 67-118 41z" stroke="#aec494" stroke-dasharray="5 8"/>
+    <path d="m247 345 22 10m-22-2 22 10m109-61 20 9m-20-1 20 9" stroke="#6a8355"/>
+    <path d="M207 267h20v21h-20z" fill="#f1f7e8" stroke="#6d8e4d"/>
+    <circle cx="217" cy="277" r="3" fill="#9fe640" stroke="none"/>
+    <circle cx="119" cy="134" r="5" fill="#a7ef43" stroke="none"/><circle cx="267" cy="85" r="5" fill="#a7ef43" stroke="none"/><circle cx="365" cy="143" r="5" fill="#a7ef43" stroke="none"/>
+  </symbol>
+  <symbol id="periodic" viewBox="0 0 480 400">
+    <rect x="99" y="107" width="252" height="207" rx="5" stroke-width="5"/><path d="M99 160h252M155 84v46m139-46v46" stroke-width="5"/>
+    <path d="M145 205h25m35 0h25m-85 44h25m35 0h25" stroke-width="4"/>
+    <circle cx="322" cy="285" r="65" fill="#2a3521" stroke-width="5"/><path d="M322 251v37l26 14" stroke="#a7ef43" stroke-width="6"/>
+  </symbol>
+  <symbol id="repair" viewBox="0 0 480 400">
+    <path d="M99 83v250h91M99 126h55m-55 161h55" stroke="#829b69" stroke-width="4"/>
+    <path d="M154 77v101m0 60v100" stroke-width="9"/>
+    <rect x="134" y="175" width="40" height="66" rx="3" fill="#2a3521" stroke-width="4"/>
+    <circle cx="154" cy="190" r="5" fill="#a7ef43" stroke="none"/>
+    <circle cx="154" cy="225" r="5" fill="#a7ef43" stroke="none"/>
+    <path d="M273 112c-20-8-43-3-57 12l27 27-20 20-27-27c-15 29 5 62 36 62l79 79c9 9 23 9 32 0s9-23 0-32l-79-79c9-21 12-43 9-62Z" fill="#28351e" stroke="#a7ef43" stroke-width="5"/>
+    <circle cx="327" cy="269" r="6" stroke="#a7ef43" stroke-width="4"/>
+  </symbol>
+  <symbol id="inspect" viewBox="0 0 480 400">
+    <path d="M133 79v241m190-241v82" stroke-width="8"/><rect x="113" y="158" width="41" height="67" rx="3" stroke-width="4"/><path d="M123 178h21m-21 25h21" stroke="#a7ef43" stroke-width="5"/>
+    <circle cx="288" cy="226" r="68" stroke-width="5"/><path d="m337 275 46 46" stroke-width="12"/><path d="m255 224 22 23 40-44" stroke="#a7ef43" stroke-width="6"/>
+    <path d="M182 191h36" stroke-dasharray="5 8" stroke-width="3"/>
+  </symbol>
+  <symbol id="report" viewBox="0 0 480 400">
+    <path d="M139 68h165l50 53v224H139z" fill="#f5f8ef" stroke-width="3"/><path d="M304 68v53h50M178 157h91m-91 34h137m-137 34h137m-137 34h78" stroke-width="3"/>
+    <path d="M115 91H99v278h206v-10" stroke="#a5b78e" stroke-width="3"/>
+    <circle cx="323" cy="302" r="47" fill="#d5e5bf" stroke-width="3"/><path d="m301 303 14 15 30-34" stroke="#65902f" stroke-width="4"/>
+  </symbol>
+</svg>
