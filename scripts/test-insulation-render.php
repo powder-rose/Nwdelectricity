@@ -3,6 +3,7 @@
 if (PHP_SAPI!=='cli') { http_response_code(404);exit; }
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
 define('DIAFAN',true);define('_LANG',1);define('ABSOLUTE_PATH',dirname(__DIR__).'/');
+require_once __DIR__.'/insulation-html.php';
 require ABSOLUTE_PATH.'includes/diafan.php';
 require ABSOLUTE_PATH.'includes/controller.php';
 require ABSOLUTE_PATH.'includes/parser_theme.php';
@@ -49,7 +50,7 @@ $html=$parser->get_function_in_theme('<insert name="show_insulation_content" />'
 $doc=new DOMDocument;$prev=libxml_use_internal_errors(true);$doc->loadHTML('<?xml encoding="UTF-8">'.$html,LIBXML_NONET);libxml_clear_errors();libxml_use_internal_errors($prev);$x=new DOMXPath($doc);
 $copy=require ABSOLUTE_PATH.'custom/energo/themes/insulation_content.php';$checks=0;
 function insulationRenderCheck($ok,$label){global $checks;if(!$ok){throw new RuntimeException($label);}$checks++;}
-insulationRenderCheck($x->query('//h1')->length===1 && trim($x->query('//h1')->item(0)->textContent)===$copy['name'],'one exact H1');
+insulationRenderCheck($x->query('//h1')->length===1 && nwdInsulationHeadingText($x->query('//h1')->item(0))===$copy['name'],'one exact H1');
 insulationRenderCheck($x->query('//section')->length===6 && $x->query('//h2')->length===5,'six ordered sections');
 $order=array();foreach($x->query('//section') as $node){$order[]=$node->getAttribute('aria-labelledby');}
 insulationRenderCheck($order===array('ins-title','ins-scope-title','ins-when-title','ins-process-title','ins-cost-title','ins-faq-title'),'brief section order');

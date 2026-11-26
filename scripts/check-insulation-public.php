@@ -1,6 +1,7 @@
 <?php
 /** Validate a downloaded public response without initiating requests or sending leads. */
 if(PHP_SAPI!=='cli'){http_response_code(404);exit;}
+require_once __DIR__.'/insulation-html.php';
 function nwdInsulationValidatePublicResponse($html,array $copy) {
     if(!is_string($html) || $html===''){throw new RuntimeException('Empty response');}
     if(preg_match('/\[ERROR#\d+\]/',$html)){throw new RuntimeException('DIAFAN reported a page rendering error');}
@@ -22,7 +23,7 @@ function nwdInsulationValidatePublicResponse($html,array $copy) {
     $assert($body && in_array('page-insulation',preg_split('/\s+/',trim($body->getAttribute('class'))),true),'Insulation route presentation is not active');
     $assert(!$body->hasAttribute('style'),'Unexpected body inline style');
     $assert($x->query('//header[contains(@class,"page-header")]')->length===1 && $x->query('//footer[contains(@class,"page-footer")]')->length===1,'Shared header or footer duplicated');
-    $assert($x->query('//h1')->length===1 && $text('//h1')===$copy['name'],'Unexpected H1');
+    $assert($x->query('//h1')->length===1 && nwdInsulationHeadingText($x->query('//h1')->item(0))===$copy['name'],'Unexpected H1');
     $assert($x->query('//main//section')->length===6 && $x->query('//main//h2')->length===5,'Unexpected section structure');
     $assert(html_entity_decode($text('//title'),ENT_QUOTES,'UTF-8')===$copy['seoTitle'],'Unexpected SEO title');
     $assert($x->query('//meta[@name="description" and @content="'.$copy['description'].'"]')->length===1,'Unexpected meta description');

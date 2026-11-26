@@ -12,6 +12,13 @@ $dom=new DOMDocument;$prev=libxml_use_internal_errors(true);$dom->loadHTML($with
 if(strpos($dom->getElementsByTagName('body')->item(0)->getAttribute('class'),'page-insulation')!==false){throw new RuntimeException('Tracking-pixel regression fixture no longer reproduces');}
 $cases=array(
     array('native desktop',$html,true),
+    array('libxml 2.7.8 heading whitespace',preg_replace('~<h1\b[^>]*>.*?</h1>~s','<h1 id="ins-title">Измерение<br> сопротивления<br><span>изоляции</span></h1>',$html,1),true),
+    array('heading line break whitespace',preg_replace('~<h1\b[^>]*>.*?</h1>~s',"<h1>Измерение\n<br>\tсопротивления<br><span>изоляции</span></h1>",$html,1),true),
+    array('heading nonbreaking spaces',preg_replace('~<h1\b[^>]*>.*?</h1>~s','<h1>Измерение&nbsp;сопротивления&nbsp;изоляции</h1>',$html,1),true),
+    array('joined words without line break',preg_replace('~<h1\b[^>]*>.*?</h1>~s','<h1>Измерение сопротивления<span>изоляции</span></h1>',$html,1),false),
+    array('changed heading word',preg_replace('~<h1\b[^>]*>.*?</h1>~s','<h1>Измерение<br>напряжения<br><span>изоляции</span></h1>',$html,1),false),
+    array('changed heading order',preg_replace('~<h1\b[^>]*>.*?</h1>~s','<h1>Измерение<br>изоляции<br><span>сопротивления</span></h1>',$html,1),false),
+    array('duplicate heading',preg_replace('~</h1>~','</h1><h1>Измерение сопротивления изоляции</h1>',$html,1),false),
     array('head tracking pixel',$withCounter,true),
     array('head no-script counter',str_replace('</head>','<noscript>'.$counter.'</noscript></head>',$html),true),
     array('client script body literal',str_replace('</head>','<script>var markup="<body class=example>";</script></head>',$html),true),

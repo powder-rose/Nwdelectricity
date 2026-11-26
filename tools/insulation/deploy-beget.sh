@@ -72,18 +72,25 @@ while IFS='|' read -r path existed; do
     if [[ "$path" == *.php ]]; then "$phpbin" -n -d short_open_tag=1 -l "$source/$path" >/dev/null; fi
     if [[ "$existed" == 1 ]]; then mkdir -p "$backup/files/$(dirname "$path")"; cp -p "$site/$path" "$backup/files/$path"; fi
 done < "$backup/restore.list"
-"$phpbin" "$source/scripts/test-document-request.php"
-"$phpbin" "$source/scripts/test-insulation.php"
-"$phpbin" "$source/scripts/test-laboratory.php"
-"$phpbin" "$source/scripts/test-laboratory-queries.php"
-"$phpbin" "$source/scripts/test-insulation-page.php"
-"$phpbin" "$source/scripts/test-insulation-render.php"
-"$phpbin" "$source/scripts/test-power-tools.php"
-"$phpbin" "$source/scripts/test-rcd.php"
-"$phpbin" "$source/scripts/test-phase-neutral.php"
-"$phpbin" "$source/scripts/test-insulation-shell.php"
-"$phpbin" "$source/scripts/test-insulation-shell.php" --mobile
-"$phpbin" "$source/scripts/test-insulation-public.php"
+run_php_check() {
+    local script=$1
+    shift
+    step="php-check:$script"
+    echo "PHP_CHECK=$script"
+    "$phpbin" -d display_errors=stderr -d log_errors=0 "$source/scripts/$script" "$@"
+}
+run_php_check test-document-request.php
+run_php_check test-insulation.php
+run_php_check test-laboratory.php
+run_php_check test-laboratory-queries.php
+run_php_check test-insulation-page.php
+run_php_check test-insulation-render.php
+run_php_check test-power-tools.php
+run_php_check test-rcd.php
+run_php_check test-phase-neutral.php
+run_php_check test-insulation-shell.php
+run_php_check test-insulation-shell.php --mobile
+run_php_check test-insulation-public.php
 if [[ -n "$saved_response" ]]; then
     step=saved-public-response
     # Prove the repaired validator accepts the exact response that caused rollback,

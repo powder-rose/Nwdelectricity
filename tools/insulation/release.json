@@ -217,19 +217,31 @@
       "path": "docs/INSULATION.md",
       "text": true,
       "base": null,
-      "sha256": "be9191a1d8e2341942a1cc6b55eb55744410c989957292a2790d146e46ad011b"
+      "sha256": "ce55073e306b29aafa08a7fd60cc5287f35b85b8fe9963e8e966b91cd7340e71",
+      "previous": [
+        "be9191a1d8e2341942a1cc6b55eb55744410c989957292a2790d146e46ad011b"
+      ]
     },
     {
       "path": "scripts/check-insulation-public.php",
       "text": true,
       "base": null,
-      "sha256": "e3adb453d37fddcebe0c92fb6fde16b3b3480fa3e98c49d471040521462f6b59"
+      "sha256": "03640931624b5156994683bb4cc867c5c97e699e3eebb2365ecb8f6da1ae0fd9",
+      "previous": [
+        "e3adb453d37fddcebe0c92fb6fde16b3b3480fa3e98c49d471040521462f6b59"
+      ]
     },
     {
       "path": "scripts/install-insulation.php",
       "text": true,
       "base": null,
       "sha256": "61a3d22031e82535a5867a3121ff5a10fbde91ac86306cb27df265bce368d9ee"
+    },
+    {
+      "path": "scripts/insulation-html.php",
+      "text": true,
+      "base": null,
+      "sha256": "f44198c7f6bca5d320c43da267ffa14efb3a02e81f824a85d8785fa364fed19b"
     },
     {
       "path": "scripts/insulation-page.php",
@@ -247,13 +259,19 @@
       "path": "scripts/test-insulation-public.php",
       "text": true,
       "base": null,
-      "sha256": "0cf35c8e9714995bbd1f7ea9ba1b3dd800e8b3842daa444cdfd9780e7f4cf9c4"
+      "sha256": "169b5d870506102bc3634ab24bae30ff049287594486c4f48472da8cd33f1775",
+      "previous": [
+        "0cf35c8e9714995bbd1f7ea9ba1b3dd800e8b3842daa444cdfd9780e7f4cf9c4"
+      ]
     },
     {
       "path": "scripts/test-insulation-render.php",
       "text": true,
       "base": null,
-      "sha256": "2b566afd64436dc7a95cbeace5da00e3ec217def1341c324e0083134dfdb70ba"
+      "sha256": "823ad437da8851b85d31b260e672ee99e5bed8e056c7d9e6f7d7b93c3359f785",
+      "previous": [
+        "2b566afd64436dc7a95cbeace5da00e3ec217def1341c324e0083134dfdb70ba"
+      ]
     },
     {
       "path": "scripts/test-insulation-shell.php",
@@ -271,7 +289,10 @@
       "path": "tools/insulation/deploy-beget.sh",
       "text": true,
       "base": null,
-      "sha256": "4d0d69c7a805234ec4faf5ec34c98a2a832f2af10f083b5b483e7dcc095d1a47"
+      "sha256": "23afc5670c8ba50f1efa1caba1dd4bf8c99325c348d173e2c252079ad9cb6f10",
+      "previous": [
+        "4d0d69c7a805234ec4faf5ec34c98a2a832f2af10f083b5b483e7dcc095d1a47"
+      ]
     },
     {
       "path": "tools/insulation/publish-github.ps1",
