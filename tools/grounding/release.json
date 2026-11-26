@@ -1,0 +1,302 @@
+{
+  "feature": "grounding",
+  "baseline": "815dd7acac58dd28e724713fd4eb30fc5f8fe0e6",
+  "requires": [
+    {
+      "path": "custom/energo/css/phase-neutral.css",
+      "text": true,
+      "sha256": "2c4fbc4abed864359fe1a7c071297e855aaf262d61460c34f034513c94acae91"
+    },
+    {
+      "path": "custom/energo/css/editorial-pages.css",
+      "text": true,
+      "sha256": "90da5c11d15adf651e55c0ef1c655a96fb22052bdfa70403dc7c2c46d7acf137"
+    },
+    {
+      "path": "custom/energo/js/lead-forms.js",
+      "text": true,
+      "sha256": "33297a2b4ffc6ca076f96edd7dd152a2a72ce95858ab9d0654dd1fd5979664e7"
+    },
+    {
+      "path": "custom/energo/modules/feedback/phase-neutral.php",
+      "text": true,
+      "sha256": "a454c00330efec47fc9601c22bb58c0b1b1bc86d1027a5da1077c4d7c22156b1"
+    },
+    {
+      "path": "custom/energo/modules/feedback/rcd.php",
+      "text": true,
+      "sha256": "140eb1a4fe436b320f51545006725af00868175f15c82cc82890c12aa5deab86"
+    },
+    {
+      "path": "custom/energo/modules/feedback/power-tools.php",
+      "text": true,
+      "sha256": "0b03708506f10c3c57850baed9e0f819a3165791fc5ab4e963ec55a91f8fc74f"
+    },
+    {
+      "path": "custom/energo/modules/feedback/laboratory.php",
+      "text": true,
+      "sha256": "478733089241f40be9e3a92942e226089779fecc9c5eb59d28b8032ab36cb3c8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/document-request.php",
+      "text": true,
+      "sha256": "ef6ac1ae2b00416fe34e3c6983cffc5c2c3e5efe33043107bd598f6d69bed2e8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/boykov-hub.php",
+      "text": true,
+      "sha256": "591ac5a7e271ec9dab2155c839b982e75b0c2d1cf186be9db354d2ffa28ba86c"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_content.php",
+      "text": true,
+      "sha256": "d0216e97fb017df9dcd8e6b49c75ddb7ae10c168ab5cb2bdfee3ad7a9ce02539"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_links.php",
+      "text": true,
+      "sha256": "a16e990933503ec5589e5faef838081ac33fdbb51be94279ea3db9765a4e0ea8"
+    },
+    {
+      "path": "custom/energo/themes/blocks/header.php",
+      "text": true,
+      "sha256": "08afd0c9b55df50b1b7dc45170c2d955888b94e195a7fd613999e115ec6f9830"
+    },
+    {
+      "path": "custom/energo/themes/blocks/footer.php",
+      "text": true,
+      "sha256": "5efffba7d605f83431672251927ee9cebb743799a65488186c653e91b105629b"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_head.php",
+      "text": true,
+      "sha256": "fa03acb81b07e1745a7ec9bb39594f24a210bc95c9de5b3f490a809c770fbe9d"
+    },
+    {
+      "path": "redaktsiya/lib/db.php",
+      "text": true,
+      "sha256": "1e3e3aaad8bc5eead211db4a0ff21831c800ab5938ef43769250b4c1985599cd"
+    },
+    {
+      "path": "scripts/phase-neutral-schema.php",
+      "text": true,
+      "sha256": "bedac1ab14d4b3d6c2bed316462605e35f7314ec9a644e526aa551ab00a119ba"
+    },
+    {
+      "path": "scripts/rcd-lab-link.php",
+      "text": true,
+      "sha256": "7cf5092e59d45f987edb14aa90afa005bdbcc3e6d0db0821f618c5be40fe5239"
+    },
+    {
+      "path": "scripts/test-phase-neutral-schema.php",
+      "text": true,
+      "sha256": "8096cd8e91248b74b974ebac06fa1842c99a0aaa1e9e005a46296939d740527a"
+    },
+    {
+      "path": "scripts/test-document-request.php",
+      "text": true,
+      "sha256": "f2227a03fc75ab275dfe2593aacedc279584a985a1b0396bb8647fef7782e47e"
+    },
+    {
+      "path": "scripts/test-rcd-laboratory.php",
+      "text": true,
+      "sha256": "2593617c43481914e9b7a9430a758da11ecd9cfdc7a774e4b097d8b42b46ca86"
+    },
+    {
+      "path": "scripts/test-power-tools.php",
+      "text": true,
+      "sha256": "574d6b16bef9f1747661f30c2b63b5bc8cc2c04ef60d92bf184d2fea30ad2d62"
+    },
+    {
+      "path": "scripts/test-rcd.php",
+      "text": true,
+      "sha256": "9cf5e76bc7c3b3ece59f064a1362f1d5b0cc2e5c4515cde79a97de2122710de1"
+    },
+    {
+      "path": "scripts/test-phase-neutral.php",
+      "text": true,
+      "sha256": "4235d56f105b138cce1b7e92effe9a6d3b24f42935334304af8d2c7d253d8ea6"
+    },
+    {
+      "path": "scripts/test-laboratory.php",
+      "text": true,
+      "sha256": "7e05397ffb57df8dccff25957caac56eb5dd653a16f09f977f630789bb3c6048"
+    },
+    {
+      "path": "scripts/test-laboratory-queries.php",
+      "text": true,
+      "sha256": "39c516cb2772765d57d5253dfb9a18aa64a3ce85c244f0f3586d88c35c7ddc68"
+    },
+    {
+      "path": "custom/energo/modules/feedback/insulation.php",
+      "text": true,
+      "sha256": "a3ec5aa67a7e9f108881e20645bcb0a1ac6485acc7aef51122aa460588fc2400"
+    },
+    {
+      "path": "scripts/test-insulation.php",
+      "text": true,
+      "sha256": "9c39e63fa7a9979accfce36b0bbd0fcc1c3160ce79d9b67a375b09deb52ecf28"
+    }
+  ],
+  "files": [
+    {
+      "path": "custom/energo/css/grounding.css",
+      "text": true,
+      "base": null,
+      "sha256": "f960a55ea851381c02755087864985c8c9eef2b2d4c154258d3aaa8ef1af8916",
+      "previous": [
+        "e56d5e52a8543ee245fc84db6a12e7be4ced7c01569a88a1cd5beb0551459433"
+      ]
+    },
+    {
+      "path": "custom/energo/images/grounding/illustrations.svg",
+      "text": true,
+      "base": null,
+      "sha256": "9fad7aaf15dddef09ac21da1e803df4496c543d0528d90642d89e85e678e555c"
+    },
+    {
+      "path": "custom/energo/images/grounding/izmerenie-soprotivleniya-zazemleniya.webp",
+      "text": false,
+      "base": null,
+      "sha256": "07325b1bdf81036a0cb39f2f9e8245ed375b9326b3a321f321dfb8ef0983f1eb"
+    },
+    {
+      "path": "custom/energo/js/grounding.js",
+      "text": true,
+      "base": null,
+      "sha256": "5796d2024e07063b69a75a89b32374a88b24dfc8504b51b43176cd61a95ba08f"
+    },
+    {
+      "path": "custom/energo/modules/feedback/feedback.action.php",
+      "text": true,
+      "base": "5f824fcd35de5881775d5741fa120405e6232bdaf063d68f5fe897d59b4b5744",
+      "sha256": "5a1fb2ceb34028f1177e240d2bdf677a96001b815b60174a24219f253f2f81ba"
+    },
+    {
+      "path": "custom/energo/modules/feedback/grounding.php",
+      "text": true,
+      "base": null,
+      "sha256": "86ee9988dc60418a10809abbab193fb4a14dac8e70257fdd22d1630787206f99"
+    },
+    {
+      "path": "custom/energo/modules/feedback/lead.php",
+      "text": true,
+      "base": "c7c886746729532a51daa262c1341fadb6e7b89bcd587d23b24efcc37f8e30a2",
+      "sha256": "2a0e2f4281983e513db97d1ac4a168a6aaee6d69ec1880caa4fc57a50d733103"
+    },
+    {
+      "path": "custom/energo/modules/feedback/views/feedback.view.form_grounding.php",
+      "text": true,
+      "base": null,
+      "sha256": "629ec2e7e236920e532b6b75bdd93f06146c373e7fe478796304087579e68480"
+    },
+    {
+      "path": "custom/energo/themes/blocks/head.php",
+      "text": true,
+      "base": "ecc0bbce6f82f1e96b62303f471a546dabfe77f918ea7544914967d5e03b4535",
+      "sha256": "73b478405f634b53e7a5b1f1edc732706e4ed9040612dc91c863ce4f04cc4789"
+    },
+    {
+      "path": "custom/energo/themes/editorial_pages.php",
+      "text": true,
+      "base": "1a0411a7ada4a9242a2ee484545e6488bed1f7147e3af27a7f3981cfc855a7a9",
+      "sha256": "7c4f9fad9728aa09a6b915ff02f6fd5fca0b8a7feb55ab616f5a1239c984f020"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_grounding_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "71b85dc01df7f161d1b907333d2d7df9ad4680f288e5c32766a01cf806294033"
+    },
+    {
+      "path": "custom/energo/themes/grounding.php",
+      "text": true,
+      "base": null,
+      "sha256": "bedfcb41243c089a6628ac3dfb884a99e0934e92adf54de6836385887bd18816"
+    },
+    {
+      "path": "custom/energo/themes/grounding_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "596539a25dcd18f1a833308f838a31f4d4dddbf2ffc8320c27d565b1a928c3b3"
+    },
+    {
+      "path": "custom/energo/themes/m/grounding.php",
+      "text": true,
+      "base": null,
+      "sha256": "b5b3cadc4e33fb7ae9c571cc0d7e2ab61fe5c1138575242e2839cf686a422931"
+    },
+    {
+      "path": "docs/GROUNDING.md",
+      "text": true,
+      "base": null,
+      "sha256": "66fc98e69e2c044385e962dc931bb4a9f1a40f1193b44392e84758fe1ff556de"
+    },
+    {
+      "path": "scripts/check-grounding-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "e5beab1f5997cb6594d4056eb1862cec403771de94347aea6c916932d27d7eec"
+    },
+    {
+      "path": "scripts/grounding-html.php",
+      "text": true,
+      "base": null,
+      "sha256": "1dd4a48530a3e680ee95d35c840af3037892c73c47e371b51450b17586e9c153"
+    },
+    {
+      "path": "scripts/grounding-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "9d767b3c241a54c3d75075dde7d017a25df1ecdf89d4770cebca87d76b78a1d2"
+    },
+    {
+      "path": "scripts/install-grounding.php",
+      "text": true,
+      "base": null,
+      "sha256": "51a63eec6064c2cb0009bafdba22e65b40e7b856d37993afe9b1df15490de471"
+    },
+    {
+      "path": "scripts/test-grounding-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "1237dfc33392dc457660624d08d518afbe6de16af04ed0ece3c862472261092d"
+    },
+    {
+      "path": "scripts/test-grounding-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "e31655d5504b2b7d829c470089493c7756ce153802000316d0ca2cc0789d42d0"
+    },
+    {
+      "path": "scripts/test-grounding-render.php",
+      "text": true,
+      "base": null,
+      "sha256": "b4976d8809c0bbf35174ae3e36d3a4fe25b513a8d1ef6717cfa4e9fbcdef6df4"
+    },
+    {
+      "path": "scripts/test-grounding-shell.php",
+      "text": true,
+      "base": null,
+      "sha256": "74e09fc718174762a4e065c520a2140b2b95b2e92894ddfcc0bf3c2121e17cb0"
+    },
+    {
+      "path": "scripts/test-grounding.php",
+      "text": true,
+      "base": null,
+      "sha256": "5049a9699e6702a5b9a496ed9ae76d40a1763808d078bec14ed73dfce14ac108"
+    },
+    {
+      "path": "tools/grounding/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "6811399637852cd5e779f1e18bf3b6c9c007ea7a83ba738595f03e7b107c37f5"
+    },
+    {
+      "path": "tools/grounding/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "5d1b2d57e97a75112672ae8fe17ecb250b0fddd0a7edf19736287570fe54d7dc"
+    }
+  ]
+}

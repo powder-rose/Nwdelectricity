@@ -12,8 +12,15 @@ class NwdEditorialPages
 
 	public static function isEditorial($diafan)
 	{
-		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan) || self::isBlog($diafan) || self::isMaintenance($diafan) || self::isServices($diafan) || self::isPhaseNeutral($diafan) || self::isRcd($diafan) || self::isPowerTools($diafan) || self::isLaboratory($diafan) || self::isInsulation($diafan);
+		return self::isAbout($diafan) || self::isPrices($diafan) || self::isContacts($diafan) || self::isResponsible($diafan) || self::isBlog($diafan) || self::isMaintenance($diafan) || self::isServices($diafan) || self::isPhaseNeutral($diafan) || self::isRcd($diafan) || self::isPowerTools($diafan) || self::isLaboratory($diafan) || self::isInsulation($diafan) || self::isGrounding($diafan);
 	}
+
+    public static function isGrounding($diafan)
+    {
+        $link=(string)$diafan->_site->rewrite;
+        if($link===''){$link=$diafan->_route->link((int)$diafan->_site->id);}
+        return trim((string)parse_url($link,PHP_URL_PATH),'/')==='services/proverka-soprotivleniya-zazemliteley';
+    }
 
     public static function isInsulation($diafan)
     {
