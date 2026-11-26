@@ -45,7 +45,8 @@ function nwdFeedbackLead($id, $siteId) {
     require_once __DIR__.'/continuity.php';
     require_once __DIR__.'/lightning.php';
     require_once __DIR__.'/cablefault.php';
-    return nwdCablefaultLead(nwdLightningLead(nwdContinuityLead(nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row)))))))))))));
+    require_once __DIR__.'/avr.php';
+    return nwdAvrLead(nwdCablefaultLead(nwdLightningLead(nwdContinuityLead(nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row))))))))))))));
 }
 
 function nwdFeedbackEscape($text) {

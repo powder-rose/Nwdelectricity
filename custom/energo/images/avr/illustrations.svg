@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="transfer" viewBox="0 0 480 400">
+    <rect x="91" y="53" width="298" height="308" rx="7" stroke="#657d4e" stroke-width="2"/>
+    <rect x="120" y="84" width="80" height="68" rx="3" fill="#26321f" stroke="#72865f" stroke-width="3"/>
+    <rect x="280" y="84" width="80" height="68" rx="3" fill="#2d3c21" stroke="#a7ef43" stroke-width="3"/>
+    <path d="M138 119h12l10-16 11 28 10-12h3" stroke="#8a9c79" stroke-width="3"/>
+    <path d="M298 119h12l10-16 11 28 10-12h3" stroke="#a7ef43" stroke-width="3"/>
+    <path d="M160 152v74m160-74v74" stroke-width="4"/>
+    <circle cx="160" cy="232" r="6" stroke="#8a9c79" stroke-width="3"/>
+    <circle cx="320" cy="232" r="6" fill="#a7ef43" stroke="none"/>
+    <path d="m240 285 80-53M240 285v34" stroke="#a7ef43" stroke-width="5"/>
+    <circle cx="240" cy="285" r="7" fill="#a7ef43" stroke="none"/>
+    <path d="M215 319h50v31h-50zM226 329h28m-28 11h28" stroke="#a7ef43" stroke-width="3"/>
+    <path d="M114 378h252" stroke="#637a4f" stroke-width="2"/>
+  </symbol>
+  <symbol id="commission" viewBox="0 0 480 400">
+    <rect x="124" y="66" width="218" height="278" rx="4" stroke-width="4"/>
+    <path d="M159 97h145v76H159zM183 221h94m-94 34h68" stroke-width="4"/>
+    <circle cx="181" cy="136" r="7" fill="#a7ef43" stroke="none"/><circle cx="222" cy="136" r="7" stroke-width="3"/>
+    <circle cx="321" cy="287" r="53" fill="#242e1d" stroke-width="4"/>
+    <path d="m297 286 17 18 33-38" stroke="#a7ef43" stroke-width="5"/>
+  </symbol>
+  <symbol id="repair" viewBox="0 0 480 400">
+    <path d="M262 86c-29-11-63-3-84 20l40 40-29 30-41-40c-22 43 7 92 53 92l102 102c13 13 34 13 47 0s13-34 0-47L247 181c14-31 18-63 15-95Z" fill="#2a3521" stroke-width="5"/>
+    <circle cx="326" cy="306" r="9" stroke="#a7ef43" stroke-width="4"/>
+  </symbol>
+  <symbol id="operation" viewBox="0 0 480 400">
+    <rect x="111" y="76" width="210" height="261" rx="4" stroke-width="4"/>
+    <path d="M143 108h146v60H143zM148 218h98m-98 39h63" stroke-width="4"/>
+    <circle cx="168" cy="139" r="7" fill="#a7ef43" stroke="none"/><circle cx="208" cy="139" r="7" stroke-width="3"/>
+    <circle cx="320" cy="281" r="66" fill="#242e1d" stroke-width="4"/>
+    <path d="M320 242v42l28 17" stroke="#a7ef43" stroke-width="5"/>
+  </symbol>
+  <symbol id="protocol" viewBox="0 0 480 400">
+    <path d="M124 55h170l54 54v242H124z" fill="#f8fbf3" stroke-width="3"/>
+    <path d="M294 55v54h54M159 99h83m-83 47h127" stroke-width="3"/>
+    <path d="M158 183h86m-86 35h86m-86 35h86m-86 35h86m-86 35h86" stroke="#9caf89" stroke-width="2"/>
+    <path d="m277 180 5 6 11-13m-16 42 5 6 11-13m-16 42 5 6 11-13m-16 42 5 6 11-13m-16 42 5 6 11-13" stroke="#7a9e4f" stroke-width="3"/>
+    <path d="M105 78H91v291h218v-11" stroke="#a6b993" stroke-width="3"/>
+  </symbol>
+</svg>

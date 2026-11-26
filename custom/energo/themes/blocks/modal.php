@@ -27,7 +27,8 @@ if (NwdEditorialPages::isEditorial($this->diafan) && in_array($nwdCallbackPath, 
     'services/tekhnicheskiy-otchet-po-elektroizmereniyam',
     'services/zamer-metallosvyazi',
     'services/proverka-sistem-molniezaschity',
-    'services/poisk-mesta-povrezhdeniya-kabelya'
+    'services/poisk-mesta-povrezhdeniya-kabelya',
+    'services/ispytanie-ustroystv-avr'
 ), true)) {
     echo '<insert name="show_include" file="callback" />';
 }
