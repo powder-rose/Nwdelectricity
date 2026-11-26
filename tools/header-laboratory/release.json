@@ -1,0 +1,30 @@
+{
+  "feature": "header-laboratory",
+  "baseline": "faef89151273f42382235bdd4f2bc2b6de990c13",
+  "files": [
+    {
+      "path": "custom/energo/modules/menu/service_navigation.php",
+      "text": true,
+      "base": "e2ca768ad887af0926442c6c3bd50858ae68fe85792202e6fb2c4b493d3948a1",
+      "sha256": "46e2333fc39091e5f33bc84abf55e433ecf8ed974a58120dba5f0260f3bfdb37"
+    },
+    {
+      "path": "docs/HEADER_LABORATORY.md",
+      "text": true,
+      "base": null,
+      "sha256": "16cd4ba04e3010989678469cb7b20fde557f7094076138ab45e5f1327354c3c6"
+    },
+    {
+      "path": "tools/header-laboratory/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "352e0d3ec7153b93a56bd81837e8e69bead8b6f777f5b043776ade82a1f8846a"
+    },
+    {
+      "path": "tools/header-laboratory/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "4d8e58d3fc17e022383e829a2736fade17dfb3dc809b04bb0bf95c51d6931d4a"
+    }
+  ]
+}
