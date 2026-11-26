@@ -1,0 +1,361 @@
+{
+  "feature": "tehotchet",
+  "baseline": "cc1ff164760fce24821b71a82c7355c23caba727",
+  "requires": [
+    {
+      "path": "custom/energo/css/phase-neutral.css",
+      "text": true,
+      "sha256": "2c4fbc4abed864359fe1a7c071297e855aaf262d61460c34f034513c94acae91"
+    },
+    {
+      "path": "custom/energo/css/editorial-pages.css",
+      "text": true,
+      "sha256": "90da5c11d15adf651e55c0ef1c655a96fb22052bdfa70403dc7c2c46d7acf137"
+    },
+    {
+      "path": "custom/energo/js/lead-forms.js",
+      "text": true,
+      "sha256": "33297a2b4ffc6ca076f96edd7dd152a2a72ce95858ab9d0654dd1fd5979664e7"
+    },
+    {
+      "path": "custom/energo/modules/feedback/phase-neutral.php",
+      "text": true,
+      "sha256": "a454c00330efec47fc9601c22bb58c0b1b1bc86d1027a5da1077c4d7c22156b1"
+    },
+    {
+      "path": "custom/energo/modules/feedback/rcd.php",
+      "text": true,
+      "sha256": "140eb1a4fe436b320f51545006725af00868175f15c82cc82890c12aa5deab86"
+    },
+    {
+      "path": "custom/energo/modules/feedback/power-tools.php",
+      "text": true,
+      "sha256": "0b03708506f10c3c57850baed9e0f819a3165791fc5ab4e963ec55a91f8fc74f"
+    },
+    {
+      "path": "custom/energo/modules/feedback/laboratory.php",
+      "text": true,
+      "sha256": "478733089241f40be9e3a92942e226089779fecc9c5eb59d28b8032ab36cb3c8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/document-request.php",
+      "text": true,
+      "sha256": "ef6ac1ae2b00416fe34e3c6983cffc5c2c3e5efe33043107bd598f6d69bed2e8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/boykov-hub.php",
+      "text": true,
+      "sha256": "591ac5a7e271ec9dab2155c839b982e75b0c2d1cf186be9db354d2ffa28ba86c"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_content.php",
+      "text": true,
+      "sha256": "d0216e97fb017df9dcd8e6b49c75ddb7ae10c168ab5cb2bdfee3ad7a9ce02539"
+    },
+    {
+      "path": "custom/energo/themes/laboratory_links.php",
+      "text": true,
+      "sha256": "a16e990933503ec5589e5faef838081ac33fdbb51be94279ea3db9765a4e0ea8"
+    },
+    {
+      "path": "custom/energo/themes/blocks/header.php",
+      "text": true,
+      "sha256": "08afd0c9b55df50b1b7dc45170c2d955888b94e195a7fd613999e115ec6f9830"
+    },
+    {
+      "path": "custom/energo/themes/blocks/footer.php",
+      "text": true,
+      "sha256": "5efffba7d605f83431672251927ee9cebb743799a65488186c653e91b105629b"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_head.php",
+      "text": true,
+      "sha256": "fa03acb81b07e1745a7ec9bb39594f24a210bc95c9de5b3f490a809c770fbe9d"
+    },
+    {
+      "path": "redaktsiya/lib/db.php",
+      "text": true,
+      "sha256": "1e3e3aaad8bc5eead211db4a0ff21831c800ab5938ef43769250b4c1985599cd"
+    },
+    {
+      "path": "scripts/phase-neutral-schema.php",
+      "text": true,
+      "sha256": "bedac1ab14d4b3d6c2bed316462605e35f7314ec9a644e526aa551ab00a119ba"
+    },
+    {
+      "path": "scripts/rcd-lab-link.php",
+      "text": true,
+      "sha256": "7cf5092e59d45f987edb14aa90afa005bdbcc3e6d0db0821f618c5be40fe5239"
+    },
+    {
+      "path": "scripts/test-phase-neutral-schema.php",
+      "text": true,
+      "sha256": "8096cd8e91248b74b974ebac06fa1842c99a0aaa1e9e005a46296939d740527a"
+    },
+    {
+      "path": "scripts/test-document-request.php",
+      "text": true,
+      "sha256": "f2227a03fc75ab275dfe2593aacedc279584a985a1b0396bb8647fef7782e47e"
+    },
+    {
+      "path": "scripts/test-rcd-laboratory.php",
+      "text": true,
+      "sha256": "2593617c43481914e9b7a9430a758da11ecd9cfdc7a774e4b097d8b42b46ca86"
+    },
+    {
+      "path": "scripts/test-power-tools.php",
+      "text": true,
+      "sha256": "574d6b16bef9f1747661f30c2b63b5bc8cc2c04ef60d92bf184d2fea30ad2d62"
+    },
+    {
+      "path": "scripts/test-rcd.php",
+      "text": true,
+      "sha256": "9cf5e76bc7c3b3ece59f064a1362f1d5b0cc2e5c4515cde79a97de2122710de1"
+    },
+    {
+      "path": "scripts/test-phase-neutral.php",
+      "text": true,
+      "sha256": "4235d56f105b138cce1b7e92effe9a6d3b24f42935334304af8d2c7d253d8ea6"
+    },
+    {
+      "path": "scripts/test-laboratory.php",
+      "text": true,
+      "sha256": "7e05397ffb57df8dccff25957caac56eb5dd653a16f09f977f630789bb3c6048"
+    },
+    {
+      "path": "scripts/test-laboratory-queries.php",
+      "text": true,
+      "sha256": "39c516cb2772765d57d5253dfb9a18aa64a3ce85c244f0f3586d88c35c7ddc68"
+    },
+    {
+      "path": "custom/energo/modules/feedback/insulation.php",
+      "text": true,
+      "sha256": "a3ec5aa67a7e9f108881e20645bcb0a1ac6485acc7aef51122aa460588fc2400"
+    },
+    {
+      "path": "scripts/test-insulation.php",
+      "text": true,
+      "sha256": "9c39e63fa7a9979accfce36b0bbd0fcc1c3160ce79d9b67a375b09deb52ecf28"
+    },
+    {
+      "path": "custom/energo/modules/feedback/grounding.php",
+      "text": true,
+      "sha256": "86ee9988dc60418a10809abbab193fb4a14dac8e70257fdd22d1630787206f99"
+    },
+    {
+      "path": "scripts/test-grounding.php",
+      "text": true,
+      "sha256": "5049a9699e6702a5b9a496ed9ae76d40a1763808d078bec14ed73dfce14ac108"
+    },
+    {
+      "path": "custom/energo/modules/feedback/breakers.php",
+      "text": true,
+      "sha256": "3036bef120a4e44b1b44ed352defbb6ea4934d91364239bcee8480250be787cb"
+    },
+    {
+      "path": "scripts/test-breakers.php",
+      "text": true,
+      "sha256": "dfce36da9c3b23d1f6b34a2d9ed634d6b9256186518b649842c37a4a91dfbf08"
+    },
+    {
+      "path": "custom/energo/css/service-callback.css",
+      "text": true,
+      "sha256": "2046471374e69aea0186df51ce364f23376ebaa2a0a4fb4cbee3fb7ac4e33bf0"
+    },
+    {
+      "path": "custom/energo/themes/blocks/callback.php",
+      "text": true,
+      "sha256": "15da2fe10432fd42a9a51893c2ec1146273a705db8c59843eb8e2ad4fcc9f7c8"
+    },
+    {
+      "path": "custom/energo/modules/feedback/cables.php",
+      "text": true,
+      "sha256": "8a9c2e81bbe2f174703164708e6b4b44bb534b9534bf78ec70aa9aa8a2b12769"
+    },
+    {
+      "path": "scripts/test-cables.php",
+      "text": true,
+      "sha256": "97a7babde0fa3a6e03f33e7c7e93eda39be7fb6c9dee12b3d9f0b9d5a93b1b9d"
+    },
+    {
+      "path": "custom/energo/modules/feedback/commissioning.php",
+      "text": true,
+      "sha256": "ecd0ec93ab9555944e1e2a78d017a49270be908244213b74e60eddf6fb2419c0"
+    },
+    {
+      "path": "scripts/test-commissioning.php",
+      "text": true,
+      "sha256": "74dadebd27e60c946467a1fa8d0174c7db36322fa226ba31c62567fc7052fc84"
+    }
+  ],
+  "files": [
+    {
+      "path": "custom/energo/css/tehotchet.css",
+      "text": true,
+      "base": null,
+      "sha256": "333b15bcaec67f5d07d981af0af468e2be4f3d9056eaa37456ed943b92863005"
+    },
+    {
+      "path": "custom/energo/images/tehotchet/illustrations.svg",
+      "text": true,
+      "base": null,
+      "sha256": "60a118143feeaee538214bc721a8bf9302eea5149a4391d61b209154abac24c5",
+      "previous": [
+        "3373941217fc1e5232f34974b1791a209bf2f5c86eed777a5f5ad7cde1977e98"
+      ]
+    },
+    {
+      "path": "custom/energo/images/tehotchet/tekhnicheskiy-otchet-po-elektroizmereniyam.webp",
+      "text": false,
+      "base": null,
+      "sha256": "d6a5e91bfed15f5c27b0fe94b737162b7cc8363612fd4a55ea39930701d2518b"
+    },
+    {
+      "path": "custom/energo/js/tehotchet.js",
+      "text": true,
+      "base": null,
+      "sha256": "c4b4e0f028f2dabbf07546f91b33cbdfcb9ad3afce1634b5237e23c5bfeb984c"
+    },
+    {
+      "path": "custom/energo/modules/feedback/feedback.action.php",
+      "text": true,
+      "base": "aeccfb6fc94adc3caae26e07ec3866015bf492b96738e708477fcb1be0589d8c",
+      "sha256": "f6e10aecc8e2e9f45fb7d01336b41050129e56d7e79aa9b07b3419d29610f0cb"
+    },
+    {
+      "path": "custom/energo/modules/feedback/lead.php",
+      "text": true,
+      "base": "5658f366530faa359fc2c0f820534cd89836fa1eec6239a33c84af2aa528d9f4",
+      "sha256": "ec093f7cbe9063301632634e7f6ff7d2cf113a17666a6951e5ed0af1a93fee67"
+    },
+    {
+      "path": "custom/energo/modules/feedback/tehotchet.php",
+      "text": true,
+      "base": null,
+      "sha256": "70de26beb9563ed821c28f324fc6cc24f8f66a25c6b4566a1abb9f4385e82eef"
+    },
+    {
+      "path": "custom/energo/modules/feedback/views/feedback.view.form_tehotchet.php",
+      "text": true,
+      "base": null,
+      "sha256": "0bfe6a00181535ac7089bb96926e2b67dc8a1d727e328e2a0ec12877930040ca"
+    },
+    {
+      "path": "custom/energo/themes/blocks/head.php",
+      "text": true,
+      "base": "a1fb6d07ba9044c4cdc4329e11f52bfc6d1ed4b0cd8b771e37cf7d3e2f87be52",
+      "sha256": "f1a8e20592eb737ed994aa1adf9ffc93bdf1be9907224294ef56ad0388cdcc6b"
+    },
+    {
+      "path": "custom/energo/themes/blocks/modal.php",
+      "text": true,
+      "base": "cccaafee3a9fb28685c1de200691f980f2ba75df0516a0a15a7d15567f8911e1",
+      "sha256": "8779da7a17e4dfb09f9dc31962f04b1ea40308562160f1f2125417b84dc048cd"
+    },
+    {
+      "path": "custom/energo/themes/editorial_pages.php",
+      "text": true,
+      "base": "4d927283f3dbc480ae490b00e4a2b9f0569a16f43f66766392c737592612ec6a",
+      "sha256": "e6210161074c3e5f84fdebd38cdfe947c6ab1b410e9465d2c58b9f7ed38007d7"
+    },
+    {
+      "path": "custom/energo/themes/functions/show_tehotchet_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "389c48bd9f4d8943063461302aacc472e0d4b5489f306e58d18216151e2e3c54",
+      "previous": [
+        "52f8c288fcc9577847d479def7135ef6e9b784de4e961c54f0262f0fa259fa21"
+      ]
+    },
+    {
+      "path": "custom/energo/themes/m/tehotchet.php",
+      "text": true,
+      "base": null,
+      "sha256": "846748b40a89010038f61b65febd7588771ae7d552db0e20fea4d88298336c79"
+    },
+    {
+      "path": "custom/energo/themes/tehotchet.php",
+      "text": true,
+      "base": null,
+      "sha256": "6e44a550b8a0275197afd29f4eb976e5497e535ef92a21430d3444bbd808cf37"
+    },
+    {
+      "path": "custom/energo/themes/tehotchet_content.php",
+      "text": true,
+      "base": null,
+      "sha256": "74e008f13ada6480918c69257b51ecd730bab8999017f31f349bb2ef75560673"
+    },
+    {
+      "path": "docs/TEHOTCHET.md",
+      "text": true,
+      "base": null,
+      "sha256": "fa4b8a22a27c17960a37c37e26128730f7defb89842cca15a621c8237b60030f"
+    },
+    {
+      "path": "scripts/check-tehotchet-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "74664aa9424df02af37c434b8a374affe4d031939eb9f18cbde259b873908d4b"
+    },
+    {
+      "path": "scripts/install-tehotchet.php",
+      "text": true,
+      "base": null,
+      "sha256": "d4c58da27665a0a7fddfed2740325e0238c28cf41aca71677df1059e9b31efcd"
+    },
+    {
+      "path": "scripts/tehotchet-html.php",
+      "text": true,
+      "base": null,
+      "sha256": "b9242f57d6ee80e308462eb665307c7fd8404755da5ea2f891d5a864f4c4c53b"
+    },
+    {
+      "path": "scripts/tehotchet-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "67610713052d52cc0891eb767feccb7653b89025f59910467700708131c61a96"
+    },
+    {
+      "path": "scripts/test-tehotchet-page.php",
+      "text": true,
+      "base": null,
+      "sha256": "3cae723613f2c5bfd2eae1e14a8e86049faa9d730c16aab7e5d55d4aa10514c9"
+    },
+    {
+      "path": "scripts/test-tehotchet-public.php",
+      "text": true,
+      "base": null,
+      "sha256": "2d209b48df80d2bf8c5055d4e1572b844bd2518fee018132a6a5567a8eb32a4c"
+    },
+    {
+      "path": "scripts/test-tehotchet-render.php",
+      "text": true,
+      "base": null,
+      "sha256": "62c0d5fa8f08845b30239889ba10dce8ef9e05cd0e7bbd8b50a4f079dec16e13"
+    },
+    {
+      "path": "scripts/test-tehotchet-shell.php",
+      "text": true,
+      "base": null,
+      "sha256": "c96ef049234226773c22a1a2432061902af343e1a948a161020390d50c49e66b"
+    },
+    {
+      "path": "scripts/test-tehotchet.php",
+      "text": true,
+      "base": null,
+      "sha256": "125b3ca818146383f822f000cd1ecf5c1a7754665e01b95aacdfb0a2e37f164b"
+    },
+    {
+      "path": "tools/tehotchet/deploy-beget.sh",
+      "text": true,
+      "base": null,
+      "sha256": "2d96c5f00f6ec65db59093d5f8570c6e64c35c5c48c9237ab179d124e1e8e1ac"
+    },
+    {
+      "path": "tools/tehotchet/publish-github.ps1",
+      "text": true,
+      "base": null,
+      "sha256": "6b9507bdc669434a47b291384685e08f886592617875b8c90041e171702f14a7"
+    }
+  ]
+}

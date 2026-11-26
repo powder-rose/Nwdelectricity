@@ -41,7 +41,8 @@ function nwdFeedbackLead($id, $siteId) {
     require_once __DIR__.'/breakers.php';
     require_once __DIR__.'/cables.php';
     require_once __DIR__.'/commissioning.php';
-    return nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row)))))))));
+    require_once __DIR__.'/tehotchet.php';
+    return nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row))))))))));
 }
 
 function nwdFeedbackEscape($text) {
