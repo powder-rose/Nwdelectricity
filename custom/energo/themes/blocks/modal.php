@@ -22,7 +22,8 @@ if (NwdEditorialPages::isEditorial($this->diafan) && in_array($nwdCallbackPath, 
     'services/zamer-soprotivleniya-izolyatsii',
     'services/proverka-soprotivleniya-zazemliteley',
     'services/proverka-avtomaticheskikh-vyklyuchateley',
-    'services/ispytanie-silovykh-kabelnykh-liniy-napryazheniem'
+    'services/ispytanie-silovykh-kabelnykh-liniy-napryazheniem',
+    'services/ekspluatatsionnye-i-priemo-sdatochnye-ispytaniya'
 ), true)) {
     echo '<insert name="show_include" file="callback" />';
 }

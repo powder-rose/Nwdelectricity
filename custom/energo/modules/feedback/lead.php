@@ -40,7 +40,8 @@ function nwdFeedbackLead($id, $siteId) {
     require_once __DIR__.'/grounding.php';
     require_once __DIR__.'/breakers.php';
     require_once __DIR__.'/cables.php';
-    return nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row))))))));
+    require_once __DIR__.'/commissioning.php';
+    return nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row)))))))));
 }
 
 function nwdFeedbackEscape($text) {
