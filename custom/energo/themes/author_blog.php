@@ -89,6 +89,8 @@ final class NwdAuthorBlog {
         return max(1,(int)ceil(count($words[0])/180));
     }
     public static function body($html) {
+        require_once ABSOLUTE_PATH.'custom/energo/includes/thermal_links.php';
+        $html=nwdThermalMarkup($html,array('path'=>'services/teplovizionnoe-obsledovanie-elektrooborudovaniya'));
         $doc=panelUtf8Document($html);$toc=array();$used=array();$index=0;
         foreach($doc->getElementsByTagName('h2') as $heading) {
             $index++;$id=$heading->getAttribute('id');

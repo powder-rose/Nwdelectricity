@@ -302,6 +302,10 @@ class Init extends Core
 	 */
 	private function get_redirect()
 	{
+		// Consolidate the thermal service before native route lookup, including tagged URLs.
+		require_once ABSOLUTE_PATH.'custom/energo/includes/thermal_redirect.php';
+		$nwdThermalTarget = nwdThermalRedirectTarget(getenv('REQUEST_URI'), defined('BASE_PATH') ? BASE_PATH : 'https://nwdelectricity.ru/');
+		if ($nwdThermalTarget !== null) { $this->redirect($nwdThermalTarget, 301); }
 		$url = rawurldecode(getenv('REQUEST_URI'));
 		$url = preg_replace('/^\/'.(REVATIVE_PATH ? preg_quote(REVATIVE_PATH, '/').'\/' : '').'/', '', $url);
 		if($row = DB::query_fetch_array("SELECT * FROM {redirect} WHERE redirect='%s' LIMIT 1", $url))

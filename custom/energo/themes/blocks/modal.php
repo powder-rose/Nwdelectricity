@@ -30,7 +30,8 @@ if (NwdEditorialPages::isEditorial($this->diafan) && in_array($nwdCallbackPath, 
     'services/poisk-mesta-povrezhdeniya-kabelya',
     'services/ispytanie-ustroystv-avr',
     'services/proverka-releynoy-apparatury',
-    'services/proverka-fazirovki'
+    'services/proverka-fazirovki',
+    'services/teplovizionnoe-obsledovanie-elektrooborudovaniya'
 ), true)) {
     echo '<insert name="show_include" file="callback" />';
 }

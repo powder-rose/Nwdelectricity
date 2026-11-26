@@ -48,7 +48,8 @@ function nwdFeedbackLead($id, $siteId) {
     require_once __DIR__.'/avr.php';
     require_once __DIR__.'/relay.php';
     require_once __DIR__.'/phasing.php';
-    return nwdPhasingLead(nwdRelayLead(nwdAvrLead(nwdCablefaultLead(nwdLightningLead(nwdContinuityLead(nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row))))))))))))))));
+    require_once __DIR__.'/thermal.php';
+    return nwdThermalLead(nwdPhasingLead(nwdRelayLead(nwdAvrLead(nwdCablefaultLead(nwdLightningLead(nwdContinuityLead(nwdTehotchetLead(nwdCommissioningLead(nwdCablesLead(nwdBreakersLead(nwdGroundingLead(nwdInsulationLead(nwdLaboratoryLead(nwdPowerToolsLead(nwdRcdLead(nwdPhaseNeutralLead($row)))))))))))))))));
 }
 
 function nwdFeedbackEscape($text) {

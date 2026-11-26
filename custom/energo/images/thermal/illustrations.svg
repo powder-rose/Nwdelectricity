@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="survey" viewBox="0 0 480 400">
+ <rect x="278" y="46" width="131" height="287" rx="4" fill="#2b3b20" stroke="#8ea773" stroke-width="3"/>
+ <path d="M294 71h99M294 306h99" stroke="#6f8955" stroke-width="3"/>
+ <rect x="298" y="92" width="28" height="61" rx="2" fill="#364a27"/><rect x="337" y="92" width="28" height="61" rx="2" fill="#364a27"/>
+ <path d="M312 111v22m39-22v22m-39 20v27m39-27v27M298 198h91m-91 31h91m-91 31h91" stroke="#9cb884" stroke-width="3"/>
+ <rect x="61" y="180" width="118" height="83" rx="9" fill="#344729" stroke-width="3"/>
+ <path d="M104 263v76h34l11-76M179 196h30v51h-30" fill="#344729" stroke-width="3"/>
+ <path d="M78 198h57v41H78z" fill="#a4c87a" stroke="#a4c87a" stroke-width="2"/>
+ <path d="M93 211h27m-27 13h15" stroke="#3e552c" stroke-width="3"/>
+ <path d="m221 193 40-80m-40 132 40 49" stroke="#8da66f" stroke-width="2" stroke-dasharray="4 8"/>
+ <path d="M326 175h-13v22m55-22h13v22m-68 36v22h13m55-22v22h-13" stroke="#a7ef43" stroke-width="3"/>
+ <circle cx="348" cy="215" r="6" fill="#a7ef43" stroke="none"/>
+</symbol>
+<symbol id="plan" viewBox="0 0 480 400">
+ <path d="M126 94h229v259H126z" fill="#344729" stroke-width="4"/>
+ <path d="M194 94V68h91v26M176 149h139m-139 57h139m-139 57h139m-139 57h90" stroke-width="4"/>
+ <path d="m145 145 10 10 17-20m-27 67 10 10 17-20m-27 67 10 10 17-20" stroke="#a7ef43" stroke-width="4"/>
+</symbol>
+<symbol id="repair" viewBox="0 0 480 400">
+ <path d="M264 81c-30-8-60 2-81 25l39 39-29 30-42-40c-20 44 8 92 54 91l101 102c13 13 34 13 47 0s13-34 0-47L251 179c13-30 16-64 13-98Z" fill="#e4ecd9" stroke-width="5"/>
+ <circle cx="329" cy="305" r="9" stroke="#87b14b" stroke-width="4"/>
+</symbol>
+<symbol id="load" viewBox="0 0 480 400">
+ <path d="M151 106h177v225H151z" fill="#e6eedb" stroke-width="4"/>
+ <path d="M173 129h131M173 309h131m-91-173v165m50-165v165" stroke="#a5b990" stroke-width="3"/>
+ <rect x="169" y="164" width="45" height="53" rx="2" fill="#f7faf0" stroke-width="3"/>
+ <rect x="264" y="164" width="45" height="53" rx="2" fill="#f7faf0" stroke-width="3"/>
+ <path d="M192 182v18m95-18v18m-47 50v-60m-20 21 20-21 20 21" stroke="#84a552" stroke-width="5"/>
+</symbol>
+<symbol id="focus" viewBox="0 0 480 400">
+ <path d="M119 123V91h39m163 0h39v32m0 147v36h-39m-163 0h-39v-36" stroke="#a3b78b" stroke-width="4"/>
+ <circle cx="230" cy="190" r="62" fill="#e5edd9" stroke-width="4"/>
+ <path d="m275 236 64 64" stroke-width="11"/>
+ <path d="M188 191h84m-42-40v80" stroke="#a4bd8b" stroke-width="3"/>
+ <circle cx="230" cy="191" r="13" fill="#acd270" stroke="#8dac66" stroke-width="3"/>
+</symbol>
+<symbol id="report" viewBox="0 0 480 400">
+ <path d="M126 55h171l54 54v239H126z" fill="#354329" stroke-width="3"/>
+ <path d="M297 55v54h54M162 112h80m-80 44h147m-147 46h108m-108 44h147m-147 44h108" stroke="#9cb682" stroke-width="3"/>
+ <path d="M102 83H90v286h215v-10" stroke="#6d8653" stroke-width="3"/>
+ <path d="m268 288 14 14 28-33" stroke="#a7ef43" stroke-width="4"/>
+</symbol>
+</svg>

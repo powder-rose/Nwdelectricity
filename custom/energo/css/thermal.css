@@ -1,0 +1,112 @@
+/* Phase sequence and cable thermal: two distinct checks, three work scenarios and documented results. */
+.page-thermal{background:#f4f2ed;color:var(--home-ink)}
+.page-thermal .page-main{padding:0}
+.page-thermal .thermal-breadcrumbs{padding:22px 0;background:#f4f2ed}
+.page-thermal .thermal-breadcrumbs ol{font-size:11px;gap:6px 15px}
+.page-thermal .thermal-breadcrumbs li+li::before{margin-right:15px}
+.page-thermal main h1,.page-thermal main h2,.page-thermal main h3{font-family:inherit;letter-spacing:-.045em;text-wrap:balance}
+.page-thermal main p{margin:0;line-height:1.8}
+.page-thermal .thermal-hero{padding:59px 0 66px;background:#141612;color:#f4f2ed}
+.thermal-hero__grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:36px;align-items:center}
+.thermal-hero__copy{min-width:0}
+.page-thermal main h1{font-size:clamp(46px,4.65vw,68px);font-weight:550;line-height:1.04;letter-spacing:-.055em;text-wrap:initial}
+.thermal-hero h1 span{color:#a7ef43}
+.thermal-hero__intro{max-width:690px;margin-top:27px}
+.page-thermal .thermal-hero__intro p{font-size:17px;line-height:1.75;color:#e7ede0}
+.page-thermal .thermal-hero__intro p+p{font-size:14px;color:#aebba0;margin-top:13px}
+.thermal-credentials{margin-top:22px;border-left:2px solid #65794e;padding-left:18px}
+.page-thermal .thermal-credentials p{font-size:12px;color:#c1cdb4}
+.page-thermal .thermal-credentials p+p{font-size:11px;color:#94a581;margin-top:6px}
+.thermal-hero__offer{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;margin-top:27px}
+.page-thermal .thermal-price{font-size:32px;font-weight:750;letter-spacing:-.04em;line-height:1.12;color:#a7ef43}
+.page-thermal .thermal-included{font-size:12px;line-height:1.7;color:#c2cfb4;margin-top:10px;max-width:440px}
+.page-thermal .thermal-cta{min-height:55px;gap:24px;font-size:13px;padding:15px 19px}
+.thermal-cta svg{display:block}
+.thermal-hero__photo{position:relative;margin:0}
+.thermal-hero__photo:after{content:'';position:absolute;left:0;top:-20px;width:55px;height:3px;background:#a7ef43}
+.thermal-hero__photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.65) brightness(.94)}
+.page-thermal .thermal-section{padding-block:88px}
+.page-thermal main h2{font-size:clamp(34px,3.7vw,50px);line-height:1.12;font-weight:550;max-width:1050px}
+.page-thermal main h3{font-size:27px;line-height:1.28;font-weight:550}
+.page-thermal main a:not(.fn-button){color:inherit;text-decoration-color:#84a864;text-underline-offset:4px}
+.page-thermal .thermal-section a:not(.fn-button){text-decoration-line:underline}
+.page-thermal main a:not(.fn-button):hover{text-decoration-color:currentColor}
+.page-thermal .thermal-section__intro{margin-top:27px;font-size:18px;line-height:1.8;color:#5d6755;max-width:1080px}
+.page-thermal .thermal-section__label{font-size:13px;color:#7a866e;margin-bottom:18px}
+.thermal-art{display:block;width:100%;height:auto;color:#52673d}
+
+.page-thermal .thermal-scope h2{max-width:1180px}
+.page-thermal .thermal-scope .thermal-section__intro{max-width:1100px}
+.page-thermal .thermal-scope__label{font-size:15px;color:#718363;margin-top:23px;max-width:1000px}
+.thermal-scope__layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.75fr);gap:24px;margin-top:30px}
+.thermal-scope__visual{display:flex;align-items:center;justify-content:center;min-width:0;background:#25301d;color:#b1c79a;padding:10px}
+.thermal-scope__visual .thermal-art{max-width:410px}
+.thermal-equipment{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;list-style:none;margin:0;padding:0}
+.thermal-equipment li{background:#e5ecda;padding:26px 28px;min-width:0}
+.page-thermal .thermal-equipment h3{font-size:26px;line-height:1.28}
+.page-thermal .thermal-equipment p{font-size:15px;line-height:1.8;color:#5f7250;margin-top:16px}
+.page-thermal .thermal-scope__outro{font-size:17px;line-height:1.85;color:#536648;margin-top:26px;max-width:1070px}
+.page-thermal .thermal-when{background:#e5ebdc}
+.thermal-when__heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:center}
+.page-thermal .thermal-when__heading .thermal-section__intro{font-size:17px;margin-top:0}
+.thermal-situations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;list-style:none;margin:34px 0 0;padding:0}
+.thermal-situations li{display:grid;grid-template-columns:140px minmax(0,1fr);align-items:center;gap:18px;background:#f7f8f1;padding:26px 30px 26px 10px;min-width:0}
+.thermal-situations li:first-child{background:#29371e;color:#f3f6ed}
+.thermal-situations .thermal-art{width:145px;height:145px;color:#859e6a}
+.thermal-situations li:first-child .thermal-art{color:#afc796}
+.page-thermal .thermal-situations h3{font-size:27px;line-height:1.28}
+.page-thermal .thermal-situations p{font-size:15px;line-height:1.8;color:#637352;margin-top:14px}
+.page-thermal .thermal-situations li:first-child p{color:#bdcfa9}
+.page-thermal .thermal-when__outro{font-size:16px;line-height:1.85;color:#5b6d4d;margin-top:27px;max-width:1080px}
+.thermal-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:31px 45px;list-style:none;margin:35px 0 0;padding:0}
+.thermal-steps li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:15px;min-width:0;padding:9px 0 13px}
+.thermal-steps li>span{font-size:33px;letter-spacing:-.04em;line-height:1.1;color:#9ab27c}
+.page-thermal .thermal-steps h3{font-size:27px;line-height:1.3}
+.page-thermal .thermal-steps p{font-size:16px;line-height:1.85;color:#637353;margin-top:15px}
+.thermal-report{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:45px;background:#20281a;color:#f3f6ee;padding:30px 39px 36px;margin-top:33px}
+.thermal-report__heading .thermal-art{width:150px;height:130px;color:#a1bb88;margin:-10px 0 10px -20px}
+.page-thermal .thermal-report h3{font-size:34px;line-height:1.25;max-width:400px}
+.page-thermal .thermal-report p{font-size:16px;line-height:1.85;color:#c2d2b3;margin-top:5px;max-width:720px}
+.page-thermal .thermal-report p+p{font-size:14px;color:#a3b58f;margin-top:21px}
+.page-thermal .thermal-cost{background:#141612;color:#f4f2ed}
+.thermal-cost__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:65px;align-items:start}
+.page-thermal .thermal-cost h2{font-size:clamp(34px,3.4vw,46px);max-width:620px}
+.page-thermal .thermal-cost .thermal-price{font-size:36px;margin-top:29px}
+.page-thermal .thermal-cost .thermal-included{font-size:14px;max-width:620px;margin-top:12px;color:#d3dec7}
+.page-thermal .thermal-cost__intro{font-size:14px;line-height:1.85;color:#aebc9e;margin-top:26px;max-width:620px}
+.page-thermal .thermal-cost h3{font-size:24px;margin-top:29px}
+.thermal-factors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 25px;list-style:none;padding:0;margin:22px 0 0}
+.thermal-factors li{position:relative;padding-left:19px;font-size:15px;line-height:1.75;color:#d6e0cb}
+
+.thermal-factors li:before{content:'';position:absolute;width:4px;height:4px;top:11px;left:0;background:#a7ef43}
+.page-thermal .thermal-cost__outro{font-size:13px;line-height:1.85;color:#a4b58f;margin-top:25px;max-width:600px}
+.page-thermal .thermal-form{padding:35px 34px;background:#f4f2ed;color:#171c13;scroll-margin-top:120px}
+.page-thermal .thermal-form h3{font-size:29px;margin:0}
+.page-thermal .thermal-form>p{font-size:14px;line-height:1.75;color:#67745b;margin-top:17px}
+.page-thermal .thermal-form form{margin-top:26px}
+.page-thermal .thermal-form .fn-button{width:100%;font-size:14px}
+.page-thermal .thermal-form .fn-form__consent{font-size:11px;line-height:1.6}
+.thermal-faq__items{margin-top:34px}
+.thermal-faq details{border-bottom:1px solid #d9dece}
+.thermal-faq summary{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:27px 0;cursor:pointer;list-style:none;font-size:23px;letter-spacing:-.03em;line-height:1.35}
+.thermal-faq summary::-webkit-details-marker{display:none}
+.thermal-faq summary svg{flex:none;color:#5e7346;transition:transform .2s}
+.thermal-faq details[open] summary svg{transform:rotate(180deg)}
+.page-thermal .thermal-faq details>p{font-size:15px;line-height:1.85;color:#626e57;padding:0 40px 28px 0;max-width:1000px}
+.page-thermal main :focus-visible{outline:2px solid #7aa246;outline-offset:6px}
+
+@media(min-width:768px) and (max-width:1100px){
+ .page-thermal main h1{font-size:clamp(40px,4.9vw,54px)}.thermal-hero__grid{gap:32px}.thermal-hero__offer{grid-template-columns:minmax(0,1fr);gap:20px}.thermal-cta{justify-self:start}.thermal-scope__layout{grid-template-columns:minmax(0,.75fr) minmax(0,1.7fr);gap:20px}.thermal-equipment{gap:15px}.thermal-equipment li{padding:23px}.page-thermal .thermal-equipment h3{font-size:24px}.page-thermal .thermal-equipment p{font-size:14px}.thermal-when__heading{gap:35px}.thermal-situations li{grid-template-columns:95px minmax(0,1fr);gap:15px;padding:23px 24px 23px 8px}.thermal-situations .thermal-art{width:105px;height:120px}.page-thermal .thermal-situations h3{font-size:25px}.thermal-steps{gap:28px}.thermal-steps li{grid-template-columns:40px minmax(0,1fr);gap:12px}.page-thermal .thermal-steps h3{font-size:25px}.thermal-report{padding:27px 30px;gap:30px}.page-thermal .thermal-report h3{font-size:31px}.thermal-cost__grid{gap:35px}.page-thermal .thermal-form{padding:28px}.thermal-factors{grid-template-columns:minmax(0,1fr)}
+}
+@media(min-width:768px) and (max-width:900px){
+ .thermal-hero__grid{grid-template-columns:minmax(0,1fr);gap:38px}.page-thermal main h1{font-size:58px}.thermal-hero__offer{grid-template-columns:minmax(0,1fr) auto}.thermal-hero__photo{max-width:560px;width:100%;justify-self:center}.thermal-scope__layout{grid-template-columns:minmax(0,1fr)}.thermal-scope__visual .thermal-art{width:350px;height:300px}.thermal-when__heading{grid-template-columns:minmax(0,1fr);gap:24px}.thermal-situations{grid-template-columns:minmax(0,1fr)}.thermal-situations li{grid-template-columns:140px minmax(0,1fr);gap:24px}.thermal-situations .thermal-art{width:140px;height:140px}.thermal-report{grid-template-columns:minmax(0,1fr);gap:20px}.thermal-report__heading{display:flex;align-items:center;gap:24px}.thermal-report__heading .thermal-art{margin:0;width:120px;height:100px}.thermal-cost__grid{grid-template-columns:minmax(0,1fr);gap:36px}.thermal-factors{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:767px){
+ .page-thermal .thermal-breadcrumbs{padding-block:18px}.page-thermal .thermal-breadcrumbs ol{font-size:10px;gap:4px 10px}.page-thermal .thermal-breadcrumbs li+li::before{margin-right:10px}.page-thermal .thermal-hero{padding:35px 0 42px}.thermal-hero__grid{grid-template-columns:minmax(0,1fr);gap:35px}.page-thermal main h1{font-size:clamp(31px,8.7vw,48px)}.page-thermal main h1 span{font-size:.92em}.thermal-hero__intro{margin-top:24px}.page-thermal .thermal-hero__intro p{font-size:16px}.page-thermal .thermal-hero__intro p+p{font-size:14px}.thermal-credentials{margin-top:20px}.page-thermal .thermal-credentials p{font-size:12px}.page-thermal .thermal-credentials p+p{font-size:11px}
+ .thermal-hero__offer{grid-template-columns:minmax(0,1fr);gap:21px;margin-top:25px}.page-thermal .thermal-price{font-size:28px}.page-thermal .thermal-included{font-size:12px}.page-thermal .thermal-cta{width:100%;min-height:56px;font-size:13px;padding:16px 19px;gap:16px}.thermal-hero__photo:after{top:-12px;width:45px}
+ .page-thermal .thermal-section{padding-block:53px}.page-thermal main h2{font-size:clamp(30px,8vw,40px)}.page-thermal .thermal-section__intro{font-size:16px;margin-top:24px}.page-thermal .thermal-scope__label{font-size:14px;margin-top:20px}.thermal-scope__layout{grid-template-columns:minmax(0,1fr);gap:17px;margin-top:26px}.thermal-scope__visual{padding:4px 18px}.thermal-scope__visual .thermal-art{width:100%;max-width:380px;height:auto}.thermal-equipment{grid-template-columns:minmax(0,1fr);gap:14px}.thermal-equipment li{padding:25px 27px}.page-thermal .thermal-equipment h3{font-size:27px}.page-thermal .thermal-equipment p{font-size:16px;margin-top:15px}.page-thermal .thermal-scope__outro{font-size:15px;margin-top:23px}
+ .thermal-when__heading{grid-template-columns:minmax(0,1fr);gap:24px}.page-thermal .thermal-when__heading .thermal-section__intro{font-size:16px}.thermal-situations{grid-template-columns:minmax(0,1fr);gap:15px;margin-top:27px}.thermal-situations li{grid-template-columns:minmax(0,1fr);padding:10px 26px 27px;gap:0}.thermal-situations .thermal-art{width:140px;height:135px;margin-left:-12px}.page-thermal .thermal-situations h3{font-size:27px}.page-thermal .thermal-situations p{font-size:16px;margin-top:15px}.page-thermal .thermal-when__outro{font-size:15px;margin-top:24px}
+ .thermal-steps{grid-template-columns:minmax(0,1fr);gap:25px;margin-top:28px}.thermal-steps li{grid-template-columns:minmax(0,1fr);gap:15px;padding:0}.thermal-steps li>span{font-size:25px}.page-thermal .thermal-steps h3{font-size:27px}.page-thermal .thermal-steps p{font-size:15px;margin-top:14px}.thermal-report{grid-template-columns:minmax(0,1fr);padding:23px 27px 28px;gap:23px;margin-top:28px}.thermal-report__heading .thermal-art{height:115px;width:140px;margin:-7px 0 8px -17px}.page-thermal .thermal-report h3{font-size:31px}.page-thermal .thermal-report p{font-size:16px;margin:0}.page-thermal .thermal-report p+p{font-size:14px;margin-top:18px}
+ .thermal-cost__grid{grid-template-columns:minmax(0,1fr);gap:32px}.page-thermal .thermal-cost h2{font-size:clamp(31px,8vw,39px)}.page-thermal .thermal-cost .thermal-price{font-size:33px;margin-top:25px}.page-thermal .thermal-cost .thermal-included{font-size:14px}.page-thermal .thermal-cost h3{font-size:25px}.thermal-factors{grid-template-columns:minmax(0,1fr);gap:16px}.page-thermal .thermal-form{padding:27px 23px;scroll-margin-top:105px}.page-thermal .thermal-form h3{font-size:27px}.page-thermal .thermal-form .fn-button{font-size:13px}.thermal-faq__items{margin-top:24px}.thermal-faq summary{font-size:21px;gap:20px;padding:24px 0}.page-thermal .thermal-faq details>p{font-size:15px;padding-right:10px}
+}
+@media(prefers-reduced-motion:reduce){.thermal-faq summary svg{transition:none}}
