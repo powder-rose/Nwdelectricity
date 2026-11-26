@@ -29,7 +29,8 @@ if (NwdEditorialPages::isEditorial($this->diafan) && in_array($nwdCallbackPath, 
     'services/proverka-sistem-molniezaschity',
     'services/poisk-mesta-povrezhdeniya-kabelya',
     'services/ispytanie-ustroystv-avr',
-    'services/proverka-releynoy-apparatury'
+    'services/proverka-releynoy-apparatury',
+    'services/proverka-fazirovki'
 ), true)) {
     echo '<insert name="show_include" file="callback" />';
 }

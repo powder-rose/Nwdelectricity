@@ -130,12 +130,17 @@ class Feedback_action extends Action
                 require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/relay.php';
                 $serviceCopy=nwdRelayCopy();
             }
+            if ($_POST['nwd_service']==='phasing') {
+                require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/phasing.php';
+                $serviceCopy=nwdPhasingCopy();
+            }
             $errors=array();
-            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools','laboratory','insulation','grounding','breakers','cables','commissioning','tehotchet','continuity','lightning','cablefault','avr','relay'),true) || (int)$this->site_id!==27 || $documentContext) {
+            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools','laboratory','insulation','grounding','breakers','cables','commissioning','tehotchet','continuity','lightning','cablefault','avr','relay','phasing'),true) || (int)$this->site_id!==27 || $documentContext) {
                 $errors[0]=$serviceCopy['errors']['failure'];
             } else {
                 try {
-                    if ($_POST['nwd_service']==='relay') { $serviceContext=nwdRelayValidate($params,$_POST,$errors); }
+                    if ($_POST['nwd_service']==='phasing') { $serviceContext=nwdPhasingValidate($params,$_POST,$errors); }
+                    elseif ($_POST['nwd_service']==='relay') { $serviceContext=nwdRelayValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='avr') { $serviceContext=nwdAvrValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='cablefault') { $serviceContext=nwdCablefaultValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='lightning') { $serviceContext=nwdLightningValidate($params,$_POST,$errors); }
