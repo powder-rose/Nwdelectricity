@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="distance" viewBox="0 0 480 400">
+    <path d="M125 92h230v179H125z" fill="#f7faf2" stroke-width="3"/><path d="M144 111h192v116H144z" fill="#e7eddd" stroke="#9aae84"/>
+    <path d="M157 196h22v-47h13v47h65v-30h13v30h53" stroke="#78a640" stroke-width="4"/>
+    <circle cx="318" cy="249" r="7" stroke-width="3"/><path d="M145 248h78m17 0h23" stroke="#97ae7b" stroke-width="3"/>
+    <path d="M167 271v39H94m73 0h205" stroke-width="3"/>
+    <path d="M97 300v20m273-20v20" stroke="#87ad53" stroke-width="3"/>
+  </symbol>
+  <symbol id="route" viewBox="0 0 480 400">
+    <path d="m75 110 110-25 110 25 110-25v200l-110 25-110-25-110 25z" fill="#f1f6e9" stroke="#a0b587" stroke-width="2"/>
+    <path d="M185 85v200m110-175v200" stroke="#b7c7a2" stroke-width="2"/>
+    <path d="m108 243 62-48 50 34 55-55 63 17 35-51" stroke="#80ae43" stroke-width="6"/>
+    <circle cx="108" cy="243" r="7" fill="#a7ef43" stroke="none"/><circle cx="373" cy="140" r="7" fill="#a7ef43" stroke="none"/>
+  </symbol>
+  <symbol id="localize" viewBox="0 0 480 400">
+    <path d="M82 265h137m42 0h137" stroke="#88ae55" stroke-width="6"/>
+    <path d="M89 287h302m-282 21 16-8m35 8 16-8m35 8 16-8m35 8 16-8m35 8 16-8m35 8 16-8" stroke="#a5bb8c" stroke-width="2"/>
+    <path d="M240 71c-43 0-78 34-78 76 0 51 78 116 78 116s78-65 78-116c0-42-35-76-78-76Z" fill="#eef5e5" stroke-width="3"/>
+    <circle cx="240" cy="147" r="31" stroke="#7c9a57" stroke-width="3"/><path d="M240 131v32m-16-16h32" stroke="#719846" stroke-width="3"/>
+    <circle cx="240" cy="265" r="6" fill="#a7ef43" stroke="none"/>
+  </symbol>
+  <symbol id="access" viewBox="0 0 480 400">
+    <path d="M52 157h115l33 134h80l33-134h115v183H52Z" fill="#2d3922" stroke="#94ac79" stroke-width="3"/>
+    <path d="M69 141h77m187 0h77M75 185l16-10m12 40 16-10m-44 40 16-10m12 40 16-10m-44 40 16-10m272-110 16-10m12 40 16-10m-44 40 16-10m12 40 16-10m-44 40 16-10" stroke="#667f50" stroke-width="2"/>
+    <path d="M74 270h150m32 0h150" stroke="#a7ef43" stroke-width="6"/>
+    <path d="M224 263v14m32-14v14" stroke="#a7ef43" stroke-width="4"/>
+    <path d="M240 51c-24 0-43 19-43 43 0 28 43 64 43 64s43-36 43-64c0-24-19-43-43-43Z" fill="#222c1b" stroke-width="3"/>
+    <circle cx="240" cy="94" r="13" stroke="#a7ef43" stroke-width="3"/>
+    <path d="M240 173v57" stroke="#89a66a" stroke-dasharray="4 8" stroke-width="2"/>
+  </symbol>
+</svg>

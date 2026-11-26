@@ -118,12 +118,17 @@ class Feedback_action extends Action
                 require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/lightning.php';
                 $serviceCopy=nwdLightningCopy();
             }
+            if ($_POST['nwd_service']==='cablefault') {
+                require_once ABSOLUTE_PATH.'custom/energo/modules/feedback/cablefault.php';
+                $serviceCopy=nwdCablefaultCopy();
+            }
             $errors=array();
-            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools','laboratory','insulation','grounding','breakers','cables','commissioning','tehotchet','continuity','lightning'),true) || (int)$this->site_id!==27 || $documentContext) {
+            if (!in_array($_POST['nwd_service'],array('phase-neutral','rcd','power-tools','laboratory','insulation','grounding','breakers','cables','commissioning','tehotchet','continuity','lightning','cablefault'),true) || (int)$this->site_id!==27 || $documentContext) {
                 $errors[0]=$serviceCopy['errors']['failure'];
             } else {
                 try {
-                    if ($_POST['nwd_service']==='lightning') { $serviceContext=nwdLightningValidate($params,$_POST,$errors); }
+                    if ($_POST['nwd_service']==='cablefault') { $serviceContext=nwdCablefaultValidate($params,$_POST,$errors); }
+                    elseif ($_POST['nwd_service']==='lightning') { $serviceContext=nwdLightningValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='continuity') { $serviceContext=nwdContinuityValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='tehotchet') { $serviceContext=nwdTehotchetValidate($params,$_POST,$errors); }
                     elseif ($_POST['nwd_service']==='commissioning') { $serviceContext=nwdCommissioningValidate($params,$_POST,$errors); }

@@ -1,0 +1,100 @@
+/* Cable fault location: three diagnostic stages, ground access and an ordered service flow. */
+.page-cablefault{background:#f4f2ed;color:var(--home-ink)}
+.page-cablefault .page-main{padding:0}
+.page-cablefault .cfl-breadcrumbs{padding:22px 0;background:#f4f2ed}
+.page-cablefault .cfl-breadcrumbs ol{font-size:11px;gap:6px 15px}
+.page-cablefault .cfl-breadcrumbs li+li::before{margin-right:15px}
+.page-cablefault main h1,.page-cablefault main h2,.page-cablefault main h3{font-family:inherit;letter-spacing:-.045em;text-wrap:balance}
+.page-cablefault main p{margin:0;line-height:1.8}
+.page-cablefault .cfl-hero{padding:59px 0 66px;background:#141612;color:#f4f2ed}
+.cfl-hero__grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:36px;align-items:center}
+.cfl-hero__copy{min-width:0}
+.page-cablefault main h1{font-size:clamp(48px,5.35vw,76px);font-weight:550;line-height:1.04;letter-spacing:-.055em;text-wrap:initial}
+.cfl-hero h1 span{color:#a7ef43}
+.cfl-hero__intro{max-width:690px;margin-top:27px}
+.page-cablefault .cfl-hero__intro p{font-size:17px;line-height:1.75;color:#e7ede0}
+.page-cablefault .cfl-hero__intro p+p{font-size:14px;color:#aebba0;margin-top:13px}
+.page-cablefault .cfl-geography{font-size:12px;color:#adbc9d;margin-top:22px}
+.cfl-hero__offer{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;margin-top:27px}
+.page-cablefault .cfl-price{font-size:32px;font-weight:750;letter-spacing:-.04em;line-height:1.12;color:#a7ef43}
+.page-cablefault .cfl-included{font-size:12px;line-height:1.7;color:#c2cfb4;margin-top:10px;max-width:440px}
+.page-cablefault .cfl-cta{min-height:55px;gap:24px;font-size:13px;padding:15px 19px}
+.cfl-cta svg{display:block}
+.cfl-hero__photo{position:relative;margin:0}
+.cfl-hero__photo:after{content:'';position:absolute;left:0;top:-20px;width:55px;height:3px;background:#a7ef43}
+.cfl-hero__photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.65) brightness(.94)}
+.page-cablefault .cfl-section{padding-block:88px}
+.page-cablefault main h2{font-size:clamp(34px,3.7vw,50px);line-height:1.12;font-weight:550;max-width:1050px}
+.page-cablefault main h3{font-size:27px;line-height:1.28;font-weight:550}
+.page-cablefault main a:not(.fn-button){color:inherit;text-decoration-color:#84a864;text-underline-offset:4px}
+.page-cablefault .cfl-section a:not(.fn-button){text-decoration-line:underline}
+.page-cablefault main a:not(.fn-button):hover{text-decoration-color:currentColor}
+.page-cablefault .cfl-section__intro{margin-top:27px;font-size:18px;line-height:1.8;color:#5d6755;max-width:1080px}
+.page-cablefault .cfl-section__label{font-size:13px;color:#7a866e;margin-bottom:18px}
+.cfl-art{display:block;width:100%;height:auto;color:#52673d}
+.cfl-scope__heading{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:65px;align-items:center}
+.page-cablefault .cfl-scope__heading .cfl-section__intro{font-size:17px;margin-top:0;max-width:500px}
+.cfl-search{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;padding:0;margin:36px 0 0}
+.cfl-search li{background:#fff;min-width:0;display:flex;flex-direction:column}
+.cfl-search__visual{position:relative;background:#e8eddf;padding:8px 27px}
+.cfl-search__visual>span{position:absolute;top:25px;left:26px;font-size:13px;line-height:1;color:#7a8c66;letter-spacing:.04em}
+.cfl-search .cfl-art{height:210px;max-width:330px;margin:auto}
+.cfl-search li:nth-child(2) .cfl-search__visual{background:#e1e8d6}
+.cfl-search li:nth-child(3) .cfl-search__visual{background:#d9e5c8}
+.cfl-search__copy{padding:26px 29px 31px}
+.page-cablefault .cfl-search h3{font-size:27px;line-height:1.28;font-weight:600}
+.page-cablefault .cfl-search p{font-size:15px;color:#627153;line-height:1.8;margin-top:17px}
+.page-cablefault .cfl-access{background:#1a2016;color:#f4f5ef}
+.cfl-access__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:62px;align-items:center}
+.cfl-access__visual{background:#222c1b;padding:20px}
+.cfl-access__visual .cfl-art{height:auto;color:#98ad7d}
+.page-cablefault .cfl-access h2{font-size:clamp(34px,3.4vw,46px);max-width:700px}
+.page-cablefault .cfl-access__intro{font-size:18px;line-height:1.8;color:#d2dec5;margin-top:25px;max-width:700px}
+.page-cablefault .cfl-access__outro{font-size:15px;line-height:1.85;color:#aabf94;margin-top:24px;max-width:680px}
+.cfl-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;list-style:none;margin:38px 0 0;padding:0}
+.cfl-step__number{display:inline-flex;align-items:center;justify-content:center;font-size:27px;letter-spacing:-.05em;font-weight:400;background:#dce9c9;color:#41582b;width:62px;height:62px;margin-bottom:24px}
+.cfl-steps li{min-width:0}
+.page-cablefault .cfl-steps h3{font-size:26px;line-height:1.3;min-height:68px}
+.page-cablefault .cfl-steps p{font-size:15px;line-height:1.85;color:#67755a;margin-top:19px}
+.page-cablefault .cfl-result{font-size:18px;line-height:1.8;background:#e2ead6;color:#3c502c;padding:27px 32px;margin-top:35px;max-width:none}
+.page-cablefault .cfl-laboratory{font-size:14px;line-height:1.8;color:#68775a;margin-top:24px}
+.page-cablefault .cfl-cost{background:#141612;color:#f4f2ed}
+.cfl-cost__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:65px;align-items:start}
+.page-cablefault .cfl-cost h2{font-size:clamp(34px,3.4vw,46px);max-width:620px}
+.page-cablefault .cfl-cost .cfl-price{font-size:36px;margin-top:29px}
+.page-cablefault .cfl-cost .cfl-included{font-size:14px;max-width:620px;margin-top:12px;color:#d3dec7}
+.page-cablefault .cfl-cost__intro{font-size:14px;line-height:1.85;color:#aebc9e;margin-top:26px;max-width:620px}
+.page-cablefault .cfl-cost h3{font-size:24px;margin-top:29px}
+.cfl-factors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 25px;list-style:none;padding:0;margin:22px 0 0}
+.cfl-factors li{position:relative;padding-left:19px;font-size:15px;line-height:1.75;color:#d6e0cb}
+.cfl-factors li:before{content:'';position:absolute;width:4px;height:4px;top:11px;left:0;background:#a7ef43}
+.page-cablefault .cfl-cost__outro{font-size:13px;line-height:1.85;color:#a4b58f;margin-top:25px;max-width:600px}
+.page-cablefault .cfl-form{padding:35px 34px;background:#f4f2ed;color:#171c13;scroll-margin-top:120px}
+.page-cablefault .cfl-form h3{font-size:29px;margin:0}
+.page-cablefault .cfl-form>p{font-size:14px;line-height:1.75;color:#67745b;margin-top:17px}
+.page-cablefault .cfl-form form{margin-top:26px}
+.page-cablefault .cfl-form .fn-button{width:100%;font-size:14px}
+.page-cablefault .cfl-form .fn-form__consent{font-size:11px;line-height:1.6}
+.cfl-faq__items{margin-top:34px}
+.cfl-faq details{border-bottom:1px solid #d9dece}
+.cfl-faq summary{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:27px 0;cursor:pointer;list-style:none;font-size:23px;letter-spacing:-.03em;line-height:1.35}
+.cfl-faq summary::-webkit-details-marker{display:none}
+.cfl-faq summary svg{flex:none;color:#5e7346;transition:transform .2s}
+.cfl-faq details[open] summary svg{transform:rotate(180deg)}
+.page-cablefault .cfl-faq details>p{font-size:15px;line-height:1.85;color:#626e57;padding:0 40px 28px 0;max-width:1000px}
+.page-cablefault main :focus-visible{outline:2px solid #7aa246;outline-offset:6px}
+@media(min-width:768px) and (max-width:1100px){
+ .page-cablefault main h1{font-size:clamp(43px,5.7vw,60px)}.cfl-hero__grid{gap:28px}.cfl-hero__offer{grid-template-columns:minmax(0,1fr);gap:20px}.cfl-cta{justify-self:start}.cfl-scope__heading{gap:35px}.cfl-search{gap:16px}.cfl-search__copy{padding:23px}.page-cablefault .cfl-search h3{font-size:24px}.cfl-search .cfl-art{height:175px}.cfl-search__visual{padding-inline:15px}.cfl-access__grid{gap:35px}.page-cablefault .cfl-access__intro{font-size:16px}.cfl-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:31px 34px}.page-cablefault .cfl-steps h3{min-height:0}.cfl-cost__grid{gap:35px}.page-cablefault .cfl-form{padding:28px}.cfl-factors{grid-template-columns:minmax(0,1fr)}
+}
+@media(min-width:768px) and (max-width:900px){
+ .cfl-hero__grid{grid-template-columns:minmax(0,1fr);gap:38px}.page-cablefault main h1{font-size:61px}.cfl-hero__offer{grid-template-columns:minmax(0,1fr) auto}.cfl-hero__photo{max-width:560px;width:100%;justify-self:center}.cfl-scope__heading{grid-template-columns:minmax(0,1fr);gap:24px}.page-cablefault .cfl-scope__heading .cfl-section__intro{max-width:650px}.cfl-search{grid-template-columns:minmax(0,1fr);gap:18px}.cfl-search li{display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr)}.cfl-search__visual{display:flex;align-items:center}.cfl-search .cfl-art{height:200px}.cfl-search__copy{padding:28px}.cfl-access__grid{grid-template-columns:minmax(0,1fr)}.cfl-access__visual{order:2}.cfl-access__visual .cfl-art{height:300px}.cfl-cost__grid{grid-template-columns:minmax(0,1fr);gap:36px}.cfl-factors{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:767px){
+ .page-cablefault .cfl-breadcrumbs{padding-block:18px}.page-cablefault .cfl-breadcrumbs ol{font-size:10px;gap:4px 10px}.page-cablefault .cfl-breadcrumbs li+li::before{margin-right:10px}.page-cablefault .cfl-hero{padding:35px 0 42px}.cfl-hero__grid{grid-template-columns:minmax(0,1fr);gap:35px}.page-cablefault main h1{font-size:clamp(38px,11vw,55px)}.cfl-hero__intro{margin-top:24px}.page-cablefault .cfl-hero__intro p{font-size:16px}.page-cablefault .cfl-hero__intro p+p{font-size:14px}.page-cablefault .cfl-geography{margin-top:19px}
+ .cfl-hero__offer{grid-template-columns:minmax(0,1fr);gap:21px;margin-top:25px}.page-cablefault .cfl-price{font-size:28px}.page-cablefault .cfl-included{font-size:12px}.page-cablefault .cfl-cta{width:100%;min-height:56px;font-size:13px;padding:16px 19px;gap:16px}.cfl-hero__photo:after{top:-12px;width:45px}
+ .page-cablefault .cfl-section{padding-block:53px}.page-cablefault main h2{font-size:clamp(30px,8vw,40px)}.page-cablefault .cfl-section__intro{font-size:16px;margin-top:24px}.cfl-scope__heading{grid-template-columns:minmax(0,1fr);gap:24px}.page-cablefault .cfl-scope__heading .cfl-section__intro{font-size:16px}.cfl-search{grid-template-columns:minmax(0,1fr);gap:18px;margin-top:27px}.cfl-search .cfl-art{height:190px}.cfl-search__copy{padding:25px}.page-cablefault .cfl-search h3{font-size:26px}.page-cablefault .cfl-search p{font-size:15px;margin-top:15px}
+ .cfl-access__grid{grid-template-columns:minmax(0,1fr);gap:28px}.cfl-access__visual{order:2;padding:5px}.cfl-access__visual .cfl-art{height:265px}.page-cablefault .cfl-access h2{font-size:clamp(30px,8vw,40px)}.page-cablefault .cfl-access__intro{font-size:16px;margin-top:24px}.page-cablefault .cfl-access__outro{font-size:15px;margin-top:21px}
+ .cfl-steps{grid-template-columns:minmax(0,1fr);gap:29px;margin-top:28px}.cfl-steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 20px}.cfl-step__number{width:44px;height:44px;font-size:23px;margin:0;grid-row:1/3}.page-cablefault .cfl-steps h3{font-size:25px;min-height:0}.page-cablefault .cfl-steps p{font-size:15px;margin-top:13px}.page-cablefault .cfl-result{font-size:16px;line-height:1.8;padding:24px 25px;margin-top:29px}.page-cablefault .cfl-laboratory{font-size:14px;margin-top:23px}
+ .cfl-cost__grid{grid-template-columns:minmax(0,1fr);gap:32px}.page-cablefault .cfl-cost h2{font-size:clamp(31px,8vw,39px)}.page-cablefault .cfl-cost .cfl-price{font-size:33px;margin-top:25px}.page-cablefault .cfl-cost .cfl-included{font-size:14px}.page-cablefault .cfl-cost h3{font-size:25px}.cfl-factors{grid-template-columns:minmax(0,1fr);gap:16px}.page-cablefault .cfl-form{padding:27px 23px;scroll-margin-top:105px}.page-cablefault .cfl-form h3{font-size:27px}.page-cablefault .cfl-form .fn-button{font-size:13px}.cfl-faq__items{margin-top:24px}.cfl-faq summary{font-size:21px;gap:20px;padding:24px 0}.page-cablefault .cfl-faq details>p{font-size:15px;padding-right:10px}
+}
+@media(prefers-reduced-motion:reduce){.cfl-faq summary svg{transition:none}}
